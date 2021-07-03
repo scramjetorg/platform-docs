@@ -113,8 +113,7 @@ The package.json should be filled as shown below:
     "package": "0.0.1"
   },​​
   "engines": {​​
-      "node": ">=10",
-      "scramjet": ">=0.9"
+      "node": ">=10"
   },
   "config": {​​
       "": "" //ports, etc.
