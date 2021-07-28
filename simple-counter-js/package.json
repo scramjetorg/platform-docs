@@ -1,0 +1,10 @@
+{
+  "name": "small-sample",
+  "main": "index.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "scramjet": "^4.35.20"
+  }
+}
