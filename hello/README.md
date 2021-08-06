@@ -1,6 +1,6 @@
-## transform-string-stream 
+## hello
 ----
-Sequence that modifies incoming stream of strings by adding a prefix and a suffix.
+Sequence that modifies incoming stream of strings by saying Hello :).
 
 ### Running
 ```bash
