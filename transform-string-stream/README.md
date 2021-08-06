@@ -1,6 +1,6 @@
 ## transform-string-stream 
 ----
-Sequence that modifies incoming stream of strings by adding a prefix and suffix.
+Sequence that modifies incoming stream of strings by adding a prefix and a suffix.
 
 ### Running
 ```bash
@@ -17,8 +17,11 @@ cp -r node_modules package.json dist/
 si pack dist/ -o transform-string-stream.tar.gz
 
 # send sequence to transform hub, this will output Sequence ID
-si send transform-string-stream.tar.gz
+si seq send transform-string-stream.tar.gz
 
-# start a sequence
-si start <sequence-id> "['Hello', '.']" 
+# start a sequence, this will output Instance ID
+si seq start <sequence-id> "[\"Hello. \", \" Bye.\"]" 
+
+# attach to sequence process
+si inst attach <instance-id>
 ```
