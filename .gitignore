@@ -3,12 +3,16 @@
 # Dependency directories
 node_modules/
 
+# Build dirs
+dist/
+
 # dotenv environment variables file
 .env
 .env.test
 
 # Output of 'npm pack'
 *.tgz
+*.tar.gz
 
 # Logs
 logs
