@@ -9,6 +9,7 @@ node_modules/
 
 # Output of 'npm pack'
 *.tgz
+*.tar.gz
 
 # Logs
 logs
