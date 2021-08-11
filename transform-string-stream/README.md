@@ -20,10 +20,14 @@ si pack dist/ -o transform-string-stream.tar.gz
 si seq send transform-string-stream.tar.gz
 
 # start a sequence, this will output Instance ID
-si seq start <sequence-id> "[\"Hello. \", \" Bye.\"]" 
+si seq start <sequence-id> Hello Bye
 
-# attach to sequence process
-si inst attach <instance-id>
-> My name is John.
-Hello. My name is John. Bye.
+# See output of instance process
+si inst output <instance-id>
+
+# In another terminal send text to instance input steam
+si inst input <instance-id>
+> John
+
+# Now you should see "Hello John\n Bye" in output console
 ```

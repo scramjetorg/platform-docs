@@ -11,10 +11,14 @@ si pack . -o hello.tar.gz
 si seq send hello.tar.gz
 
 # start a sequence, this will output Instance ID
-si seq start <sequence-id> "[]" 
+si seq start <sequence-id>
 
-# attach to sequence process
-si inst attach <instance-id>
+# See output of instance process
+si inst output <instance-id>
+
+# In another terminal send text to instance input steam
+si inst input <instance-id>
 > John
-Hello John!
+
+# Now you should see "Hello John" in output console
 ```
