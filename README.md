@@ -51,7 +51,7 @@ Our engine outputs can be managed in several ways:
 * **STDOUT** - output can be directed to system STDOUT (STERR is supported as well)
 * **API** - output can be consumed from our  STH REST API
 * **URL Request** - you can write your app in a way to request URL, webhook etc
-* **Stream** - output cab be streamed to a particular destination
+* **Stream** - output can be streamed to a particular destination
 * you can mix multiple actions together: you can both send data to remote system/URL and save it locally.
 
 # **3 Install Scramjet Transform Hub**
