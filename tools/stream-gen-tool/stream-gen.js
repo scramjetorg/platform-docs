@@ -8,7 +8,7 @@ const req = http.request({
     headers: { "Content-Type":  "application/octet-stream" },
 });
 http.get(`http://127.0.0.1:8000/api/v1/instance/${instanceId}/output`, res => {
-    res.on('data', (outData) => console.log('OUTPUT| ' + outData))
+    res.on('data', (outData) => console.log('OUTPUT| ' + outData.toString()))
 });
 const wait = ms => new Promise(res => setTimeout(res, ms))
 let msgCounter = 0
