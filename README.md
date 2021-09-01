@@ -128,10 +128,10 @@ Now we have uploaded sequence to the host and host assigned to it a random ID (G
 
 ## **4.3 Run the sequence**
 
-We can now use sequence ID to run this uploaded sequence. The command is `si seq start <sequence_id>  '[]'`. The final array is used to pass parameters to the sequence, in case of our `hello-snowman` parameters are not used so array is empty.
+We can now use sequence ID to run this uploaded sequence. The command is `si seq start <sequence_id>`. You can also pass arbitrary number of parameters by providing them after <sequence_id>, in case of our `hello-snowman` parameters are not used.
 For example for the above sequence we could write:
 ```console
-si sequence start cf775cc1-105b-473d-b929-6885a0c2182c  '[]'
+si sequence start cf775cc1-105b-473d-b929-6885a0c2182c
 ```
 the output would look similiar to this one:
 ```console

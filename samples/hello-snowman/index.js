@@ -2,7 +2,7 @@ const { PassThrough } = require("stream");
 
 module.exports = function(input) {
     // create output stream
-    const out = new PassThrough();
+    const out = new PassThrough({encoding: 'utf-8'});
 
     // do something for each number in input stream
     input.on("data", data => {
