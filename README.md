@@ -1,5 +1,11 @@
 # **Scramjet Transform Hub - Quick Start introduction**
 
+> **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub. 
+
+* Developers looking for source code repository should visit [https://github.com/scramjetorg/transform-hub](https://github.com/scramjetorg/transform-hub). 
+* You can also find our packages published in NPM 
+  * STH [https://www.npmjs.com/package/@scramjet/sth](https://www.npmjs.com/package/@scramjet/sth)
+  * CLI [https://www.npmjs.com/package/@scramjet/cli](https://www.npmjs.com/package/@scramjet/cli)
 ## **1. What is Scramjet Transform Hub (STH)**
 
 Scramjet Transform Hub allows you to deploy and run multiple data processing apps called sequences. 
