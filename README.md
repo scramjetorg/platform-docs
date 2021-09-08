@@ -106,7 +106,7 @@ si pack ./samples/hello-snowman/ -o ./samples/hello-snowman.tar.gz
 ```
 There is no output shown in the terminal but you can verify with `ls` that tarball package is created inside `samples` directory.
 
-b) send hello-sequence.tar.gz to the running host (default localhost API endpoint will be used by the CLI send command)
+b) send hello-snowman.tar.gz to the running host (default localhost API endpoint will be used by the CLI send command)
 
 ```console
 si sequence send ./samples/hello-snowman.tar.gz
@@ -170,7 +170,7 @@ Our `hello-snowman` app will read and interpret these messages and will inform u
 - if temperature will be 0 or below, sequence will return message `Snowman is freezing ... :)`
 - in the other case (temperature above 0 degrees), sequence will return message `Snowman is melting! :(`
 
-To run this app, please execute this command from the root of our directory `node /stream-gen-tool/stream-gen.js <instance_id>`. In our case this would look like this:
+To run this app, please execute this command from the root of our directory `node ./tools/stream-gen-tool/stream-gen.js <instance_id>`. In our case this would look like this:
 ```console
 node ./tools/stream-gen-tool/stream-gen.js e70222d1-acfc-4e00-b046-4a3a9481c53b
 ```
