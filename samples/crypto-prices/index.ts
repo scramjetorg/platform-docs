@@ -14,7 +14,7 @@ const getData = async (baseCurrency: string, currency: string) =>
  * @param currency currency (default: 'USD')
  */
 const app: ReadableApp<string> = async function(_stream, baseCurrency = "BTC", currency = "USD") {
-    const outputStream = new PassThrough();
+    const outputStream = new PassThrough({ encoding: 'utf-8' });
 
     setInterval(async () => {
         getData(baseCurrency, currency)
