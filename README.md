@@ -111,6 +111,8 @@ b) send hello-snowman.tar.gz to the running host (default localhost API endpoint
 ```console
 si sequence send ./samples/hello-snowman.tar.gz
 ```
+> Note: if you receive reply: Request ok: http://127.0.0.1:8000/api/v1/sequence status: 422 Unprocessable Entity, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue "si sequence send" command again. We are working on fixing this issue in the next STH release.
+
 output will look similiar to this one:
 ```console
 Request ok: http://127.0.0.1:8000/api/v1/sequence status: 202 Accepted
