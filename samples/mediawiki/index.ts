@@ -4,7 +4,17 @@ import EventSource = require("eventsource");
 
 const url = 'https://stream.wikimedia.org/v2/stream/recentchange';
 
-const app: ReadableApp<string> = async function (_stream) {
+const app: ReadableApp<string> = async function (_stream, search) {
+  // Prepare filter
+  let filter;
+  if (search) {
+    filter = (data) => eval(search);
+  } else {
+    filter = (data) => data;
+  }
+
+  console.error('filter: ' + filter)
+
   const outputStream = new PassThrough({ encoding: 'utf-8' });
 
   const eventSource = new EventSource(url);
@@ -18,7 +28,9 @@ const app: ReadableApp<string> = async function (_stream) {
   };
 
   eventSource.onmessage = function (event) {
-    outputStream.write(JSON.stringify(event.data));
+    const data = [event.data];
+    const result = data.map(data => JSON.parse(data)).filter(filter)[0];
+    if (result) outputStream.write(JSON.stringify(result));
   };
 
   return outputStream;
