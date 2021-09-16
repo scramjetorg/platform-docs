@@ -3,7 +3,7 @@ import { PassThrough } from "stream";
 import EventSource = require("eventsource");
 
 const url = 'https://stream.wikimedia.org/v2/stream/recentchange';
-let streaming = false;.
+let streaming = false;
 function init(outputStream, filter) {
   if (streaming) return;
   streaming = true;
