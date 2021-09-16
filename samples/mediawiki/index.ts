@@ -27,6 +27,7 @@ function init(outputStream, filter) {
         // Wait for drain.
         console.log('--- Pause and wait for drain');
         eventSource.close();
+        streaming = false;
       }
     }
   };
