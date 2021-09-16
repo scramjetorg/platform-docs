@@ -4,18 +4,8 @@ import EventSource = require("eventsource");
 
 const url = 'https://stream.wikimedia.org/v2/stream/recentchange';
 
-const app: ReadableApp<string> = async function (_stream, search) {
-  // Prepare filter
-  let filter;
-  if (search) {
-    filter = (data) => eval(search);
-  } else {
-    filter = (data) => data;
-  }
-
-  const outputStream = new PassThrough({ objectMode: true });
-
-  const eventSource = new EventSource(url);
+function init(outputStream, filter) {
+  let eventSource = new EventSource(url);
 
   eventSource.onopen = function (event) {
     console.log('--- Opened connection.');
@@ -32,10 +22,30 @@ const app: ReadableApp<string> = async function (_stream, search) {
       const isOkayToContinue = outputStream.write(result);
       if (!isOkayToContinue) {
         // Wait for drain.
+        console.log('--- Pause and wait for drain');
         eventSource.close();
       }
     }
   };
+}
+
+const app: ReadableApp<string> = async function (_stream, search) {
+  // Prepare filter
+  let filter;
+  if (search) {
+    filter = (data) => eval(search);
+  } else {
+    filter = (data) => data;
+  }
+
+  const outputStream = new PassThrough({ objectMode: true });
+
+  init(outputStream, filter);
+
+  this.on("drain", () => {
+    console.log('--- Resume');
+    init(outputStream, filter)
+  });
 
   return outputStream;
 };

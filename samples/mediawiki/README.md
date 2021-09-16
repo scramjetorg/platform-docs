@@ -27,6 +27,15 @@ si seq start <sequence-id> [<search>]
 
 # See output
 si inst output <instance-id>
+
+# Check console.log messages
+si inst stdout <instance-id>
+
+# Check console.error messages
+si inst stderr <instace-id>
+
+# Send event, e.g. `drain`: `si inst emit <instance-id> drain "{}"`
+si inst emit <instance-id> <event> <payload>
 ```
 
 #### Example Event
