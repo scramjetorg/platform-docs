@@ -13,8 +13,6 @@ const app: ReadableApp<string> = async function (_stream, search) {
     filter = (data) => data;
   }
 
-  console.error('filter: ' + filter)
-
   const outputStream = new PassThrough({ objectMode: true });
 
   const eventSource = new EventSource(url);
