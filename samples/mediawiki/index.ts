@@ -5,6 +5,9 @@ import EventSource = require("eventsource");
 const url = 'https://stream.wikimedia.org/v2/stream/recentchange';
 let streaming = false;.
 function init(outputStream, filter) {
+  if (streaming) return;
+  streaming = true;
+
   let eventSource = new EventSource(url);
 
   eventSource.onopen = function (event) {
