@@ -28,7 +28,13 @@ const app: ReadableApp<string> = async function (_stream, search) {
   eventSource.onmessage = function (event) {
     const data = [event.data];
     const result = data.map(data => JSON.parse(data)).filter(filter)[0];
-    if (result) outputStream.write(result);
+    if (result) {
+      const isOkayToContinue = outputStream.write(result);
+      if (!isOkayToContinue) {
+        // Wait for drain.
+        eventSource.close();
+      }
+    }
   };
 
   return outputStream;
