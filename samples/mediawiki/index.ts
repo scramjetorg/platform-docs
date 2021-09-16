@@ -15,7 +15,7 @@ const app: ReadableApp<string> = async function (_stream, search) {
 
   console.error('filter: ' + filter)
 
-  const outputStream = new PassThrough({ encoding: 'utf-8' });
+  const outputStream = new PassThrough({ objectMode: true });
 
   const eventSource = new EventSource(url);
 
@@ -30,7 +30,7 @@ const app: ReadableApp<string> = async function (_stream, search) {
   eventSource.onmessage = function (event) {
     const data = [event.data];
     const result = data.map(data => JSON.parse(data)).filter(filter)[0];
-    if (result) outputStream.write(JSON.stringify(result));
+    if (result) outputStream.write(result);
   };
 
   return outputStream;
