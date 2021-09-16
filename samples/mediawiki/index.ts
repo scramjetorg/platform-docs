@@ -46,7 +46,7 @@ const app: ReadableApp<string> = async function (_stream, search) {
 
   init(outputStream, filter);
 
-  this.on("drain", () => {
+  outputStream.on("drain", () => {
     console.log('--- Resume');
     init(outputStream, filter)
   });
