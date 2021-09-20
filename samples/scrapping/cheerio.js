@@ -44,7 +44,6 @@ async function run() {
       if (catLinks) {
         catLinks.children('a').each((i, link) => {
           const linkText = $(link).text();
-          // console.log(linkText);
 
           categoryName.add(linkText);
         });
@@ -54,28 +53,6 @@ async function run() {
   });
 
   const result = await Promise.all(categories);
-
-  // const counter = new Map();
-
-  // const categories = Array.from(links).map(async (link) => {
-  //   console.log('LOAD: ' + link);
-  //   const page = await axios.get(`${BASE_URL}${link}`);
-
-  //   const $ = cheerio.load(page.data);
-
-  //   const catLinks = $('#mw-normal-catlinks > ul > li');
-
-  //   if (catLinks) {
-  //     catLinks.children('a').each((i, link) => {
-  //       const linkText = $(link).text();
-  //       console.log(linkText);
-
-  //       counter.set(linkText, (counter.get(linkText) || 0) + 1);
-  //     });
-  //   }
-  // });
-
-  // await Promise.all(categories);
 
   console.log('SUB CATEGORIES');
   console.log(result);
