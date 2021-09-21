@@ -9,7 +9,8 @@ const app: ReadableApp<string> = async function (_stream: any) {
 
     const result = await scrap();
 
-    outputStream.write(result)
+    // TODO: Silly implementation as this is getting all results in one-go.
+    outputStream.write(result.map(links => Array.from(links)))
 
     return outputStream;
 }

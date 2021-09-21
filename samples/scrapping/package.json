@@ -2,7 +2,7 @@
   "name": "scrapping",
   "version": "1.0.0",
   "description": "",
-  "main": "cheerio.js",
+  "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json"
   },
