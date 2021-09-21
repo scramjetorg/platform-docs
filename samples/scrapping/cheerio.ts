@@ -1,11 +1,11 @@
 'use strict';
 
-const cheerio = require('cheerio');
-const axios = require('axios');
+import * as cheerio from 'cheerio';
+import axios from 'axios';
 
 const BASE_URL = 'https://en.wikipedia.org';
 
-async function load(url) {
+async function load(url: string):Promise<any> {
   return (await axios.get(url)).data;
 }
 
@@ -19,12 +19,12 @@ async function scrap() {
   const links = new Set(
     Array.from(
       anchors
-        .filter((i, link) => {
+        .filter((i: any, link: any) => {
           const href = $(link).attr('href'); // first one is undefined
 
           return href && href.startsWith('/wiki/') && !href.includes(':');
         })
-        .map((i, link) => {
+        .map((i: any, link: any) => {
           return $(link).attr('href');
         })
     )
@@ -43,7 +43,7 @@ async function scrap() {
       const catLinks = $('#mw-normal-catlinks > ul > li');
 
       if (catLinks) {
-        catLinks.children('a').each((i, link) => {
+        catLinks.children('a').each((i: any, link: any) => {
           const linkText = $(link).text();
 
           categoryName.add(linkText);
@@ -53,11 +53,12 @@ async function scrap() {
     });
   });
 
-  const result = await Promise.all(categories);
+  const result:unknown[] = await Promise.all(categories);
 
   // console.log('SUB CATEGORIES');
   // console.log(result);
   return result;
 }
 
-module.exports = { scrap };
+export default scrap;
+

@@ -1,6 +1,5 @@
 'use strict';
-
-const { scrap } = require('./cheerio');
+import scrap from './cheerio';
 
 (async () => {
   const result = await scrap();
