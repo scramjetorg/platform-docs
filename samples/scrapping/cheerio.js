@@ -1,4 +1,5 @@
 'use strict';
+
 const cheerio = require('cheerio');
 const axios = require('axios');
 
@@ -8,7 +9,7 @@ async function load(url) {
   return (await axios.get(url)).data;
 }
 
-async function run() {
+async function scrap() {
   const html = await load(BASE_URL);
 
   const $ = cheerio.load(html);
@@ -29,8 +30,8 @@ async function run() {
     )
   );
 
-  console.log(links);
-  console.log('---'.repeat(20));
+  // console.log(links);
+  // console.log('---'.repeat(20));
 
   const categories = Array.from(links).map((link) => {
     return new Promise(async (res) => {
@@ -54,8 +55,9 @@ async function run() {
 
   const result = await Promise.all(categories);
 
-  console.log('SUB CATEGORIES');
-  console.log(result);
+  // console.log('SUB CATEGORIES');
+  // console.log(result);
+  return result;
 }
 
-run();
+module.exports = { scrap };
