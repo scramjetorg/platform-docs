@@ -33,9 +33,9 @@ async function scrap() {
   // console.log(links);
   // console.log('---'.repeat(20));
 
-  const categories = Array.from(links).map((link) => {
+  const categories:Promise<Set<string>>[] = Array.from(links).map((link) => {
     return new Promise(async (res) => {
-      const categoryName = new Set();
+      const categoryName:Set<string> = new Set();
       const page = await axios.get(`${BASE_URL}${link}`);
 
       const $ = cheerio.load(page.data);
@@ -53,7 +53,7 @@ async function scrap() {
     });
   });
 
-  const result:unknown[] = await Promise.all(categories);
+  const result:Set<string>[] = await Promise.all(categories);
 
   // console.log('SUB CATEGORIES');
   // console.log(result);
