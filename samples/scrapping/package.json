@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@scramjet/types": "^0.11.0-0",
-    "@types/node": "^16.9.4",
-    "typescript": "^4.4.3"
+    "@types/node": "15.12.5",
+    "typescript": "^4.3.4"
   }
 }
