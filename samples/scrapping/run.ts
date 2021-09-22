@@ -1,5 +1,5 @@
 'use strict';
-import scrap from './cheerio';
+import scrap from './scrapper';
 
 (async () => {
   const result = await scrap();
