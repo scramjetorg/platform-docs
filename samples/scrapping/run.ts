@@ -1,6 +1,6 @@
 'use strict';
-// import scrap from './wiki-scrapper';
-import scrap from './time-scrapper';
+// import scrap from './wiki-scraper';
+import scrap from './time-scraper';
 
 (async () => {
   const result = await scrap();
