@@ -6,7 +6,9 @@ We scrap current time from https://currentmillis.com/ and return this as a strea
 
 ### Troubleshooting
 
-As this is using `puppeteer` some dependencies may or may be not installed already. If you run the code and get error like:
+As this is using `puppeteer` some dependencies may or may be not installed already. If you run the code and something isn't working as expected, please examine `stderr`.
+
+#### libnss3
 
 ```bash
 Error: Failed to launch the browser process!
@@ -17,7 +19,7 @@ TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troublesh
 
 Then you must install missing dependency, e.g. `sudo apt install libnss3`
 
-If the error is:
+#### libgbm-dev
 
 ```bash
 Error: Failed to launch the browser process!
@@ -28,3 +30,11 @@ TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troublesh
 ```
 
 Then run: `sudo apt install libgbm-dev`
+
+#### EACCES
+
+```
+Error: Failed to launch the browser process! spawn /package/chrome/chrome EACCES
+```
+
+Change permission and give executable right: `chmod a+x chrome`
