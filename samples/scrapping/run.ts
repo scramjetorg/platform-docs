@@ -4,5 +4,5 @@ import scrap from './time-scrapper';
 
 (async () => {
   const result = await scrap();
-  console.log(result);
+  console.log(`RESULT: ${result}`);
 })();
