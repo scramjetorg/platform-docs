@@ -2,39 +2,37 @@
 
 This is a simple and trivial example of scraping web pages.
 
-We scrap current time from https://currentmillis.com/ and return this as a stream.
+We scrap current time from https://www.timeanddate.com/worldclock/poland and return this as a stream.
 
-### Troubleshooting
-
-As this is using `puppeteer` some dependencies may or may be not installed already. If you run the code and something isn't working as expected, please examine `stderr`.
-
-#### libnss3
+### Running
 
 ```bash
-Error: Failed to launch the browser process!
-/scramjet-cloud-docs/samples/scraping/node_modules/puppeteer/.local-chromium/linux-901912/chrome-linux/chrome: error while loading shared libraries: libnss3.so: cannot open shared object file: No such file or directory
+# install dependencies
+npm install
 
-TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
+# transpile TS->JS to dist/
+npm run build
+
+# prepare standalone JS package
+cp -r node_modules package.json dist/
+
+# make a compressed package with sequence
+si pack dist
+
+# send sequence to transform hub, this will output Sequence ID
+si seq send dist.tar.gz
+
+# start a sequence, this will output Instance ID.
+si seq start <sequence-id>
+
+# See output
+si inst output <instance-id>
+
+# Optional commands below:
+
+# Check console.log messages
+si inst stdout <instance-id>
+
+# Check console.error messages
+si inst stderr <instace-id>
 ```
-
-Then you must install missing dependency, e.g. `sudo apt install libnss3`
-
-#### libgbm-dev
-
-```bash
-Error: Failed to launch the browser process!
-/scramjet-cloud-docs/samples/scraping/node_modules/puppeteer/.local-chromium/linux-901912/chrome-linux/chrome: error while loading shared libraries: libgbm.so.1: cannot open shared object file: No such file or directory
-
-
-TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
-```
-
-Then run: `sudo apt install libgbm-dev`
-
-#### EACCES
-
-```
-Error: Failed to launch the browser process! spawn /package/chrome/chrome EACCES
-```
-
-Change permission and give executable right: `chmod a+x chrome`

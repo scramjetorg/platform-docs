@@ -1,5 +1,4 @@
 'use strict';
-// import scrap from './wiki-scraper';
 import scrap from './time-scraper';
 
 (async () => {
