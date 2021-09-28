@@ -3,13 +3,11 @@
 import * as cheerio from 'cheerio';
 import axios from 'axios';
 
-const BASE_URL = 'https://www.timeanddate.com/worldclock/poland';
+async function scrap(url: string, id: string) {
 
-async function scrap() {
-
-    const html = (await axios.get(BASE_URL)).data;
+    const html = (await axios.get(url)).data;
     const $ = cheerio.load(html);
-    const selector = $('#ct');
+    const selector = $(id);
 
     return selector.text();
 }
