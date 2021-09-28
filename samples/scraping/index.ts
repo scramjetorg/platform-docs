@@ -4,7 +4,6 @@ import scrap from "./time-scraper";
 
 
 const app: ReadableApp<string> = async function (_stream: any, url: string, id: string) {
-
     const outputStream = new PassThrough({ objectMode: true });
 
     setInterval(async () => {
