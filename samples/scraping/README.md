@@ -2,7 +2,10 @@
 
 This is a simple and trivial example of scraping web pages.
 
-We scrap current time from https://www.timeanddate.com/worldclock/poland and return this as a stream.
+The scraper takes URL and CSS ID selector as input parameters and returns data every second.
+
+To test this please use URL: https://www.timeanddate.com/worldclock/poland and ID: `#ct`. Scraper will connect to the website and read (scrap) the current time. Next, it returns this as a stream.
+As URL and ID are paramterised we can use other websites too. For example, URL: https://time.is/ and ID: `#clock`
 
 ### Running
 
@@ -22,8 +25,8 @@ si pack dist
 # send sequence to transform hub, this will output Sequence ID
 si seq send dist.tar.gz
 
-# start a sequence, this will output Instance ID.
-si seq start <sequence-id>
+# start a sequence, this will output Instance ID. As the CSS ID has # (hash) sign surround it with quotes:
+si seq start <sequence-id> https://www.timeanddate.com/worldclock/poland '#ct'
 
 # See output
 si inst output <instance-id>
