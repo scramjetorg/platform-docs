@@ -42,8 +42,9 @@
     - [Run the sequence](#43-run-the-sequence)
     - [Send data to the sequence](#44-send-data-to-the-sequence)
 5. [Where to go next](#5-where-to-go-next)
+6. [User's dictionary](#5-users-dictionary)
 
----
+
 ## **1. What is Scramjet Transform Hub (STH)**
 
 Scramjet Transform Hub allows you to deploy and run multiple data processing apps called sequences. 
@@ -62,10 +63,10 @@ The core part of our STH engine is called the "host".
 Host exposes also its own REST API to provide and receive data and manage sequences and host itself.
 
 What we also do on the host level is that we apply a set of algorithms to optimize and speed up data processing execution in sequences. 
+
 > We call our processing optimization algorithms **"IFCA"** meaning "Intelligent Function Composition Algorithms". 
 
 You can interact with host using our dedicated STH CLI that will help you with sequences deployment, running it and monitoring.
-
 
 ## **2. Solution concept diagram**
 
@@ -168,6 +169,7 @@ SequenceClient {
   sequenceURL: 'sequence/cf775cc1-105b-473d-b929-6885a0c2182c'
 }
 ```
+
 Now we have uploaded sequence to the host and host assigned to it a random ID (GUID), in my case our sequence ID is:
 
  `_id: 'cf775cc1-105b-473d-b929-6885a0c2182c'`
@@ -269,7 +271,10 @@ Here you can find more resources related to Scramjet Transform Hub:
 - [Contribute to STH development](https://github.com/scramjetorg/transform-hub) :construction_worker: - please feel free to contribute to STH development by submitting pull requests or creating issues.
 - [Visit our Scramjet.org page](https://scramjet.org) :globe_with_meridians: - check out our website for more information about our Scramjet team, history and products.
 
----
+## **6. User's dictionary** :book:
 
-### Thank you for reading! We hope you enjoyed it, if not here is a random cheer up joke, that may make you smile :smile: !
+There is a lot of terminology that we use in our project that may already be known to you. We have prepared a [dictionary](dictionary.md) of terms that you may find useful and which you will learn as you learn about Scramjet Platform. The definitions of the terms we try to keep short and simple.
+
+### Thank you for reading, we hope you enjoyed it. If not, here is a random cheer up joke, that may make you smile :grin: 
+
 ![Jokes Card](https://readme-jokes.vercel.app/api)
