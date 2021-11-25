@@ -72,7 +72,7 @@ Cloud Server Instance -> [Instance](#instance)
 
 ### Cucumber
 
-[Cucumber](https://cucumber.io/) is a framework for automatiion testing based on [BDD](#bdd), it uses [Gherkin](#gherkin) syntax
+[Cucumber](https://cucumber.io/) is a framework for automation testing based on [BDD](#bdd), it uses [Gherkin](#gherkin) syntax
 
 ## D
 
@@ -88,7 +88,7 @@ Thanks to dockerization, we get rid of the problem of differences in software ve
 
 The difference between the docker and virtual machines is that they are still operating within a common [kernel](#kernel) and architecture, so either the machines must have a consistent configuration (CPU architecture, platform - unix/win64/linux), or we have to create independent builds for supported configurations (like every package maintainer). Therefore, it is essential that [CSH](#csh) is open-source so that users can adapt it to their needs and the platforms, on which they will use it
 
-### Docker deamon
+### Docker daemon
 
 Checks if a given CSI has the right to perform sensitive operations such as creating new containers, attaching [volumes](#volume), deleting containers, etc
 
@@ -110,6 +110,9 @@ A CSI component, which supports [instance](#instance) in managing and communicat
 
 ESLint is a tool for a static code analysis ([linter](#linter)). It identifies and reports on patterns found in JavaScript code, the goal is to make code more consistent and avoiding bugs. More info: <https://eslint.org/>
 
+### Endpoint
+
+<!--TODO-->
 ## F
 
 ### Function
@@ -117,35 +120,6 @@ ESLint is a tool for a static code analysis ([linter](#linter)). It identifies a
 Single function, atomic element of the [sequence](#sequence) written by the [developer](#developer)
 
 ## G
-
-### Getter(s)
-
-A set of methods that allow to access the property of an object. The point is that the developer should not act directly on the property. Getters can adjust the value of the returned property to the developer's needs. The opposite of [setters](#setters)
-
-```js
-const temp = {
-    kel: 0.,
-    // getters
-    get celsius(){
-        return this.kel-273.15
-    },
-    get farenheit(){
-        return this.celsius * 9/5 + 32
-    },
-    get kelvin(){
-        return this.kel
-    },
-    //setter
-    set kelvin(k){
-        this.kel = k
-    }
-};
-// set base (kelvin) temperature
-temp.kelvin = 309.75
-// get celsius and farenheit
-console.log(temp.celsius)
-console.log(temp.farenheit)
-```
 
 ### Gherkin
 
@@ -170,6 +144,13 @@ A bundle containing [runner](#runner) that runs a [sequence](#sequence) which is
 ### Interface
 
 In the context of Object-Oriented Programming (OOP), it is a set of methods and properties that the class, which implements interface, should implement, give a body (methods) or values(properties). The interface itself does not contain logic, method's bodies, or values for properties. [Examples](https://www.typescriptlang.org/docs/handbook/interfaces.html)
+
+
+### Input
+
+Input is a set of parameters/values that are passed to the function.
+
+<!--TODO-->
 
 ### Image
 
@@ -205,7 +186,7 @@ Key [instance](#instance) element, [Supervisor's](#supervisor) component, superv
 
 ### LifeCycle Docker Adapter (LCDA)
 
-One of the [supervisor's](#supervisor) components. LCDA is an interface that inheritates from [IlifeCycle](#ilifecycle-ilc), it is responsible for communication with Docker:
+One of the [supervisor's](#supervisor) components. LCDA is an interface that inherits from [IlifeCycle](#ilifecycle-ilc), it is responsible for communication with Docker:
 
 - accepts stream with sequence from [LCC](#lifecycle-controller-lcc),
 - creates an image of [prerunner](#prerunner),
@@ -231,9 +212,9 @@ One of the [supervisor's](#supervisor) components, which is responsible for coll
 in the context of the Scramjet platform, Cloud Platform Manager is a host management software that provides service-discovery, controls the scaling of individual instances in accordance with the programmed logic and client configuration, providing [API](#api)
 
 ### mCPM
-
+<!--TODO-->
 ### mSTH
-
+<!--TODO-->
 ## N
 
 ### npm
@@ -266,7 +247,7 @@ Catching a query from the user and redirecting it to the appropriate API functio
 
 ### Runner
 
-An executable written in one of the supported programming langauages that starts the [sequence](#sequence) created by developer, inside the container controlled by the [supervisor](#supervisor)
+An executable written in one of the supported programming languages that starts the [sequence](#sequence) created by developer, inside the container controlled by the [supervisor](#supervisor)
 
 ## S
 
@@ -279,50 +260,24 @@ Project as whole. Common misspell: __u__ instead of __a__. Beware!
 
 Software Development Kit. A collection of tools and libraries to create a software. It usually includes a compiler, runtime, and necessary libraries
 
-### Setter(s)
-
-A set of methods that allow access to the property of an object. Their purpose is to protect the variable (property) against undesirable interference (e.g. division by 0), or against accidental overwriting of the value of a given property. The opposite of [getters](#getters)
-
-```js
-const temp = {
-    kel: 0.,
-    // getters
-    get celsius(){
-        return this.kel-273.15
-    },
-    get farenheit(){
-      return this.celsius * 9/5 + 32
-    },
-    get kelvin(){
-        return this.kel
-    },
-    //setter
-    set kelvin(k){
-        this.kel = k
-    }
-};
-// set base (kelvin) temperature
-temp.kelvin = 309.75
-// get celsius and farenheit
-console.log(temp.celsius)
-console.log(temp.farenheit)
-```
-
 ### Sequence
 
 Developer's code that consists of chained functions. Minimal [sequence](#sequence) consists of 1 [function](#function)
 
 ### Socket
 
-Socket is a kind of an endpoint in a two-way communication channel between the server and the receiving software (client). Typically the socket is used for a specific flow of events. In the case of the client-server model, the socket on the server listens when requested by the client. The client connects to the server through the socket. The socket can be a socket on the disk or it can be an IP socket - so you can actually serve HTTP API on your disk - for realz!
+Socket is a kind of an endpoint in a two-way communication channel between the server and the receiving software (client). Typically the socket is used for a specific flow of events. In the case of the client-server model, the socket on the server listens when requested by the client. The client connects to the server through the socket. The socket can be a socket on the disk or it can be an IP socket - so you can actually serve HTTP API on your disk - for real!
 
 ### SSH
 
 [Secure Shell](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)). It's a network cryptographic protocol
 
-### stdin/stdout
+### stdin/stdout/stderr <!--TODO-->
 
 standard input/standard output. Application communication channels with the outside world (e.g. the console). Stdin allows you to enter information into an application (e.g. from the keyboard). stdout allows you to display messages from the application, e.g. on a monitor/printer, etc
+
+
+### STH <!--TODO-->
 
 ### Supervisor
 
@@ -351,17 +306,13 @@ Behavior Driven Development - a software development method in which the task to
 
 unit tests are written by the developer. Run by CI to check whether the newly written code has influenced the already existing code. Starting writing a new function/functionality from writing a test gives a high probability, that what we write will work as it was assumed. Unit tests should be written for key system components. They can be omitted for smaller fragments, helpers
 
-#### regression
-
-regressive tests. They check whether the operation of our software in the present corresponds to the operation in the past. Of course, the exception is when we fix a logic error that once made it malfunction :wink:
-
 ### TCP
 
-Transmission Control Protocol. A low-level networking protocol used for data transmission, it ensures that all packeges arrive in the same order in which they were sent
+Transmission Control Protocol. A low-level networking protocol used for data transmission, it ensures that all packages arrive in the same order in which they were sent
 
 ### Thread
 
-A thread is a single process used in program to complete tasks. Each thread can only peform a single task at once:
+A thread is a single process used in program to complete tasks. Each thread can only perform a single task at once:
 
 ```bash
 Task A ---> Task B ---> Task C
