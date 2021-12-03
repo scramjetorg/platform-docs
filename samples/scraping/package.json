@@ -2,7 +2,7 @@
   "name": "scraping",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "build": "tsc -p tsconfig.json"
   },
