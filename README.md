@@ -1,6 +1,6 @@
 # **Scramjet Transform Hub - Quick Start introduction**
 
-> **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub. 
+> :bulb: **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub. 
 
 * Developers looking for source code repository should visit [https://github.com/scramjetorg/transform-hub](https://github.com/scramjetorg/transform-hub). 
 * You can also find our packages published in NPM 
@@ -54,19 +54,19 @@ This is solution central processing and management unit with following major com
 Our engine outputs can be managed in several ways: 
 
 * **File** - you can save your output to local or remote file
-* **STDOUT** - output can be directed to system STDOUT (STERR is supported as well)
+* **STDOUT** - output can be directed to system STDOUT (STDERR is supported as well)
 * **API** - output can be consumed from our  STH REST API
 * **URL Request** - you can write your app in a way to request URL, webhook etc
 * **Stream** - output can be streamed to a particular destination
 * you can mix multiple actions together: you can both send data to remote system/URL and save it locally.
 
-# **3 Install Scramjet Transform Hub**
-## **3.1 Prepare environment**
-In order to install Scramjet Transform Hub, plese follow these 3 steps:
+## **3. Install Scramjet Transform Hub**
+### **3.1 Prepare environment**
+In order to install Scramjet Transform Hub, please follow these 3 steps:
 1. Get Linux machine (local UNIX/Linux OS, cloud VM etc)
 2. Install Docker on this Linux machine ([official Docker instructions are here](https://docs.docker.com/get-docker/)) 
 3. Install npm on this machine ([official instructions are here](https://nodejs.org/)). Currently we recommend Node.js version 14.x LTS.
-## **3.2 Install STH**
+### **3.2 Install STH**
 Open one Linux terminal window and issue following commands:
 
 **1. Install Scramjet Transform Hub and  STH CLI**
@@ -77,10 +77,10 @@ npm i -g @scramjet/sth @scramjet/cli
 ```
 scramjet-transform-hub
 ```
-# **4 Run your first sequence**
-## **4.1 Review the package**
+## **4. Run your first sequence**
+### **4.1 Review the package**
 
-> Note that all commands here are executed from the root of this repository
+> :bulb: **Note** that all commands here are executed from the root of this repository
 
 We have prepared for you a simple "hello-snowman" sequence that you can use. This sequence is available in the directory `samples/hello-snowman` in this repository.
 In this directory you will find two files:
@@ -92,11 +92,11 @@ This particular application is written in plain JavaScript to simplify this exam
 
 There is no need to change anything in our `hello-snowman` sequence for a first run. Let's move to the next step.
 
-## **4.2 Prepare and send sequence package**
+### **4.2 Prepare and send sequence package**
 
 Our "sequence" apps need to be packaged before can be send to Transform Hub. Package is a simple TAR archive and our STH CLI has special command to package app directory into sequence tarball.
 
-**Note:** any time, you can display STH CLI help by issuing terminal command `si help` (for general help) or `si <command> help` for specific command (ie. `si sequence help`)
+> :bulb: **Note:** any time, you can display STH CLI help by issuing terminal command `si help` (for general help) or `si <command> help` for specific command (ie. `si sequence help`)
 
 Please open new terminal window (and keep the first one with STH running). Then issue following commands in the root directory of this repository
 
@@ -111,10 +111,10 @@ b) send hello-snowman.tar.gz to the running host (default localhost API endpoint
 ```console
 si sequence send ./samples/hello-snowman.tar.gz
 ```
-> Note: if you receive reply: Request ok: http://127.0.0.1:8000/api/v1/sequence status: 422 Unprocessable Entity, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue "si sequence send" command again. We are working on fixing this issue in the next STH release.
+> :bulb: **Note:** if you receive reply: **Request ok: http://127.0.0.1:8000/api/v1/sequence status: 422 Unprocessable Entity**, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue `si sequence send` command again. We are working on fixing this issue in the next STH release.
 
-output will look similiar to this one:
-```console
+output will look similar to this one:
+```bash
 Request ok: http://127.0.0.1:8000/api/v1/sequence status: 202 Accepted
 SequenceClient {
   _id: 'cf775cc1-105b-473d-b929-6885a0c2182c',
@@ -134,15 +134,17 @@ Now we have uploaded sequence to the host and host assigned to it a random ID (G
  
  Host also exposes REST API endpoint for each sequence and this is also described in this response.
 
-## **4.3 Run the sequence**
+### **4.3 Run the sequence**
 
-We can now use sequence ID to run this uploaded sequence. The command is `si seq start <sequence_id>`. You can also pass arbitrary number of parameters by providing them after <sequence_id>, in case of our `hello-snowman` parameters are not used.
+We can now use sequence ID to run this uploaded sequence. The command is `si seq start <sequence_id>`. You can also pass arbitrary number of parameters by providing them after `<sequence_id>`, in case of our `hello-snowman` parameters are not used.
 For example for the above sequence we could write:
-```console
-si sequence start cf775cc1-105b-473d-b929-6885a0c2182c
-```
-the output would look similiar to this one:
-```console
+
+    si sequence start cf775cc1-105b-473d-b929-6885a0c2182c
+
+
+the output would look similar to this one:
+
+```bash
 Request ok: http://127.0.0.1:8000/api/v1/sequence/cf775cc1-105b-473d-b929-6885a0c2182c/start status: 200 OK
 InstanceClient {
   host: HostClient {
@@ -156,13 +158,14 @@ InstanceClient {
   instanceURL: 'instance/e70222d1-acfc-4e00-b046-4a3a9481c53b'
 }
 ```
+
 Sequence is an app template. Once run, it will become live as a new instance. Instance also receives its own ID (GUID). In this case instance Id is:
 
 `_id: 'e70222d1-acfc-4e00-b046-4a3a9481c53b'`
 
 Of course, sequences can be run multiple times. Each run will create separate instance with distinct instance id.
 
-## **4.4 Send data to the sequence**
+### **4.4 Send data to the sequence**
 
 We want to make your life easier and for this very example, we have prepared a special Node.js app that will generate a stream of simple messages and send them to our running instance of `hello-snowman`.
 
@@ -173,11 +176,12 @@ Our `hello-snowman` app will read and interpret these messages and will inform u
 - in the other case (temperature above 0 degrees), sequence will return message `Snowman is melting! :(`
 
 To run this app, please execute this command from the root of our directory `node ./tools/stream-gen-tool/stream-gen.js <instance_id>`. In our case this would look like this:
-```console
-node ./tools/stream-gen-tool/stream-gen.js e70222d1-acfc-4e00-b046-4a3a9481c53b
-```
+
+    node ./tools/stream-gen-tool/stream-gen.js e70222d1-acfc-4e00-b046-4a3a9481c53b
+
+
 the output would look like this:
-```console
+```bash
 ----------------------------------------
 Message# 1 | Temperature measure
 INPUT | 41
@@ -199,11 +203,11 @@ Our sequence generator app does two things here:
 - Reads output from Host API that is generated by our `hello-snowman` sequences
 
 Separately, you can also open a new terminal window and see log of this particular instance with command `si instance log <instance_id>`. In our case this would be
-```code
-si instance log e70222d1-acfc-4e00-b046-4a3a9481c53b
-```
-the sample output will be similiar to this one
-```console
+
+  si instance log e70222d1-acfc-4e00-b046-4a3a9481c53b
+
+the sample output will be similar to this one
+```bash
 ...
 2021-08-09T04:29:39.790Z log (object:Runner) Input message <Buffer 32 30>
 2021-08-09T04:29:40.791Z log (object:Runner) Input message <Buffer 2d 34>
@@ -212,11 +216,11 @@ the sample output will be similiar to this one
 2021-08-09T04:29:43.801Z log (object:Runner) Input message <Buffer 2d 33 36>
 ...
 ```
----
 
-> Well done! You have run your first Scramjet Transform Hub sequence!
 
-# **5 Where to go next**
+> Well done! :clap::clap::clap: You have run your first Scramjet Transform Hub sequence! 
+
+##` **5. Where to go next**
 Here you can find more resources related to Scramjet Transform Hub:
 - [Check out more samples](samples)
 - [Start from our app templates](templates)
