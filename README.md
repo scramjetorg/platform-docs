@@ -160,7 +160,7 @@ InstanceClient {
 }
 ```
 
-Sequence is an app template. Once run, it will become live as a new instance. Instance also receives its own ID (GUID). In this case instance ID is:
+Sequence is an app template. Once it is up and running, it will become a new instance. Instance also receives its own ID (GUID). In this case instance ID is:
 
 `_id: 'e70222d1-acfc-4e00-b046-4a3a9481c53b'`
 
