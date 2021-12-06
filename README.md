@@ -53,7 +53,7 @@ This is a solution for the central processing and management unit with the follo
 ### **2.3 Outputs**
 Our engine outputs can be managed in several ways: 
 
-* **File** - you can save your output to local or remote file
+* **File** - you can save your output to a local or remote file
 * **STDOUT** - output can be directed to system STDOUT (STDERR is supported as well)
 * **API** - output can be consumed from our  STH REST API
 * **URL Request** - you can write your app in a way to request URL, webhook etc
