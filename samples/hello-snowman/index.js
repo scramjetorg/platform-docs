@@ -14,8 +14,7 @@ module.exports = function(input) {
         }
         // write to output stream
         out.write(outMessage)
-        }
-);
+    });
     // return output stream so it can be consumed (e.g. by CLI client)
     return out;
 };

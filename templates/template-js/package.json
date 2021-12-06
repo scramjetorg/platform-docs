@@ -1,7 +1,11 @@
 {
   "name": "@scramjet/template-js",
-  "version": "0.11.0-0",
-  "main": "./index",
+  "version": "0.12.2",
+  "description": "This package is a User's template for Node.js projects",
+  "main": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "author": "Scramjet <open-source@scramjet.org>",
   "license": "GPL-3.0",
   "repository": {

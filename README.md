@@ -44,7 +44,7 @@ You can interact with host using our dedicated STH CLI that will help you with b
 ### **2.2 Host**
 This is solution central processing and management unit with following major components:
 
-1.  **Sequences** - these are the actual "STH" apps. It its a gzipped package (`*.tar.gz`) containing at least two files:
+1.  **Sequences** - these are the actual "STH" apps. It is a gzipped package (`*.tar.gz`) containing at least two files:
     * **package.json** - JSON manifest file describing the app and its configuration such as main file to run
     * **main file** - file such as index.js or index.ts that contains lightweight application business logic.
 2. **Instance** - once sequence is run, host will create a separate runtime environment for it and will execute sequence code inside this runtime entity. This is an instance.
@@ -65,7 +65,7 @@ Our engine outputs can be managed in several ways:
 In order to install Scramjet Transform Hub, please follow these 3 steps:
 1. Get Linux machine (local UNIX/Linux OS, cloud VM etc)
 2. Install Docker on this Linux machine ([official Docker instructions are here](https://docs.docker.com/get-docker/)) 
-3. Install npm on this machine ([official instructions are here](https://nodejs.org/)). Currently we recommend Node.js version 14.x LTS.
+3. Install npm on this machine ([official instructions are here](https://nodejs.org/)). Currently we recommend Node.js version 16.x LTS.
 ### **3.2 Install STH**
 Open one Linux terminal window and issue following commands:
 
@@ -90,27 +90,28 @@ In this directory you will find two files:
 
 This particular application is written in plain JavaScript to simplify this example. However, you can also write your sequences in TypeScript and build them before packaging and sending sequence to STH.
 
+In the template's [readme](templates/README.md) you will find a more specific descriptions of the particular file's content.
+
 There is no need to change anything in our `hello-snowman` sequence for a first run. Let's move to the next step.
 
 ### **4.2 Prepare and send sequence package**
 
-Our "sequence" apps need to be packaged before can be send to Transform Hub. Package is a simple TAR archive and our STH CLI has special command to package app directory into sequence tarball.
+Our "sequence" apps need to be packaged before sending to Transform Hub. Package is a simple TAR archive and our STH CLI has a special command to pack an app directory into a sequence tarball.
 
 > :bulb: **Note:** any time, you can display STH CLI help by issuing terminal command `si help` (for general help) or `si <command> help` for specific command (ie. `si sequence help`)
 
-Please open new terminal window (and keep the first one with STH running). Then issue following commands in the root directory of this repository
+Please open new terminal window (and keep the first one open with STH running). Then issue following commands in the root directory of this repository:
 
 a) pack directory `hello-snowman` into archive `hello-sequence.tar.gz`
-```console
-si pack ./samples/hello-snowman/ -o ./samples/hello-snowman.tar.gz
-```
+
+    si pack ./samples/hello-snowman/ -o ./samples/hello-snowman.tar.gz
+
 There is no output shown in the terminal but you can verify with `ls` that tarball package is created inside `samples` directory.
 
-b) send hello-snowman.tar.gz to the running host (default localhost API endpoint will be used by the CLI send command)
+b) send `hello-snowman.tar.gz` to the running host (default localhost API endpoint will be used by the CLI send command)
 
-```console
-si sequence send ./samples/hello-snowman.tar.gz
-```
+    si sequence send ./samples/hello-snowman.tar.gz
+
 > :bulb: **Note:** if you receive reply: **Request ok: http://127.0.0.1:8000/api/v1/sequence status: 422 Unprocessable Entity**, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue `si sequence send` command again. We are working on fixing this issue in the next STH release.
 
 output will look similar to this one:
@@ -159,11 +160,11 @@ InstanceClient {
 }
 ```
 
-Sequence is an app template. Once run, it will become live as a new instance. Instance also receives its own ID (GUID). In this case instance Id is:
+Sequence is an app template. Once run, it will become live as a new instance. Instance also receives its own ID (GUID). In this case instance ID is:
 
 `_id: 'e70222d1-acfc-4e00-b046-4a3a9481c53b'`
 
-Of course, sequences can be run multiple times. Each run will create separate instance with distinct instance id.
+Of course, sequences can be run multiple times. Each run will create separate instance with a distinct instance ID.
 
 ### **4.4 Send data to the sequence**
 
@@ -204,7 +205,7 @@ Our sequence generator app does two things here:
 
 Separately, you can also open a new terminal window and see log of this particular instance with command `si instance log <instance_id>`. In our case this would be
 
-  si instance log e70222d1-acfc-4e00-b046-4a3a9481c53b
+    si instance log e70222d1-acfc-4e00-b046-4a3a9481c53b
 
 the sample output will be similar to this one
 ```bash
@@ -220,7 +221,7 @@ the sample output will be similar to this one
 
 > Well done! :clap::clap::clap: You have run your first Scramjet Transform Hub sequence! 
 
-##` **5. Where to go next**
+## **5. Where to go next**
 Here you can find more resources related to Scramjet Transform Hub:
 - [Check out more samples](samples)
 - [Start from our app templates](templates)
