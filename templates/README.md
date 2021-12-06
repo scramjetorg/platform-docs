@@ -28,7 +28,7 @@ This application package template contains two files:
 }
 ```
 
-All the properties from the above are mandatory and some are not. Of course more properties can be added to this object if you need them, such as `dependencies` and `devDependencies`. Dependencies are simply all the other modules that your project will use. In template's `package.json` file there is one more property `"repository"`, which shows the repository address, where the source code of the package is located.
+Of course more properties can be added to this object if you need them, such as `dependencies` and `devDependencies`. Dependencies are simply all the other modules that your project will use. In template's `package.json` file there is one more property `"repository"`, which shows the repository address, where the source code of the package is located.
 
 - index.js - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application. In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
 
@@ -86,3 +86,18 @@ Terminal :three: shows the output of the `node` command that runs the app which 
 
 
 ## Work with TypeScript (ts-node)
+
+TypeScript compiles to JavaScript. It is a superset of JavaScript, which means that you can use all the features of JavaScript plus some new features and advantages of TypeScript, then compile it and get regular JavaScript.
+
+This application package template contains files:
+
+- index.ts
+
+- package.json
+
+- tsconfig.json
+
+- dist
+
+- package-json.lock
+

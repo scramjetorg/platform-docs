@@ -219,7 +219,7 @@ the sample output will be similar to this one
 ```
 
 
-> Well done! :clap::clap::clap: You have run your first Scramjet Transform Hub sequence! 
+> Congratulations! :clap::clap::clap: You have run your first Scramjet Transform Hub sequence! 
 
 ## **5. Where to go next**
 Here you can find more resources related to Scramjet Transform Hub:
