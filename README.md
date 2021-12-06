@@ -164,7 +164,7 @@ Sequence is an app template. Once it is up and running, it will become a new ins
 
 `_id: 'e70222d1-acfc-4e00-b046-4a3a9481c53b'`
 
-Of course, sequences can be run multiple times. Each run will create separate instance with a distinct instance ID.
+Of course, sequences can be run multiple times. Each run will create a separate instance with a distinct instance ID.
 
 ### **4.4 Send data to the sequence**
 
