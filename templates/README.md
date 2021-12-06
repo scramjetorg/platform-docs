@@ -48,7 +48,7 @@ module.exports = function(input) {
 };
 ```
 
-This is like the minimum signature for a function that takes a stream and returns a stream.
+This is the minimal signature for a function that takes a stream and returns a stream.
 
 ```typescript
 <T,U>(inp: ReadableStream<T>, ...args: any[]) => AnyReadable<U>
