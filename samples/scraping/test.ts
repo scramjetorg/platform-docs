@@ -1,5 +1,4 @@
-'use strict';
-import scrap from './time-scraper';
+import { scrap } from './scrap';
 
 const BASE_URL = 'https://time.is/';
 

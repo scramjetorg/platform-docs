@@ -1,16 +1,10 @@
-'use strict';
-
 import * as cheerio from 'cheerio';
 import axios from 'axios';
 
-async function scrap(url: string, id: string) {
-
+export async function scrap(url: string, selectorStr: string) {
     const html = (await axios.get(url)).data;
     const $ = cheerio.load(html);
-    const selector = $(id);
+    const selector = $(selectorStr);
 
     return selector.text();
 }
-
-export default scrap;
-
