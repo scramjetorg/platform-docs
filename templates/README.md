@@ -43,7 +43,7 @@ module.exports = function(input) {
         // write some data to output stream
         out.write(data)
     });
-    // return output stream so it can be consumed (e.g. by CLI client)
+    // return the output stream so it can be consumed (e.g. by CLI client)
     return out;
 };
 ```
