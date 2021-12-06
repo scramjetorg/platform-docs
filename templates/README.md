@@ -12,7 +12,7 @@ In the following sections we will describe both templates' contents and show you
 
 This application package template contains two files:
 
-- package.json - JSON manifest file describing the app and its configuration such as a main file to run. This is one of the Node.js project's basic requirement to have the `package.json` file in the root of every project. It contains metadata information in plain JSON Object format. This is the heart of any Node.js project. It is used by the application to find its dependencies to install, scripts to run, etc. If you would like to start your project from scratch, without using our js-template, you would need to create a directory and run `npm init` inside. This command would create a `package.json` file for you with all the obligatory properties, for example:
+- package.json - this file holds all the important information about the project in plain JSON Object format. It contains human-readable metadata about the project (like the project name and description) as well as functional metadata like the package version number or dependencies required by the application.`package.json` file is one of the basic requirement to have in the root of every project. This is the heart of any Node.js project, used by the application to find its dependencies to install, scripts to run, etc. If you would like to start your project from scratch, without using our js-template, you would need to create a directory and run `npm init` inside. This command would create a `package.json` file for you with all the obligatory properties, for example:
 
 ```json
 {
