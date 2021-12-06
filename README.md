@@ -47,7 +47,7 @@ This is a solution for the central processing and management unit with the follo
 1.  **Sequences** - these are the actual "STH" apps. It is a gzipped package (`*.tar.gz`) containing at least two files:
     * **package.json** - JSON manifest file describing the app and its configuration; such as main file to run
     * **main file** - file such as index.js or index.ts that contains a lightweight application business logic.
-2. **Instance** - once sequence is run, host will create a separate runtime environment for it and will execute sequence code inside this runtime entity. This is an instance.
+2. **Instance** - once a sequence is run, the host will create a separate runtime environment for it and will execute sequence code inside this runtime entity. This is an instance.
 3. **API & CLI** - our Application Programming Interface and CLI connecting to it allows both for **Data operations** (sending input data and receiving output data) and **Management operations** (manage host itself and its entities: sequences or instances)
 
 ### **2.3 Outputs**
