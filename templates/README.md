@@ -36,7 +36,7 @@ All the properties from the above are mandatory and some are not. Of course more
 const { PassThrough } = require("stream");
 
 module.exports = function(input) {
-    // create clean output stream
+    // create a clean output stream
     const out = new PassThrough({encoding: 'utf-8'});
 
     input.on("data", data => {
