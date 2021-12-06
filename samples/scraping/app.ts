@@ -7,7 +7,7 @@ const app: ReadableApp<string, [string, string]> = async function* (_stream, url
         const result = await scrap(url, selectorStr);
         yield result + '\n'
 
-        await sleep(1000)
+        await sleep(5000)
     }
 }
 
