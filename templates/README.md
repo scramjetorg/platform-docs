@@ -50,6 +50,89 @@ module.exports = function(input) {
 };
 ```
 
+And this is what our template app does, it takes any input that will be sent or piped to it and simply writes it to the output stream. Of course you can add some logic to this function, but to keep the template simple we will just write the data to the output stream.
+
+To see how this template works you can run it with a few simple commands:
+
+### **open 3 terminals**
+### in the 1️⃣ terminal: 
+- run command `scramjet-transform-hub`
+### in the 2️⃣ terminal:
+- `cd templates`
+- `si pack template-js`
+- `si seq send template-js.tar.gz`
+- `si sequence start <sequence-id>`
+- `si instance output <instance-id>`
+### in the 3️⃣ terminal:
+The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to instance's `/input` endpoint (to instance which will be run on sth). In this way we are sending an input stream that will be consumed by our template app.
+
+- `node ./tools/stream-gen-tool/numbers-gen.js <instance-id>`
+
+### **expected output:**
+
+![template1](../images/template1.png)
+
+What you can see in the attached image is 3 terminals that illustrates the template's workflow:
+
+Terminal :one: shows the logs of running `scramjet-transform-hub` process. 
+
+Terminal :two: shows the output of the program that we launched using STH CLI. 
+
+Terminal :three: shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input.
+
+## Work with TypeScript (ts-node)
+
+TypeScript compiles to JavaScript. It is a superset of JavaScript, which means that you can use all the features of JavaScript plus some new features and advantages of TypeScript, then compile it and get regular JavaScript. 
+
+This application package template contains files:
+
+- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](##Work-with-JavaScript-(Node.js)).
+
+- **tsconfig.json** - it is a crucial file for managing your project,it creates itself after running `tsc --init` command, which initializes the TypeScript project. This file is where you can set the compiler options. Basically this is an indicator for TypeScript, which says that the project in which this file lies and all the other sub folders should be managed by TypeScript and it also tells Typescript how to compile all the `*.ts` files in the project.
+
+```typescript
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "./index.ts"
+  ]
+}
+```
+
+:nerd_face:  If you would like to learn more about configuration in TypeScript projects, please refer to the documentation on TypeScript [official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+
+- **dist** - this is a folder where the compiled JavaScript files will be stored (`npm run build` - run this script to compile `index.ts` into `index.js`).
+
+- **package-json.lock** - this is automatically generated file, which represent any operations where npm modifies either the node_modules tree, or package.json. It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates.
+
+- **index.ts** - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application. 
+This file will be compiled into manila JavaScript and stores in `index.js` file in `dist` directory.
+
+In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
+
+```typescript
+import { ReadableApp } from "@scramjet/types";
+import { PassThrough } from "stream";
+
+const app: ReadableApp<string> = async function(input) {
+    // create a clean output stream
+    const outputStream = new PassThrough({ encoding: "utf-8" });
+
+    input.on("data", data => {
+        // write some data to the output stream
+        outputStream.write(data)
+    });
+    // return output stream so it can be consumed (e.g. by CLI client)
+    return outputStream;
+};
+
+export default app;
+```
+
 This is the minimal signature for a function that takes a stream and returns a stream.
 
 ```typescript
@@ -84,41 +167,4 @@ Terminal :one: shows the logs of running `scramjet-transform-hub` process.
 
 Terminal :two: shows the output of the program that we launched using STH CLI. 
 
-Terminal :three: shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input..
-
-
-## Work with TypeScript (ts-node)
-
-TypeScript compiles to JavaScript. It is a superset of JavaScript, which means that you can use all the features of JavaScript plus some new features and advantages of TypeScript, then compile it and get regular JavaScript. 
-
-This application package template contains files:
-
-- **index.ts** - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application. 
-This file will be compiled into manila JavaScript and stores in `index.js` file in `dist` directory.
-
-~~In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.~~
-
-- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](##Work-with-JavaScript-(Node.js)).
-
-- **tsconfig.json** - it is a crucial file for managing your project,it creates itself after running `tsc --init` command, which initializes the TypeScript project. This file is where you can set the compiler options. Basically this is an indicator for TypeScript, which says that the project in which this file lies and all the other sub folders should be managed by TypeScript and it also tells Typescript how to compile all the `*.ts` files in the project.
-
-```typescript
-{
-  "compilerOptions": {
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
-  },
-  "include": [
-    "./index.ts"
-  ]
-}
-```
-
-:nerd_face:  If you would like to learn more about configuration in TypeScript projects, please refer to the documentation on TypeScript [official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
-
-- **dist** - this is a folder where the compiled JavaScript files will be stored.
-
-- **package-json.lock** - this is automatically generated file, which represent any operations where npm modifies either the node_modules tree, or package.json. It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates.
-
-
+Terminal :three: shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input.
