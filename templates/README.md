@@ -12,7 +12,7 @@ In the following sections we will describe both templates' contents and show you
 
 This application package template contains two files:
 
-- package.json - this file holds all the important information about the project in plain JSON Object format. It contains human-readable metadata about the project (like the project name and description) as well as functional metadata like the package version number or dependencies required by the application.`package.json` file is one of the basic requirement to have in the root of every project. This is the heart of any Node.js project, used by the application to find its dependencies to install, scripts to run, etc. If you would like to start your project from scratch, without using our js-template, you would need to create a directory and run `npm init` inside. This command would create a `package.json` file for you with all the obligatory properties, for example:
+- **package.json** - this file holds all the important information about the project in plain JSON Object format. It contains human-readable metadata about the project (like the project name and description) as well as functional metadata like the package version number or dependencies required by the application.`package.json` file is one of the basic requirement to have in the root of every project. This is the heart of any Node.js project, used by the application to find its dependencies to install, scripts to run, etc. If you would like to start your project from scratch, without using our js-template, you would need to create a directory and run `npm init` inside. This command would create a `package.json` file for you with all the obligatory properties, for example:
 
 ```json
 {
@@ -30,7 +30,9 @@ This application package template contains two files:
 
 Of course more properties can be added to this object if you need them, such as `dependencies` and `devDependencies`. Dependencies are simply all the other modules that your project will use. In template's `package.json` file there is one more property `"repository"`, which shows the repository address, where the source code of the package is located.
 
-- index.js - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application. In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
+🤓 If you would like to learn more about configuration in Node.js projects, please refer to the documentation on Node.js [official website](https://nodejs.dev/learn/introduction-to-nodejs).
+
+- **index.js** - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application. In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
 
 ```js
 const { PassThrough } = require("stream");
@@ -87,17 +89,36 @@ Terminal :three: shows the output of the `node` command that runs the app which 
 
 ## Work with TypeScript (ts-node)
 
-TypeScript compiles to JavaScript. It is a superset of JavaScript, which means that you can use all the features of JavaScript plus some new features and advantages of TypeScript, then compile it and get regular JavaScript.
+TypeScript compiles to JavaScript. It is a superset of JavaScript, which means that you can use all the features of JavaScript plus some new features and advantages of TypeScript, then compile it and get regular JavaScript. 
 
 This application package template contains files:
 
-- index.ts
+- **index.ts** - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application. 
+This file will be compiled into manila JavaScript and stores in `index.js` file in `dist` directory.
 
-- package.json
+~~In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.~~
 
-- tsconfig.json
+- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](##Work-with-JavaScript-(Node.js)).
 
-- dist
+- **tsconfig.json** - it is a crucial file for managing your project,it creates itself after running `tsc --init` command, which initializes the TypeScript project. This file is where you can set the compiler options. Basically this is an indicator for TypeScript, which says that the project in which this file lies and all the other sub folders should be managed by TypeScript and it also tells Typescript how to compile all the `*.ts` files in the project.
 
-- package-json.lock
+```typescript
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "./index.ts"
+  ]
+}
+```
+
+:nerd_face:  If you would like to learn more about configuration in TypeScript projects, please refer to the documentation on TypeScript [official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+
+- **dist** - this is a folder where the compiled JavaScript files will be stored.
+
+- **package-json.lock** - this is automatically generated file, which represent any operations where npm modifies either the node_modules tree, or package.json. It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates.
+
 
