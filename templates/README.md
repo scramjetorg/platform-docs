@@ -30,7 +30,7 @@ This application package template contains two files:
 
 Of course more properties can be added to this object if you need them, such as `dependencies` and `devDependencies`. Dependencies are simply all the other modules that your project will use. In template's `package.json` file there is one more property `"repository"`, which shows the repository address, where the source code of the package is located.
 
-🤓 If you would like to learn more about configuration in Node.js projects, please refer to the documentation on Node.js [official website](https://nodejs.dev/learn/introduction-to-nodejs).
+🤓 If you would like to learn more about configuration in Node.js projects, please refer to the documentation on [Node.js official website](https://nodejs.dev/learn/introduction-to-nodejs).
 
 - **index.js** - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application. In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
 
@@ -57,27 +57,26 @@ module.exports = function(input) {
 
 And this is what our template app does, it takes any input that will be sent or piped to it and simply writes it to the output stream. Of course you can add some logic to this function, but to keep the template simple we will just write the data to the output stream.
 
-To see how this template works you can run it with a few simple commands:
+To see how this template works you can run it with a few simple commands written below:
 
 > :bulb: **Note!** To run this template you need to have those two babies installed :dancers:: `npm install -g @scramjet/sth @scramjet/cli` 
 
-
-### **open 3 terminals**
-### in the 1️⃣ terminal: 
+### **Open 3 terminals** and run the following commands and let the magic begin :magic_wand::
+#### 1️⃣ terminal: 
 - run command `scramjet-transform-hub`
-### in the 2️⃣ terminal:
+#### 2️⃣ terminal:
 - `cd templates`
 - `si pack template-js`
 - `si seq send template-js.tar.gz`
 - `si sequence start <sequence-id>`
 - `si instance output <instance-id>`
 
-### in the 3️⃣ terminal:
+#### 3️⃣ terminal:
 The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to instance's `/input` endpoint (to instance which will be run on sth). In this way we are sending an input stream that will be consumed by our template app.
 
 - `node ./tools/stream-gen-tool/numbers-gen.js <instance-id>`
 
-### **expected output:**
+### **Expected output:**
 
 ![template1](../images/template1.png)
 
@@ -124,7 +123,7 @@ This application package template contains files:
 }
 ```
 
-:nerd_face:  If you would like to learn more about configuration in TypeScript projects, please refer to the documentation on TypeScript [official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+:nerd_face:  If you would like to learn more about configuration in TypeScript projects, please refer to the documentation on [TypeScript official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) and [ts-node official website](https://typestrong.org/ts-node/)..
 
 - **dist** - this is a folder where the compiled JavaScript files will be stored. It will creates itself after running this script: `npm run build` together with compiled `index.js` file.
 
@@ -170,15 +169,13 @@ This is the minimal signature for a function that takes a stream and returns a s
 
 And this is what our template app does, it takes any input that will be sent or piped to it and simply writes it to the output stream. Of course you can add some logic to this function, but to keep the template simple we will just write the data to the output stream.
 
-To see how this template works you can run it with a few simple commands:
+To see how this template works you can run it with a few simple commands written below:
 
 > :bulb: **Note!** To run this template you need to have those two babies installed :dancers:: `npm install -g @scramjet/sth @scramjet/cli` 
-
-
-### **open 3 terminals**
-### in the 1️⃣ terminal: 
+### **Open 3 terminals** and run the following commands and let the magic begin :magic_wand::
+#### 1️⃣ terminal: 
 - run command `scramjet-transform-hub`
-### in the 2️⃣ terminal:
+#### 2️⃣ terminal:
 - `cd templates/template-ts`
 - `npm install`
 - `npm run build` - it runs build script in the template's package.json file, which compiles Typescript to JavaScript
@@ -188,12 +185,12 @@ To see how this template works you can run it with a few simple commands:
 - `si sequence start <sequence-id>` - it starts the sequence (started sequence turns into instance)
 - `si instance output <instance-id>`- it shows the instance's output stream in the terminal
 
-### in the 3️⃣ terminal:
+#### 3️⃣ terminal:
 The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to instance's `/input` endpoint (to instance which will be run on sth). In this way we are sending an input stream that will be consumed by our template app.
 
 - `node ./tools/stream-gen-tool/numbers-gen.js <instance-id>`
 
-### **expected output:**
+### **Expected output:**
 
 ![template1](../images/template2.png)
 
