@@ -31,7 +31,7 @@ You can interact with host using our dedicated STH CLI that will help you with b
 
 ## **2. Solution concept diagram**
 
-<img src="./sth-diagram.png" width="85%"/>
+<img src="./images/sth-diagram.png" width="85%"/>
 
 ### **2.1 Inputs**
 1. STH can handle any input that can be handled by Node.js application. 

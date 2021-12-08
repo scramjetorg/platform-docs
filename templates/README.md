@@ -59,7 +59,7 @@ And this is what our template app does, it takes any input that will be sent or 
 
 To see how this template works you can run it with a few simple commands:
 
-> :bulb: **Note** You need those two babies installed to run this template: `npm install -g @scramjet/sth @scramjet/cli`
+> :bulb: **Note!** To run this template you need to have those two babies installed :dancers:: `npm install -g @scramjet/sth @scramjet/cli` 
 
 
 ### **open 3 terminals**
@@ -95,7 +95,19 @@ TypeScript compiles to JavaScript. It is a superset of JavaScript, which means t
 
 This application package template contains files:
 
-- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](##Work-with-JavaScript-(Node.js)).
+- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](##Work-with-JavaScript-(Node.js)) with a small but :exclamation: **VERY IMPORTANT** :exclamation: difference is that the entry file given in `"main"` property must be typed in without any extension, like in the example below. This is because this `package.jason` will be copied into the `dist` directory, which eventually will be archived into a `.tar.gz` format and sent to the STH.
+
+```json
+{
+  "name": "@template/template-ts",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index",   // the entry file MUST be named without any extension!
+  "description": "This package is a User's template for ts-node projects",
+  "author": "Scramjet <open-source@signicode.com>",
+  "license": "GPL-3.0",
+  }
+```
 
 - **tsconfig.json** - it is a crucial file for managing your project,it creates itself after running `tsc --init` command, which initializes the TypeScript project. This file is where you can set the compiler options. Basically this is an indicator for TypeScript, which says that the project in which this file lies and all the other sub folders should be managed by TypeScript and it also tells Typescript how to compile all the `*.ts` files in the project.
 
@@ -114,7 +126,7 @@ This application package template contains files:
 
 :nerd_face:  If you would like to learn more about configuration in TypeScript projects, please refer to the documentation on TypeScript [official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
-- **dist** - this is a folder where the compiled JavaScript files will be stored (`npm run build` - run this script to compile `index.ts` into `index.js`).
+- **dist** - this is a folder where the compiled JavaScript files will be stored. It will creates itself after running this script: `npm run build` together with compiled `index.js` file.
 
 - **package-json.lock** - this is automatically generated file, which represent any operations where npm modifies either the node_modules tree, or package.json. It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates.
 
@@ -123,6 +135,8 @@ This file will be compiled into manila JavaScript and stores in `index.js` file 
 
 In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
 
+> :book: In the example below we use `@scramjet/types` module. Scramjet is a very nice and functional stream programming framework. You might find it very useful while writing your app or dealing with streams in general. More info, examples ang usage you can find [here](https://www.npmjs.com/package/scramjet).
+
 ```typescript
 import { ReadableApp } from "@scramjet/types";
 import { PassThrough } from "stream";
@@ -130,7 +144,8 @@ import { PassThrough } from "stream";
 const app: ReadableApp<string> = async function(input) {
     /*
     THIS IS WHERE YOU SHOULD PUT YOUR CODE, AND ALL THE LOGIC OF YOUR APPLICATION
-    We put some code below for demonstration, and also instructions to run this template with scramjet-transform-hub.
+    We put some code below for demonstration, and also instructions to run this template 
+    with scramjet-transform-hub.
     */
 
     // create a clean output stream
@@ -157,16 +172,15 @@ And this is what our template app does, it takes any input that will be sent or 
 
 To see how this template works you can run it with a few simple commands:
 
-> :bulb: **Note!** You need those two babies installed to run this template:
-> `npm install -g @scramjet/sth @scramjet/cli` 
+> :bulb: **Note!** To run this template you need to have those two babies installed :dancers:: `npm install -g @scramjet/sth @scramjet/cli` 
 
-:dancers:
 
 ### **open 3 terminals**
 ### in the 1️⃣ terminal: 
 - run command `scramjet-transform-hub`
 ### in the 2️⃣ terminal:
 - `cd templates/template-ts`
+- `npm install`
 - `npm run build` - it runs build script in the template's package.json file, which compiles Typescript to JavaScript
 - `cp -r node_modules/ package.json dist/` - it copies node_modules and package.json to the dist folder
 - `si pack dist` - it creates a tar.gz archive of the dist folder
@@ -181,7 +195,7 @@ The command below will run the app in the background. The app generates random n
 
 ### **expected output:**
 
-![template1](../images/template1.png)
+![template1](../images/template2.png)
 
 What you can see in the attached image is 3 terminals that illustrates the template's workflow:
 

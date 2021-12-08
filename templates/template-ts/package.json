@@ -2,7 +2,7 @@
   "name": "@template/template-ts",
   "private": true,
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "index",
   "description": "This package is a User's template for ts-node projects",
   "author": "Scramjet <open-source@signicode.com>",
   "license": "GPL-3.0",
