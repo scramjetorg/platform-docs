@@ -38,6 +38,11 @@ Of course more properties can be added to this object if you need them, such as 
 const { PassThrough } = require("stream");
 
 module.exports = function(input) {
+      /*
+    THIS IS WHERE YOU SHOULD PUT YOUR CODE, AND ALL THE LOGIC OF YOUR APPLICATION
+    We put some code below for demonstration, and also instructions to run this template with scramjet-transform-hub (STH).
+    */
+
     // create a clean output stream
     const out = new PassThrough({encoding: 'utf-8'});
 
@@ -54,6 +59,9 @@ And this is what our template app does, it takes any input that will be sent or 
 
 To see how this template works you can run it with a few simple commands:
 
+> :bulb: **Note** You need those two babies installed to run this template: `npm install -g @scramjet/sth @scramjet/cli`
+
+
 ### **open 3 terminals**
 ### in the 1️⃣ terminal: 
 - run command `scramjet-transform-hub`
@@ -63,6 +71,7 @@ To see how this template works you can run it with a few simple commands:
 - `si seq send template-js.tar.gz`
 - `si sequence start <sequence-id>`
 - `si instance output <instance-id>`
+
 ### in the 3️⃣ terminal:
 The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to instance's `/input` endpoint (to instance which will be run on sth). In this way we are sending an input stream that will be consumed by our template app.
 
@@ -119,6 +128,11 @@ import { ReadableApp } from "@scramjet/types";
 import { PassThrough } from "stream";
 
 const app: ReadableApp<string> = async function(input) {
+    /*
+    THIS IS WHERE YOU SHOULD PUT YOUR CODE, AND ALL THE LOGIC OF YOUR APPLICATION
+    We put some code below for demonstration, and also instructions to run this template with scramjet-transform-hub.
+    */
+
     // create a clean output stream
     const outputStream = new PassThrough({ encoding: "utf-8" });
 
@@ -143,15 +157,23 @@ And this is what our template app does, it takes any input that will be sent or 
 
 To see how this template works you can run it with a few simple commands:
 
+> :bulb: **Note!** You need those two babies installed to run this template:
+> `npm install -g @scramjet/sth @scramjet/cli` 
+
+:dancers:
+
 ### **open 3 terminals**
 ### in the 1️⃣ terminal: 
 - run command `scramjet-transform-hub`
 ### in the 2️⃣ terminal:
-- `cd templates`
-- `si pack template-js`
-- `si seq send template-js.tar.gz`
-- `si sequence start <sequence-id>`
-- `si instance output <instance-id>`
+- `cd templates/template-ts`
+- `npm run build` - it runs build script in the template's package.json file, which compiles Typescript to JavaScript
+- `cp -r node_modules/ package.json dist/` - it copies node_modules and package.json to the dist folder
+- `si pack dist` - it creates a tar.gz archive of the dist folder
+- `si sequence send dist.tar.gz` - it sends the archive to STH
+- `si sequence start <sequence-id>` - it starts the sequence (started sequence turns into instance)
+- `si instance output <instance-id>`- it shows the instance's output stream in the terminal
+
 ### in the 3️⃣ terminal:
 The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to instance's `/input` endpoint (to instance which will be run on sth). In this way we are sending an input stream that will be consumed by our template app.
 
