@@ -5,7 +5,7 @@ This is a simple and trivial example of scraping web pages.
 The scraper takes URL and CSS ID selector as input parameters and returns data every second.
 
 To test this please use URL: https://www.timeanddate.com/worldclock/poland and ID: `#ct`. Scraper will connect to the website and read (scrap) the current time. Next, it returns this as a stream.
-As URL and ID are paramterised we can use other websites too. For example, URL: https://time.is/ and ID: `#clock`
+As URL and ID are parametrized we can use other websites too. For example, URL: https://time.is/ and ID: `#clock`
 
 ### Running
 
