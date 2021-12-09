@@ -143,7 +143,7 @@ import { PassThrough } from "stream";
 const app: ReadableApp<string> = async function(input) {
     /*
     THIS IS WHERE YOU SHOULD PUT YOUR CODE, AND ALL THE LOGIC OF YOUR APPLICATION
-    We put some code below for demonstration, and also instructions to run this template 
+    We put some code below for demonstration, and also instructions how to run this template 
     with scramjet-transform-hub.
     */
 
