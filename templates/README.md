@@ -59,7 +59,7 @@ And this is what our template app does, it takes any input that will be sent or 
 
 To see how this template works you can run it with a few simple commands written below:
 
-> :bulb: **Note!** To run this template you need to have those two babies installed :dancers:: `npm install -g @scramjet/sth @scramjet/cli` 
+> :bulb: **Note!** To run this template you need to have those two packages installed: `npm install -g @scramjet/sth @scramjet/cli` 
 
 ### **Open 3 terminals** and run the following commands and let the magic begin :magic_wand::
 #### 1️⃣ terminal: 
@@ -171,7 +171,7 @@ And this is what our template app does, it takes any input that will be sent or 
 
 To see how this template works you can run it with a few simple commands written below:
 
-> :bulb: **Note!** To run this template you need to have those two babies installed :dancers:: `npm install -g @scramjet/sth @scramjet/cli` 
+> :bulb: **Note!** To run this template you need to have those two packages installed: `npm install -g @scramjet/sth @scramjet/cli` 
 ### **Open 3 terminals** and run the following commands and let the magic begin :magic_wand::
 #### 1️⃣ terminal: 
 - run command `scramjet-transform-hub`

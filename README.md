@@ -3,7 +3,7 @@
 > :bulb: **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub. 
 
 * Developers looking for source code repository should visit the following link [https://github.com/scramjetorg/transform-hub](https://github.com/scramjetorg/transform-hub).
-* You can also find our packages published in NPM 
+* You can also find our packages published in NPM: 
   * STH [https://www.npmjs.com/package/@scramjet/sth](https://www.npmjs.com/package/@scramjet/sth)
   * CLI [https://www.npmjs.com/package/@scramjet/cli](https://www.npmjs.com/package/@scramjet/cli)
 ## **1. What is Scramjet Transform Hub (STH)**
@@ -14,9 +14,9 @@ Scramjet Transform Hub allows you to deploy and run multiple data processing app
 
 STH can be treated both as data processing engine and execution platform for multiple sequences running on the same platform and performing various data processing tasks. 
 
-We named our apps "sequences" and that term describes well its nature, as they process data through a sequence of chained functions. Therefore, usually our sequences are concise and easy to write and powerful at the same time.
+We named our apps "sequences" and that term describes well its nature, as they process data through a sequence of chained functions. Therefore, usually our sequences are concise, easy to write and powerful at the same time.
 
-Our vanilla STH engine is based on Node.js and thus allows developers to benefit from rich ecosystem and many packages and solutions provided by this vibrant community.
+Our vanilla STH engine is based on Node.js and thus allows developers to benefit from rich ecosystem, numerous packages and solutions provided by this vibrant community.
 
 The core part of our STH engine is called the "host". 
 > **Host** is responsible for maintaining and deploying sequences, keeping them running and managing its lifecycle. 
@@ -26,7 +26,7 @@ Host exposes also its own REST API to provide and receive data and manage sequen
 What we also do on the host level is that we apply a set of algorithms to optimize and speed up data processing execution in sequences. 
 > We call our processing optimization algorithms **"IFCA"** meaning "Intelligent Function Composition Algorithms". 
 
-You can interact with host using our dedicated STH CLI that will help you with both sequences deployment, running it and monitoring.
+You can interact with host using our dedicated STH CLI that will help you with sequences deployment, running it and monitoring.
 
 
 ## **2. Solution concept diagram**
@@ -46,14 +46,14 @@ This is a solution for the central processing and management unit with the follo
 
 1.  **Sequences** - these are the actual "STH" apps. It is a gzipped package (`*.tar.gz`) containing at least two files:
     * **package.json** - JSON manifest file describing the app and its configuration; such as main file to run
-    * **main file** - file such as index.js or index.ts that contains a lightweight application business logic.
+    * **main file** - file such as `index.js` or `index.ts` that contains a lightweight application business logic.
 2. **Instance** - once a sequence is run, the host will create a separate runtime environment for it and will execute sequence code inside this runtime entity. This is an instance.
 3. **API & CLI** - our Application Programming Interface and CLI connecting to it allows both for **Data operations** (sending input data and receiving output data) and **Management operations** (manage host itself and its entities: sequences or instances)
 
 ### **2.3 Outputs**
 Our engine outputs can be managed in several ways: 
 
-* **File** - you can save your output to a local or remote file
+* **File** - you can save your output to a local or a remote file
 * **STDOUT** - output can be directed to system STDOUT (STDERR is supported as well)
 * **API** - output can be consumed from our  STH REST API
 * **URL Request** - you can write your app in a way to request URL, webhook etc
@@ -69,18 +69,18 @@ In order to install Scramjet Transform Hub, please follow these 3 steps:
 ### **3.2 Install STH**
 Open one Linux terminal window and issue following commands:
 
-**1. Install Scramjet Transform Hub and  STH CLI**
+**1. Install Scramjet Transform Hub and  STH CLI:**
 ```
 npm i -g @scramjet/sth @scramjet/cli
 ```
-**2. Run STH**
+**2. Run STH:**
 ```
 scramjet-transform-hub
 ```
 ## **4. Run your first sequence**
 ### **4.1 Review the package**
 
-> :bulb: **Note** that all commands here are executed from the root of this repository
+> :bulb: **Note:** all commands here are executed from the root of this repository.
 
 We have prepared for you a simple sample sequence "hello-snowman". This sequence is available in the directory `samples/hello-snowman` in this repository.
 In this directory you will find two files:
@@ -102,19 +102,20 @@ Our "sequence" apps need to be packaged before sending to Transform Hub. Package
 
 Please open new terminal window (and keep the first one open with STH running). Then issue following commands in the root directory of this repository:
 
-a) pack directory `hello-snowman` into archive `hello-sequence.tar.gz`
+a) pack directory `hello-snowman` into archive `hello-sequence.tar.gz`:
 
     si pack ./samples/hello-snowman/ -o ./samples/hello-snowman.tar.gz
 
 There is no output shown in the terminal but you can verify with `ls` that tarball package is created inside `samples` directory.
 
-b) send `hello-snowman.tar.gz` to the running host (default localhost API endpoint will be used by the CLI send command)
+b) send `hello-snowman.tar.gz` to the running host (default localhost API endpoint will be used by the CLI send command):
 
     si sequence send ./samples/hello-snowman.tar.gz
 
 > :bulb: **Note:** if you receive reply: **Request ok: http://127.0.0.1:8000/api/v1/sequence status: 422 Unprocessable Entity**, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue `si sequence send` command again. We are working on fixing this issue in the next STH release.
 
-output will look similar to this one:
+The output will look similar to this one:
+
 ```bash
 Request ok: http://127.0.0.1:8000/api/v1/sequence status: 202 Accepted
 SequenceClient {
@@ -143,7 +144,7 @@ For example for the above sequence we could write:
     si sequence start cf775cc1-105b-473d-b929-6885a0c2182c
 
 
-the output would look similar to this one:
+The output will look similar to this one:
 
 ```bash
 Request ok: http://127.0.0.1:8000/api/v1/sequence/cf775cc1-105b-473d-b929-6885a0c2182c/start status: 200 OK
@@ -173,15 +174,16 @@ We want to make your life easier and for this very example, we have prepared a s
 For fun, our stream generator will send simple text messages containing temperature readings from artificial weather station. Temperature value will be generated randomly in range of <-50,50> degrees Celsius.
 Our `hello-snowman` app will read and interpret these messages and will inform us about state of our Snowman:
 
-- if temperature will be 0 or below, sequence will return message `Snowman is freezing ... :)`
-- in the other case (temperature above 0 degrees), sequence will return message `Snowman is melting! :(`
+- if temperature will be 0 or below, sequence will return message: `Snowman is freezing ... :)`
+- in the other case (temperature above 0 degrees), sequence will return message: `Snowman is melting! :(`
 
 To run this app, please execute the following command from the root of our directory `node ./tools/stream-gen-tool/stream-gen.js <instance_id>`. In our case this would look like this:
 
     node ./tools/stream-gen-tool/stream-gen.js e70222d1-acfc-4e00-b046-4a3a9481c53b
 
 
-the output would look like this:
+The output will look similar to this one:
+
 ```bash
 ----------------------------------------
 Message# 1 | Temperature measure
@@ -203,11 +205,12 @@ Our sequence generator app does two things here:
 - Sends stream of messages; each one containing number with temperature value
 - Reads output from Host API that is generated by our `hello-snowman` sequences
 
-Separately, you can also open a new terminal window and see log of this particular instance with command `si instance log <instance_id>`. In our case this would be
+Separately, you can also open a new terminal window and see log of this particular instance with command `si instance log <instance_id>`. In our case this would be:
 
     si instance log e70222d1-acfc-4e00-b046-4a3a9481c53b
 
-the sample output will be similar to this one
+The sample output will be similar to this one:
+
 ```bash
 ...
 2021-08-09T04:29:39.790Z log (object:Runner) Input message <Buffer 32 30>
@@ -223,10 +226,10 @@ the sample output will be similar to this one
 
 ## **5. Where to go next**
 Here you can find more resources related to Scramjet Transform Hub:
-- [Check out more samples](samples)
-- [Start from our app templates](templates)
-- [Contribute to STH development](https://github.com/scramjetorg/transform-hub)
-- [Visit our Scramjet.org page](https://scramjet.org)
+- [Check out more samples](samples) :books: - we have prepared some ready-to-use apps, which you can either use as a starting point for your own sequences or simply run them just to see what they do, and how STH works ith them.
+- [Start from our app templates](templates) :file_folder: - almost blank file structure (package) and use instructions, ready to be used as a starting point for your own sequences. This is the simplest base we can provide for you to start with.
+- [Contribute to STH development](https://github.com/scramjetorg/transform-hub) :construction_worker: - please feel free to contribute to STH development by submitting pull requests or creating issues.
+- [Visit our Scramjet.org page](https://scramjet.org) :globe_with_meridians: - check out our website for more information about our Scramjet team, history and products.
 
 ---
 
