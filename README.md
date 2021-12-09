@@ -226,7 +226,7 @@ The sample output will be similar to this one:
 
 ## **5. Where to go next**
 Here you can find more resources related to Scramjet Transform Hub:
-- [Check out more samples](samples) :books: - we have prepared some ready-to-use apps, which you can either use as a starting point for your own sequences or simply run them just to see what they do, and how STH works ith them.
+- [Check out more samples](samples) :books: - we have prepared some ready-to-use apps, which you can either use as a starting point for creating your own sequences or simply run them just to see what they do, and how the STH works with them.
 - [Start from our app templates](templates) :file_folder: - almost blank file structure (package) and use instructions, ready to be used as a starting point for your own sequences. This is the simplest base we can provide for you to start with.
 - [Contribute to STH development](https://github.com/scramjetorg/transform-hub) :construction_worker: - please feel free to contribute to STH development by submitting pull requests or creating issues.
 - [Visit our Scramjet.org page](https://scramjet.org) :globe_with_meridians: - check out our website for more information about our Scramjet team, history and products.
