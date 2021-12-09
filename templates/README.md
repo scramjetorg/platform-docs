@@ -30,7 +30,7 @@ This application package template contains two files:
 
 Of course more properties can be added to this object if you need them, such as `dependencies` and `devDependencies`. Dependencies are simply all the other modules that your project will use. In template's `package.json` file there is one more property `"repository"`, which shows the repository address, where the source code of the package is located.
 
-🤓 If you would like to learn more about configuration in Node.js projects, please refer to the documentation on [Node.js official website](https://nodejs.dev/learn/introduction-to-nodejs).
+🤓 If you would like to learn more about the configuration in Node.js projects, please refer to the documentation on [Node.js official website](https://nodejs.dev/learn/introduction-to-nodejs).
 
 - **index.js** - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application. In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
 
