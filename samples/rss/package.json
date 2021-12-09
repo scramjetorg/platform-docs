@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/scramjetorg/scramjet-cloud-docs#readme",
   "dependencies": {
+    "@types/node": "^16.11.12",
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
     "qminer": "^9.3.2",
