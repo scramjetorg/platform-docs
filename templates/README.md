@@ -134,7 +134,7 @@ This file will be compiled into manila JavaScript and stores in `index.js` file 
 
 In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
 
-> :book: In the example below we use `@scramjet/types` module. Scramjet is a very nice and functional stream programming framework. You might find it very useful while writing your app or dealing with streams in general. More info, examples ang usage you can find [here](https://www.npmjs.com/package/scramjet).
+> :book: In the example below we use `@scramjet/types` module. Scramjet is a very nice and functional stream programming framework. You might find it very useful while writing your app or dealing with streams in general. More info, examples and usage you can find [here](https://www.npmjs.com/package/scramjet).
 
 ```typescript
 import { ReadableApp } from "@scramjet/types";
