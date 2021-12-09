@@ -123,7 +123,7 @@ This application package template contains files:
 }
 ```
 
-:nerd_face:  If you would like to learn more about configuration in TypeScript projects, please refer to the documentation on [TypeScript official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) and [ts-node official website](https://typestrong.org/ts-node/)..
+:nerd_face:  If you would like to learn more about the configuration in TypeScript projects, please refer to the documentation on [TypeScript official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) and [ts-node official website](https://typestrong.org/ts-node/).
 
 - **dist** - this is a folder where the compiled JavaScript files will be stored. It will creates itself after running this script: `npm run build` together with compiled `index.js` file.
 
