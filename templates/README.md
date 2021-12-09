@@ -125,7 +125,7 @@ This application package template contains files:
 
 :nerd_face:  If you would like to learn more about the configuration in TypeScript projects, please refer to the documentation on [TypeScript official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) and [ts-node official website](https://typestrong.org/ts-node/).
 
-- **dist** - this is a folder where the compiled JavaScript files will be stored. It will creates itself after running this script: `npm run build` together with compiled `index.js` file.
+- **dist** - this is a folder where the compiled JavaScript files will be stored. It will be created after running this script: `npm run build` together with compiled `index.js` file.
 
 - **package-json.lock** - this is automatically generated file, which represent any operations where npm modifies either the node_modules tree, or package.json. It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates.
 
