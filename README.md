@@ -82,7 +82,7 @@ scramjet-transform-hub
 
 > :bulb: **Note** that all commands here are executed from the root of this repository
 
-We have prepared for you a simple "hello-snowman" sequence that you can use. This sequence is available in the directory `samples/hello-snowman` in this repository.
+We have prepared for you a simple sample sequence "hello-snowman". This sequence is available in the directory `samples/hello-snowman` in this repository.
 In this directory you will find two files:
 
 * `package.json` - manifest file that describes this particular sequence
