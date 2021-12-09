@@ -13,9 +13,8 @@ module.exports = function(input) {
             outMessage = "Snowman is freezing ... :)"
         }
         // write to output stream
-        out.write(outMessage)}
-     );
-
+        out.write(outMessage)
+    });
     // return output stream so it can be consumed (e.g. by CLI client)
     return out;
 };

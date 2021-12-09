@@ -1,38 +1,25 @@
 {
-  "name": "@template/hello",
+  "name": "@template/template-ts",
   "private": true,
   "version": "1.0.0",
   "main": "index",
-  "description": "",
-  "types": "dist/index",
-  "author": "Signicode <open-source@signicode.com>",
+  "description": "This package is a User's template for ts-node projects",
+  "author": "Scramjet <open-source@signicode.com>",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/scramjetorg/scramjet-sequence-template"
+  "url": "https://github.com/scramjetorg/scrmajet-cloud-docs.git"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json && cp data.json dist/",
-    "clean": "rm -rf ./dist",
-    "watch": "tsc -b --watch",
-    "compile": "tsc -p tsconfig.json",
-    "start": "node dist/index.js"
-  },
-  "engines": {
-    "node": ">=10",
-    "scramjet": ">=0.9"
-  },
-  "scramjet": {
-    "image": "node"
-  },
-  "devDependencies": {
-    "@types/node": "14.14.33",
-    "ts-node": "^9.1.1",
-    "typescript": "4.1.4"
+    "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "JSONStream": "^1.3.5",
-    "scramjet": "^4.35.15"
+    "scramjet": "^4.36.0"
   },
-  "publishConfig": {}
+  "devDependencies": {
+    "@scramjet/types": "^0.12.2",
+    "@types/node": "15.12.5",
+    "ts-node": "^9.1.1",
+    "typescript": "4.3.4"
+  }
 }
