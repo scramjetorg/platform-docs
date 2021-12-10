@@ -50,7 +50,7 @@ async function postToSlack(title:string, url:string, results:Array<object>) {
 
     const text = `${title} ${url} ${JSON.stringify(results)}`
     console.log('POST TO SLACK: ' + text)
-    // await axios.post(SLACK_WEBHOOK_URL, { text }); 
+    await axios.post(SLACK_WEBHOOK_URL, { text }); 
 
 }
 
