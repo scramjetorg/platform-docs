@@ -20,15 +20,22 @@ const MAX_LIST:number = 10;
  * @param results 
  */
 function addToList(url:string, title:string, score:number, results:Array<any>) {
+  if (score === 0) return false;
+
+  let added:boolean = false;
+
   if (list.length < MAX_LIST) {
     list.push({url, title, score, keywords: results});
+    added = true;
   } else {
     if (list[list.length - 1].score < score) {
       list.pop();
       list.push({url, title, score, keywords: results});
+      added = true;
     }
   }
-  list.sort((a, b) => b.score - a.score);
+  if (added) list.sort((a, b) => b.score - a.score); // Sort only when a new link was added.
+  return added;
 }
 
 
@@ -43,8 +50,8 @@ function addToList(url:string, title:string, score:number, results:Array<any>) {
         const content = await scrap(link.url, '#mainbar');
         const results = checkKeywords(content, keywords);
         const score = getScore(results);
-        addToList(link.url, link.title, score, results)
-        await postToSlack(link.title, link.url, results);
+        const added = addToList(link.url, link.title, score, results)
+        if (added) await postToSlack(link.title, link.url, results);
       }
   });
 

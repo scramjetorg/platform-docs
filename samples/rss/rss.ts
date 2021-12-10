@@ -8,15 +8,12 @@ const parser = new Parser();
  * Get RSS Feed
  * 
  * @param {string} url RSS URL
- * @returns {Array} 
+ * @returns {Array} Array of links
  */
 async function getRss(url: string) {
     const feed = await parser.parseURL(url);
 
-    const urls = feed.items.map(item => item.link);
-    console.log(urls);
-    // For Testing
-    return [{ title: 'Allow Guest Mode (no authorization) in Custom Authorizer in AWS', url: 'https://stackoverflow.com/questions/70035396/allow-guest-mode-no-authorization-in-custom-authorizer-in-aws'}];
+    return feed.items.map(item => { return { title: item.title as string, url: item.link as string }; });
 }
 
 /**
@@ -51,8 +48,8 @@ function checkKeywords(content:string, keywords:Array<any>):Array<any> {
 async function postToSlack(title:string, url:string, results:Array<object>) {
     const SLACK_WEBHOOK_URL:string = process.env["SLACK_WEBHOOK_URL"] as string;
 
-    console.log(title, url, results);
     const text = `${title} ${url} ${JSON.stringify(results)}`
+    console.log('POST TO SLACK: ' + text)
     // await axios.post(SLACK_WEBHOOK_URL, { text }); 
 
 }
