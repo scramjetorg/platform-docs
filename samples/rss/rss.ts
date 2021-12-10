@@ -5,12 +5,12 @@ import axios from 'axios';
 const parser = new Parser();
 
 /**
- * Get RSS Feed
+ * Get links from RSS Feed
  * 
  * @param {string} url RSS URL
  * @returns {Array} Array of links
  */
-async function getRss(url: string) {
+async function getLinks(url: string) {
     const feed = await parser.parseURL(url);
 
     return feed.items.map(item => { return { title: item.title as string, url: item.link as string }; });
@@ -64,4 +64,4 @@ function getScore(keywords:Array<any>) {
     return keywords.reduce((total, item) => total += item.weight, 0);
 }
 
-export { checkKeywords, getRss, postToSlack, getScore };
+export { checkKeywords, getLinks, postToSlack, getScore };

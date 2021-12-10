@@ -1,10 +1,9 @@
 'use strict';
-import { getRss, checkKeywords, postToSlack, getScore } from './rss';
+import { getLinks, checkKeywords, postToSlack, getScore } from './rss';
 import { scrap } from '../scraping/scrap';
+import keywords from './config/keywords.json';
+import { promises as fs } from 'fs';
 
-const url:string = 'https://stackoverflow.com/feeds/tag?tagnames=node.js&sort=newest';
-
-const keywords:Array<Object> = [ { word: 'serverless', weight: 15 }, { word: 'ABCDEF', weight: 20 } ];
 
 // { url, title, score, keywords }
 const list:Array<any> = []
@@ -38,21 +37,35 @@ function addToList(url:string, title:string, score:number, results:Array<any>) {
   return added;
 }
 
+/**
+ * Read RSS Feed URL from config file.
+ * 
+ */
+async function getRSS() {
+  const data = await fs.readFile('./config/rss.txt');
+  return data.toString().split("\n");
+}
+
 
 (async () => {
 
-  const links = await getRss(url);
+  const feed = await getRSS();
+  feed.forEach(async rss => {
+    
+    const links = await getLinks(rss);
 
-  links.forEach(async link => {
-      // check if link is not already on the list
-      const exists = list.find(item => item.url === link.url);
-      if (!exists) {  
-        const content = await scrap(link.url, '#mainbar');
-        const results = checkKeywords(content, keywords);
-        const score = getScore(results);
-        const added = addToList(link.url, link.title, score, results)
-        if (added) await postToSlack(link.title, link.url, results);
-      }
-  });
+    links.forEach(async link => {
+        // check if link is not already on the list
+        const exists = list.find(item => item.url === link.url);
+        if (!exists) {  
+          const content = await scrap(link.url, '#mainbar');
+          const results = checkKeywords(content, keywords);
+          const score = getScore(results);
+          const added = addToList(link.url, link.title, score, results)
+          if (added) await postToSlack(link.title, link.url, results);
+        }
+    });
+  })
+
 
 })();
