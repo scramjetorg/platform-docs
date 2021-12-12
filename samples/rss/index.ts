@@ -1,6 +1,6 @@
 import { ReadableApp } from "@scramjet/types";
 import { getLinks, checkKeywords, postToSlack, getScore } from './rss';
-import { scrap } from '../scraping/scrap';
+import { scrap } from './scrap';
 import keywords from './config/keywords.json';
 import { promises as fs } from 'fs';
 import { sleep } from './utils';
