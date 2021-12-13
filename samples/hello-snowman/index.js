@@ -8,9 +8,9 @@ module.exports = function(input) {
     input.on("data", data => {
         let outMessage = "";
         if (data > 0) {
-            outMessage = "Snowman is melting! :("
+            outMessage = "Snowman ⛄ is melting! 🥵" + "\n";
         } else {
-            outMessage = "Snowman is freezing ... :)"
+            outMessage = "Snowman ⛄ is freezing 🥶 Winter is coming ❄️ ❄️ ❄️ ❄️ ❄️" + "\n";
         }
         // write to output stream
         out.write(outMessage)
