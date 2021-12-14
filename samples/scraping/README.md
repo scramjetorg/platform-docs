@@ -37,5 +37,5 @@ si inst output <instance-id>
 si inst stdout <instance-id>
 
 # Check console.error messages
-si inst stderr <instace-id>
+si inst stderr <instance-id>
 ```

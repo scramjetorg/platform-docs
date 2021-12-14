@@ -1,5 +1,5 @@
 {
-  "name": "small-sample",
+  "name": "@scramjet/simple-counter-js",
   "main": "index.js",
   "engines": {
     "node": ">=14"

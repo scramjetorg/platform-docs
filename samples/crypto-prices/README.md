@@ -22,7 +22,7 @@ si pack dist/ -o crypto-prices.tar.gz
 # send sequence to transform hub, this will output Sequence ID
 si seq send crypto-prices.tar.gz
 
-# start a sequence, this will output Instance ID
+# start a sequence with currency parameters, this will output Instance ID
 si seq start <sequence-id> ETH USD
 
 # See output
