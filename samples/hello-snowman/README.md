@@ -11,7 +11,22 @@ Our `hello-snowman` app will read and interpret these Celsius degrees, and will 
 
 
 ### Running
+Open two terminals and run the following commands:
+
+**The first terminal:**
 ```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
+```bash
+# go to 'hello-snowman' directory
+cd samples/hello-snowman
+
+# install dependencies
+npm install
+
 # make a compressed package with sequence
 si pack . -o hello-snowman.tar.gz
 

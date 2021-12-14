@@ -1,9 +1,24 @@
 ## test-output
 ----
-Sequence that just writes random values to output stream
+Sequence that just writes random values to output stream.
 
 ### Running
+Open two terminals and run the following commands:
+
+**The first terminal:**
 ```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
+```bash
+# go to 'test-output' directory
+cd samples/test-output
+
+# install dependencies
+npm install
+
 # make a compressed package with sequence
 si pack . -o test-output.tar.gz
 

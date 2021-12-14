@@ -1,7 +1,7 @@
 {
-  "name": "scraping",
+  "name": "@scramjet/scraping",
   "version": "0.13.1",
-  "description": "",
+  "description": "This is a simple and trivial example of scraping web pages.",
   "main": "app.js",
   "scripts": {
     "build": "tsc -p tsconfig.json"

@@ -3,7 +3,19 @@
 Sequence that modifies incoming stream of strings by adding a prefix and a suffix.
 
 ### Running
+Open two terminals and run the following commands:
+
+**The first terminal:**
 ```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
+```bash
+# go to 'transform-string-stream' directory
+cd samples/transform-string-stream
+
 # install dependencies
 yarn install 
 

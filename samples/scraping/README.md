@@ -8,8 +8,19 @@ To test this please use URL: https://www.timeanddate.com/worldclock/poland and I
 As URL and ID are parametrized we can use other websites too. For example, URL: https://time.is/ and ID: `#clock`
 
 ### Running
+Open two terminals and run the following commands:
 
+**The first terminal:**
 ```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
+```bash
+# go to 'scraping' directory
+cd samples/scraping
+
 # install dependencies
 npm install
 

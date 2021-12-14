@@ -12,7 +12,6 @@ scramjet-transform-hub
 ```
 
 **The second terminal**
-
 ```bash
 # go to 'hello' directory
 cd samples/hello

@@ -1,7 +1,7 @@
 {
   "name": "@scramjet/mediawiki",
   "version": "0.13.1",
-  "description": "",
+  "description": "Sequence that keeps printing mediawiki event stream.",
   "main": "./index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json"

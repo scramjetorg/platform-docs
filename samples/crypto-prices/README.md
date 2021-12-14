@@ -5,8 +5,20 @@
 Sequence that keeps printing current crypto prices for a provided pair of currencies every 1s.
 
 ### Running
+Open two terminals and run the following commands:
+
+**The first terminal:**
+```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
 
 ```bash
+# go to 'crypto-prices' directory
+cd samples/crypto-prices
+
 # install dependencies
 npm install
 
@@ -29,7 +41,7 @@ si seq start <sequence-id> ETH USD
 si inst output <instance-id>
 ```
 
-#### Output
+### Output
 
 Once you run `si inst output <instance-id>` command you will get output like this one:
 

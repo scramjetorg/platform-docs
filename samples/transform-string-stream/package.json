@@ -1,6 +1,7 @@
 {
   "name": "@scramjet/transform-string-stream",
   "version": "0.13.1",
+  "description": "Sequence that modifies incoming stream of strings by adding a prefix and a suffix.",
   "main": "index",
   "types": "dist/index",
   "scripts": {

@@ -1,5 +1,7 @@
 {
   "name": "@scramjet/simple-counter-js",
+  "version": "0.13.1",
+  "description": "A simple sequence, that counts and logs the number in 1s intervals.",
   "main": "index.js",
   "engines": {
     "node": ">=14"

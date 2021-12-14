@@ -1,7 +1,7 @@
 {
-  "name": "stack-overflow",
+  "name": "@scramjet/stack-overflow",
   "version": "0.13.1",
-  "description": "",
+  "description": "This a sequence that gets the number of changes in Stack Overflow tag count. This queries SO API every X minutes, gathers, compares and outputs result as difference.",
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json"

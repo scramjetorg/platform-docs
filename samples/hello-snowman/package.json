@@ -1,6 +1,7 @@
 {
   "name": "@scramjet/hello-snowman",
   "version": "0.13.1",
+  "description": "Sequence that reads incoming stream (input), and and modifies it by adding a text message according to the incoming data.",
   "main": "./index",
   "author": "Scramjet <open-source@scramjet.org>",
   "license": "GPL-3.0",

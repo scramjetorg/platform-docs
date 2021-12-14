@@ -1,7 +1,7 @@
 {
   "name": "@scramjet/crypto-prices",
   "version": "0.13.1",
-  "description": "",
+  "description": "Sequence that keeps printing current crypto prices for a provided pair of currencies every 1s.",
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json"

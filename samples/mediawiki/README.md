@@ -5,8 +5,19 @@
 Sequence that keeps printing mediawiki event stream.
 
 ### Running
+Open two terminals and run the following commands:
 
+**The first terminal:**
 ```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
+```bash
+# go to 'mediawiki' directory
+cd samples/mediawiki
+
 # install dependencies
 npm install
 
