@@ -2,7 +2,7 @@ import { ReadableApp } from "@scramjet/types";
 import { getLinks, checkKeywords, postToSlack, getScore } from './rss';
 import { scrap } from './scrap';
 import keywords from './config/keywords.json';
-import { promises as fs } from 'fs';
+import feed from './config/rss.json';
 import { sleep } from './utils';
 
 const list: Array<any> = [];
@@ -36,20 +36,8 @@ function addToList(url: string, title: string, score: number, results: Array<any
   return added;
 }
 
-/**
- * Read RSS Feed URL from config file.
- * 
- */
-async function getRSS() {
-  // const data = await fs.readFile('./config/rss.txt');
-  // return data.toString().split("\n");
-  return ['https://stackoverflow.com/feeds/tag?tagnames=node.js&sort=newest', 'https://stackoverflow.com/feeds/tag?tagnames=serverless&sort=newest'];
-}
-
 const app: ReadableApp<string> = async function* (_stream, slackWebhookUrl: string) {
   while (true) {
-    const feed = await getRSS();
-
     feed.forEach(async rss => {
       let links;
       try {
