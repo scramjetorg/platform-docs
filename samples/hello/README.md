@@ -35,7 +35,7 @@ si inst output <instance-id>
 si inst input <instance-id> name.txt
 # if file not given the data will be read from stdin
 ```
-<!-- 
+<!-- TODO Delete when the issue is solved
 Issue created for reading data from stdin https://github.com/scramjetorg/transform-hub/issues/165 
 -->
 ### Output

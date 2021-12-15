@@ -1,4 +1,4 @@
-# Samples
+# Samples :books:
 
 We have prepared some sample code for you to try out. Some is written in JavaScript and some in TypeScript.
 

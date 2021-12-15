@@ -17,10 +17,10 @@ scramjet-transform-hub
 cd samples/transform-string-stream
 
 # install dependencies
-yarn install 
+npm install 
 
 # transpile TS->JS to dist/
-yarn build 
+npm run build 
 
 # prepare standalone JS package
 cp -r node_modules package.json dist/
@@ -38,8 +38,18 @@ si seq start <sequence-id> Hello Bye
 si inst output <instance-id>
 
 # In another terminal send text to instance input steam
-si inst input <instance-id>
-> John
+si inst input <instance-id> name.txt
+# if file not given the data will be read from stdin
+```
+<!-- TODO Delete when the issue is solved
+Issue created for reading data from stdin https://github.com/scramjetorg/transform-hub/issues/165 
+-->
 
-# Now you should see "Hello John\n Bye" in output console
+### Output
+
+```bash
+# Now you should see "Hello John Bye" in output console
+$ si inst output 7a1ffd59-9d1a-4e8f-a246-020124803931
+Request ok: http://127.0.0.1:8000/api/v1/instance/7a1ffd59-9d1a-4e8f-a246-020124803931/output status: 200 OK
+Hello John Bye
 ```
