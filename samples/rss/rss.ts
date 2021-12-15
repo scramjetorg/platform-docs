@@ -23,15 +23,15 @@ async function getLinks(url: string) {
  * @param {Array} keywords  Array of keywords and weights
  * @returns {Array} 
  */
-function checkKeywords(content:string, keywords:Array<any>):Array<any> {
+function checkKeywords(content: string, keywords: Array<any>): Array<any> {
 
-    const results:Array<any> = [];
+    const results: Array<any> = [];
 
     keywords.forEach(entry => {
         const regex = new RegExp(entry.word, 'g');
 
         const count = content.match(regex)?.length || 0;
-    
+
         results.push({ word: entry.word, weight: count * entry.weight });
     });
 
@@ -45,13 +45,9 @@ function checkKeywords(content:string, keywords:Array<any>):Array<any> {
  * @param {string} url URL
  * @param {Array} results Keywords
  */
-async function postToSlack(title:string, url:string, results:Array<object>) {
-    const SLACK_WEBHOOK_URL:string = process.env["SLACK_WEBHOOK_URL"] as string;
-
-    const text = `${title} ${url} ${JSON.stringify(results)}`
-    console.log('POST TO SLACK: ' + text)
-    await axios.post(SLACK_WEBHOOK_URL, { text }); 
-
+async function postToSlack(slackWebhookUrl: string, title: string, url: string, results: Array<object>) {
+    const text = `${title} ${url} ${JSON.stringify(results)}`;
+    await axios.post(slackWebhookUrl, { text });
 }
 
 /**
@@ -60,7 +56,7 @@ async function postToSlack(title:string, url:string, results:Array<object>) {
  * @param keywords
  * @returns {number}
  */
-function getScore(keywords:Array<any>) {
+function getScore(keywords: Array<any>) {
     return keywords.reduce((total, item) => total += item.weight, 0);
 }
 
