@@ -1,4 +1,4 @@
-## hello
+## hello 🙋‍♂️
 ----
 Sequence that modifies incoming stream of strings by saying Hello :).
 
