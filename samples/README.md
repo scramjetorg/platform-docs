@@ -13,6 +13,6 @@ We have prepared some sample code for you to try out. Some is written in JavaScr
 
 - [crypto-prices](crypto-prices) - Sequence that keeps printing current crypto prices for a provided pair of currencies every 1s.
 - [mediawiki](mediawiki) - Sequence that keeps printing mediawiki event stream.
-- [scraping](scraping) - Sequence that scrape web pages.
+- [scraping](scraping) - Sequence that scrapes web pages.
 - [stack-overflow](stack-overflow) - Sequence that gets a number of changes in Stack Overflow tag count.
 - [transform-string-stream](transform-string-stream) - Sequence that modifies incoming stream of strings by adding a prefix and a suffix.
