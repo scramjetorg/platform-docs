@@ -1,7 +1,7 @@
 {
   "name": "@scramjet/mediawiki",
-  "version": "0.0.1-0",
-  "description": "",
+  "version": "0.13.1",
+  "description": "Sequence that keeps printing mediawiki event stream.",
   "main": "./index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json"
@@ -13,7 +13,7 @@
     "url": "https://github.com/scramjetorg/transform-hub.git"
   },
   "devDependencies": {
-    "@scramjet/types": "^0.11.0-0",
+    "@scramjet/types": "^0.13.1",
     "@types/node": "15.12.5",
     "typescript": "^4.3.4"
   },

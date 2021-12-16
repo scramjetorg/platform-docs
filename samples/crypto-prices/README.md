@@ -1,12 +1,25 @@
-## crypto-prices
+## crypto-prices  ![bitcoin](../../images/bitcoin1.png) ![zcash](../../images/zcash1.png) ![ethereum](../../images/etherum1.png)
+
 
 ---
 
 Sequence that keeps printing current crypto prices for a provided pair of currencies every 1s.
 
 ### Running
+Open two terminals and run the following commands:
+
+**The first terminal:**
+```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
 
 ```bash
+# go to 'crypto-prices' directory
+cd samples/crypto-prices
+
 # install dependencies
 npm install
 
@@ -22,14 +35,14 @@ si pack dist/ -o crypto-prices.tar.gz
 # send sequence to transform hub, this will output Sequence ID
 si seq send crypto-prices.tar.gz
 
-# start a sequence, this will output Instance ID
+# start a sequence with currency parameters, this will output Instance ID
 si seq start <sequence-id> ETH USD
 
 # See output
 si inst output <instance-id>
 ```
 
-#### Output
+### Output
 
 Once you run `si inst output <instance-id>` command you will get output like this one:
 

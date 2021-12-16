@@ -5,8 +5,19 @@ Get number of changes in Stack Overflow tag count.
 This queries SO API every X minutes, gathers, compares and outputs result as difference.
 
 ### Running
+Open two terminals and run the following commands:
 
+**The first terminal:**
 ```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
+```bash
+# go to 'stack-overflow' directory
+cd samples/stack-overflow
+
 # install dependencies
 npm install
 
@@ -34,10 +45,10 @@ si inst output <instance-id>
 si inst stdout <instance-id>
 
 # Check console.error messages
-si inst stderr <instace-id>
+si inst stderr <instance-id>
 ```
 
-### Example ouput
+### Example output
 
 ```bash
 {"diff":{"python":1,"c#":1,"android":1,"html":2,"jquery":1,"c++":1,"css":1,"node.js":1,"reactjs":1,".net":1,"swift":2,"xml":1,"vb.net":1,"amazon-web-services":1,"function":-1,"csv":1},"timestamp":1632986938780}

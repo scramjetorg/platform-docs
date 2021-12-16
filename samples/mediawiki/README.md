@@ -5,8 +5,19 @@
 Sequence that keeps printing mediawiki event stream.
 
 ### Running
+Open two terminals and run the following commands:
 
+**The first terminal:**
 ```bash
+# start sth
+scramjet-transform-hub
+```
+
+**The second terminal**
+```bash
+# go to 'mediawiki' directory
+cd samples/mediawiki
+
 # install dependencies
 npm install
 
@@ -32,7 +43,7 @@ si inst output <instance-id>
 si inst stdout <instance-id>
 
 # Check console.error messages
-si inst stderr <instace-id>
+si inst stderr <instance-id>
 
 # Send event, e.g. `drain`: `si inst emit <instance-id> drain "{}"`
 si inst emit <instance-id> <event> <payload>
