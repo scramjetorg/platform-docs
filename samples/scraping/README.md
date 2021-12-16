@@ -50,3 +50,21 @@ si inst stdout <instance-id>
 # Check console.error messages
 si inst stderr <instance-id>
 ```
+
+### Output
+
+```bash
+ $ si instance output 41783884-2e97-4b78-9639-aac5d7ff8447
+Request ok: http://127.0.0.1:8000/api/v1/instance/41783884-2e97-4b78-9639-aac5d7ff8447/output status: 200 OK
+13:06:10
+13:06:15
+13:06:20
+13:06:25
+13:06:31
+13:06:36
+13:06:41
+13:06:46
+13:06:51
+13:06:56
+(...)
+```
