@@ -4,6 +4,7 @@ import EventSource = require("eventsource");
 
 const url = 'https://stream.wikimedia.org/v2/stream/recentchange';
 let streaming = false;
+
 function init(outputStream, filter) {
   if (streaming) return;
   streaming = true;
@@ -22,7 +23,7 @@ function init(outputStream, filter) {
     const data = [event.data];
     const result = data.map(data => JSON.parse(data)).filter(filter)[0];
     if (result) {
-      const isOkayToContinue = outputStream.write(result);
+      const isOkayToContinue = outputStream.write(JSON.stringify(result));
       if (!isOkayToContinue) {
         // Wait for drain.
         console.log('--- Pause and wait for drain');

@@ -9,7 +9,7 @@ const app: ReadableApp<string> = async function (_stream: any, interval: number,
 
     setInterval(async () => {
         const result = await diff(interval, key);
-        if (Object.keys(result.diff).length > 0) outputStream.write(result);
+        if (Object.keys(result.diff).length > 0) outputStream.write(JSON.stringify(result));
     }, interval * ONE_MINUTE);
 
     return outputStream;
