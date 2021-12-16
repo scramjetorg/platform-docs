@@ -7,7 +7,7 @@ We have prepared some sample code for you to try out. Some is written in JavaScr
 - [hello](hello) - Sequence that modifies incoming stream of strings by saying Hello :).
 - [hello-snowman](hello-snowman) - Sequence that reads incoming stream, and and modifies it by adding a text message according to the incoming data.
 - [simple-counter-js](simple-counter-js) - Sequence, that counts to 1000, and logs the number in one-second intervals.
-- [test-output](test-output) - Sequence that just writes random values to output stream
+- [test-output](test-output) - Sequence that just writes random values to the output stream
 
 ## TypeScript samples
 
