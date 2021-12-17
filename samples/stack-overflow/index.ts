@@ -5,7 +5,7 @@ import diff from "./stack-overflow";
 const ONE_MINUTE = 60000;
 
 const app: ReadableApp<string> = async function (_stream: any, interval: number, key: string) {
-    const outputStream = new PassThrough({ objectMode: true });
+    const outputStream = new PassThrough();
 
     setInterval(async () => {
         const result = await diff(interval, key);

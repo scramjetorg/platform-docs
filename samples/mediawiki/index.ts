@@ -43,7 +43,7 @@ const app: ReadableApp<string> = async function (_stream, search) {
     filter = (data) => data;
   }
 
-  const outputStream = new PassThrough({ objectMode: true });
+  const outputStream = new PassThrough();
 
   init(outputStream, filter);
 
