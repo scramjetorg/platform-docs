@@ -9,6 +9,7 @@ Our `hello-snowman` app will read and interpret these Celsius degrees, and will 
 - if temperature will be 0 or below, sequence will return message: `Snowman is freezing ... :)`
 - in the other case (temperature above 0 degrees), sequence will return message: `Snowman is melting! :(`
 
+> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ### Running
 Open three terminals and run the following commands:

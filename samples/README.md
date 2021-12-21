@@ -2,6 +2,8 @@
 
 We have prepared some sample code for you to try out. Some is written in JavaScript and some in TypeScript.
 
+> :bulb: **Please note that samples below require some previous installations before you start running them. Instructions are [here](../README.md#3-install-scramjet-transform-hub).**
+
 ## JavaScript samples
 
 - [hello](hello) - Sequence that modifies incoming stream of strings by saying Hello :).

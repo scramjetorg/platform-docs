@@ -1,8 +1,10 @@
 ## stack-overflow
-
+---
 Get number of changes in Stack Overflow tag count.
 
 This queries SO API every X minutes, gathers, compares and outputs result as difference.
+
+> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ### Running
 Open two terminals and run the following commands:
