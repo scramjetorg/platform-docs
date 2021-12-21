@@ -1,4 +1,4 @@
-import { ReadableApp } from "@scramjet/types";
+import { ReadableApp, SynchronousStreamable } from "@scramjet/types";
 import { PassThrough } from "stream";
 import EventSource = require("eventsource");
 
@@ -23,7 +23,7 @@ function init(outputStream, filter) {
     const data = [event.data];
     const result = data.map(data => JSON.parse(data)).filter(filter)[0];
     if (result) {
-      const isOkayToContinue = outputStream.write(JSON.stringify(result));
+      const isOkayToContinue = outputStream.write(result);
       if (!isOkayToContinue) {
         // Wait for drain.
         console.log('--- Pause and wait for drain');
@@ -43,7 +43,7 @@ const app: ReadableApp<string> = async function (_stream, search) {
     filter = (data) => data;
   }
 
-  const outputStream = new PassThrough();
+  const outputStream = new PassThrough( { objectMode: true } );
 
   init(outputStream, filter);
 
@@ -51,6 +51,8 @@ const app: ReadableApp<string> = async function (_stream, search) {
     console.log('--- Resume');
     init(outputStream, filter)
   });
+
+  (outputStream as SynchronousStreamable<any>).contentType = "application/x-ndjson";
 
   return outputStream;
 };

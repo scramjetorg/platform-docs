@@ -28,11 +28,18 @@ const ONE_MINUTE = 60000;
 async function diff(interval: number, key?: string) {
 
     const url = key ? `${BASE_URL}${TAGS_URL}&key=${key}` : `${BASE_URL}${TAGS_URL}`;
+
+    console.log("-------URL: ", url);
+
     const before = (await axios.get(url)).data.items;
+
+    console.log("--------Before--------", before);
   
     await sleep(interval * ONE_MINUTE);
   
     const after = (await axios.get(url)).data.items;
+
+    console.log("--------after--------", after);
   
     const change = after.map(tag => {
       return {
