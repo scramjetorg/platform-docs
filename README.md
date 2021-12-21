@@ -17,7 +17,14 @@
     <img src="https://assets.scramjet.org/sth-logo.svg" alt="Scramjet Transform Hub Logo">
 </p>
 
-------
+
+> :bulb: **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub. 
+
+* Developers looking for source code repository should visit the following link [https://github.com/scramjetorg/transform-hub](https://github.com/scramjetorg/transform-hub).
+* You can also find our packages published in NPM: 
+  * STH [https://www.npmjs.com/package/@scramjet/sth](https://www.npmjs.com/package/@scramjet/sth)
+  * CLI [https://www.npmjs.com/package/@scramjet/cli](https://www.npmjs.com/package/@scramjet/cli)
+---
 ## **Table of Contents**
 
 1. [What is Scramjet Transform Hub (STH)?](#1-what-is-scramjet-transform-hub-STH-?)
