@@ -42,7 +42,7 @@ si inst output <instance-id>
 
 **The third terminal**
 ```bash
-# Send file to instance input steam
+# Send file to the instance input steam
 si inst input <instance-id> name.txt
 # if file not given the data will be read from stdin
 ```
