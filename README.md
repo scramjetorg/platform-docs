@@ -1,11 +1,49 @@
 # **Scramjet Transform Hub - Quick Start introduction**
 
+<p align="center">
+    <a href=https://github.com/scramjetorg/scramjet-cloud-docs/blob/main/LICENSE>
+        <img src="https://img.shields.io/badge/license-MIT-green?color=green&style=plastic" alt="GitHub license"/></a>
+    <a href=https://github.com/scramjetorg/scramjet-cloud-docs/stargazers>
+        <img src="https://img.shields.io/github/stars/scramjetorg/scramjet-cloud-docs?color=pink&style=plastic" alt="GitHub stars" /></a>
+    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7F7V65C43EBMW">
+        <img src="https://img.shields.io/badge/Donate-PayPal-green.svg?color=yellow&style=plastic" alt="Donate" /></a>
+    <a href="https://scramjet.org/">
+        <img src="https://img.shields.io/badge/www-scramjet-2d71c5?style=plastic" alt="Slack"/></a>
+    <a href="https://join.slack.com/t/scramjetorg/shared_invite/zt-bb16pluv-XlICrq5Khuhbq5beenP2Fg">
+        <img src="https://img.shields.io/badge/slack-purple.svg?style=plastic&logo=slack&logoColor=white"/></a>
+    <a href="https://www.linkedin.com/company/scramjet/">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=plastic&logo=linkedin&logoColor=white" alt="Slack"/></a>
+</p>
+<p align="center">⭐ Star us on GitHub — it motivates us a lot! 🚀 </p>
+<p align="center">
+    <img src="https://assets.scramjet.org/sth-logo.svg" alt="Scramjet Transform Hub Logo">
+</p> 
+
 > :bulb: **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub. 
 
 * Developers looking for source code repository should visit the following link [https://github.com/scramjetorg/transform-hub](https://github.com/scramjetorg/transform-hub).
 * You can also find our packages published in NPM: 
   * STH [https://www.npmjs.com/package/@scramjet/sth](https://www.npmjs.com/package/@scramjet/sth)
   * CLI [https://www.npmjs.com/package/@scramjet/cli](https://www.npmjs.com/package/@scramjet/cli)
+---
+## **Table of Contents**
+
+1. [What is Scramjet Transform Hub (STH)?](#1-what-is-scramjet-transform-hub-STH-?)
+2. [Solution concept diagram](#2-solution-concept-diagram)
+    - [Inputs](#21-inputs)
+    - [Host](#22-host)
+    - [Outputs](#23-outputs)
+3. [Install Scramjet Transform Hub](#3-install-scramjet-transform-hub)
+    - [Prepare environment](#31-prepare-environment)
+    - [Install STH](#32-install-sth)
+4. [Run your first sequence](#4-run-your-first-sequence)
+    - [Review the package](#41-review-the-package)
+    - [Prepare and send sequence package](#42-prepare-and-send-sequence-package)
+    - [Run the sequence](#43-run-the-sequence)
+    - [Send data to the sequence](#44-send-data-to-the-sequence)
+5. [Where to go next](#5-where-to-go-next)
+
+---
 ## **1. What is Scramjet Transform Hub (STH)**
 
 Scramjet Transform Hub allows you to deploy and run multiple data processing apps called sequences. 
@@ -233,3 +271,5 @@ Here you can find more resources related to Scramjet Transform Hub:
 
 ---
 
+### Thank you for reading! We hope you enjoyed it, if not here is a random cheer up joke, that may make you smile :smile: !
+![Jokes Card](https://readme-jokes.vercel.app/api)

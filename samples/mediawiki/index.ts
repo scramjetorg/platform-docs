@@ -1,9 +1,10 @@
-import { ReadableApp } from "@scramjet/types";
+import { ReadableApp, SynchronousStreamable } from "@scramjet/types";
 import { PassThrough } from "stream";
 import EventSource = require("eventsource");
 
 const url = 'https://stream.wikimedia.org/v2/stream/recentchange';
 let streaming = false;
+
 function init(outputStream, filter) {
   if (streaming) return;
   streaming = true;
@@ -42,7 +43,7 @@ const app: ReadableApp<string> = async function (_stream, search) {
     filter = (data) => data;
   }
 
-  const outputStream = new PassThrough({ objectMode: true });
+  const outputStream = new PassThrough( { objectMode: true } );
 
   init(outputStream, filter);
 
@@ -50,6 +51,8 @@ const app: ReadableApp<string> = async function (_stream, search) {
     console.log('--- Resume');
     init(outputStream, filter)
   });
+
+  (outputStream as SynchronousStreamable<any>).contentType = "application/x-ndjson";
 
   return outputStream;
 };

@@ -33,7 +33,6 @@ async function diff(interval: number, key?: string) {
     await sleep(interval * ONE_MINUTE);
   
     const after = (await axios.get(url)).data.items;
-  
     const change = after.map(tag => {
       return {
           name: tag.name,

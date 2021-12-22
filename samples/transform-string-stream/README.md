@@ -2,8 +2,10 @@
 ----
 Sequence that modifies incoming stream of strings by adding a prefix and a suffix.
 
+> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+
 ### Running
-Open two terminals and run the following commands:
+Open three terminals and run the following commands:
 
 **The first terminal:**
 ```bash
@@ -36,13 +38,16 @@ si seq start <sequence-id> Hello Bye
 
 # See output of instance process
 si inst output <instance-id>
+```
 
-# In another terminal send text to instance input steam
+**The third terminal**
+```bash
+# Send file to the instance input steam
 si inst input <instance-id> name.txt
 # if file not given the data will be read from stdin
 ```
 <!-- TODO Delete when the issue is solved
-Issue created for reading data from stdin https://github.com/scramjetorg/transform-hub/issues/165 
+Issue created for reading data from stdin https://github.com/scramjetorg/transform-hub/issues/165 ---. ISSUE SOLVED!!! awaits release
 -->
 
 ### Output
