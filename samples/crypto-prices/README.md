@@ -22,11 +22,8 @@ cd samples/crypto-prices
 # install dependencies
 npm install
 
-# transpile TS->JS to dist/
+# transpile TS->JS and copy node_modules and package.json to dist/
 npm run build
-
-# prepare standalone JS package
-cp -r node_modules package.json dist/
 
 # make a compressed package with sequence
 si pack dist/ -o crypto-prices.tar.gz
