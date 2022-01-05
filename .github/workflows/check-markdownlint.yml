@@ -5,16 +5,25 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  Lint-check:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version: [ 16.x ]
+
     steps:
     - uses: actions/checkout@v2
+
+    - name: Setup Nodejs ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
       with:
-        ref: ${{ github.head_ref }}
-    - uses: actions/setup-node@master
-    - name: lint all markdownfiles
-      run: |
-        npm install
-        npx markdownlint '**/*.md' --ignore node_modules -c .markdownlint.json
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Check all markdown files
+      run: npx markdownlint '**/*.md' --ignore node_modules -c .markdownlint.json
