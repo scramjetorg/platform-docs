@@ -1,4 +1,5 @@
 ## hello-snowman :snowman:
+
 ----
 Sequence that reads incoming stream (input), and and modifies it by adding a text message according to the incoming data.
 
@@ -12,15 +13,18 @@ Our `hello-snowman` app will read and interpret these Celsius degrees, and will 
 > :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ### Running
+
 Open three terminals and run the following commands:
 
 **The first terminal:**
+
 ```bash
 # start sth
 scramjet-transform-hub
 ```
 
 **The second terminal**
+
 ```bash
 # go to 'hello-snowman' directory
 cd samples/hello-snowman
@@ -42,6 +46,7 @@ si inst output <instance-id>
 ```
 
 **In the third terminal**
+
 ```bash
 # Start stream generator tool with instance ID as parameter
 node ./tools/stream-gen-tool/stream-gen.js <instance_id>

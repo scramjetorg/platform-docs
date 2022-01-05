@@ -47,7 +47,7 @@ si inst output <instance-id>
 si inst stdout <instance-id>
 
 # Check console.error messages
-si inst stderr <instace-id>
+si inst stderr <instance-id>
 ```
 
 As this is scraping content on regular basis `429 Too Many Requests` Error is inevitable. In order to mitigate this problem, increase pause between requests.

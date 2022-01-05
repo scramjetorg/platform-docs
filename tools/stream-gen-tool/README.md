@@ -1,4 +1,5 @@
 # Stream generator tool
+
 The stream-gen.js is a Node.js application that you can start using following command:
 
 `node stream-gen.js <sth instance ID>`

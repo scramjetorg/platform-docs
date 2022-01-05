@@ -1,19 +1,23 @@
-## simple-counter 
+## simple-counter
+
 ---
 A simple sequence, that counts and logs the number in one-second intervals. As a default, the counter is started with 0 and ends with 1000. These values can be changed by passing the `start` and `end` parameters.
 
 > :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ### Running
+
 Open two terminals and run the following commands:
 
 **The first terminal:**
+
 ```bash
 # start sth
 scramjet-transform-hub
 ```
 
 **The second terminal**
+
 ```bash
 # go to 'simple-counter-js' directory
 cd samples/simple-counter-js

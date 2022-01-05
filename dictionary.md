@@ -145,7 +145,6 @@ A bundle containing [runner](#runner) that runs a [sequence](#sequence) which is
 
 In the context of Object-Oriented Programming (OOP), it is a set of methods and properties that the class, which implements interface, should implement, give a body (methods) or values(properties). The interface itself does not contain logic, method's bodies, or values for properties. [Examples](https://www.typescriptlang.org/docs/handbook/interfaces.html)
 
-
 ### Input
 
 Input is a set of parameters/values that are passed to the function.
@@ -251,7 +250,6 @@ An executable written in one of the supported programming languages that starts 
 
 ## S
 
-
 ### Scramjet
 
 Project as whole. Common misspell: __u__ instead of __a__. Beware!
@@ -275,7 +273,6 @@ Socket is a kind of an endpoint in a two-way communication channel between the s
 ### stdin/stdout/stderr <!--TODO-->
 
 standard input/standard output. Application communication channels with the outside world (e.g. the console). Stdin allows you to enter information into an application (e.g. from the keyboard). stdout allows you to display messages from the application, e.g. on a monitor/printer, etc
-
 
 ### STH <!--TODO-->
 
