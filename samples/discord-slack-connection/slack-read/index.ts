@@ -55,7 +55,7 @@ export = async function (_stream: any, SOCKET_MODE_TOKEN: String) {
                 );
 
                 if (msg === undefined) {
-                    ps.write({ text: event.payload.event.text }); // For testing output text only. TODO: format and keep extra details, e.g. thread ID
+                    ps.write({ id: event.payload.event.client_msg_id, text: event.payload.event.text, channel: event.payload.event.channel, thread_ts: event.payload.event.ts });
                     messages.push(event?.payload?.event?.client_msg_id);
                 }
             }
