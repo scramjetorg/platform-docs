@@ -39,7 +39,6 @@ Artifacts are byproducts of software development, e.g. project diagrams, plans, 
 
 Asynchronous execution of operations allows multiple processes/functions to happen at the same time. We do not have to wait for the result of the first function/method call, but we perform the next and subsequent ones. Physically, in a computer, true asynchronicity requires multiple CPU cores. In case of single-core CPU, asynchronicity is faked by dividing the linear processor time between the different processes. See also [synchronous](#synchronous)
 
-
 ## C
 
 ### CLI
@@ -139,7 +138,7 @@ An interface for managing the space in which the [prerunner](#prerunner) and [ru
 
 ### Instance
 
-It is a running [sequence](#sequence). A bundle containing [runner](#runner) that runs a [sequence](#sequence) which is controlled by [supervisor](#supervisor). 
+It is a running [sequence](#sequence). A bundle containing [runner](#runner) that runs a [sequence](#sequence) which is controlled by [supervisor](#supervisor).
 
 ### Interface
 
