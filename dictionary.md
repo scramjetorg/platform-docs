@@ -14,7 +14,10 @@ If you think that some word definitions are missing, please feel free to contact
 
 ### Account
 
-User's account for the Scramjet platform
+User's account for the Scramjet platform. It is used to store user's data and to authenticate user's actions. We differentiate between two types of accounts:
+
+- business account
+- individual account
 
 ### API
 
@@ -36,9 +39,6 @@ Artifacts are byproducts of software development, e.g. project diagrams, plans, 
 
 Asynchronous execution of operations allows multiple processes/functions to happen at the same time. We do not have to wait for the result of the first function/method call, but we perform the next and subsequent ones. Physically, in a computer, true asynchronicity requires multiple CPU cores. In case of single-core CPU, asynchronicity is faked by dividing the linear processor time between the different processes. See also [synchronous](#synchronous)
 
-### Ava
-
-[Ava](https://github.com/avajs/ava) is a test runner for Node.js
 
 ## C
 
@@ -139,7 +139,7 @@ An interface for managing the space in which the [prerunner](#prerunner) and [ru
 
 ### Instance
 
-A bundle containing [runner](#runner) that runs a [sequence](#sequence) which is controlled by [supervisor](#supervisor)
+It is a running [sequence](#sequence). A bundle containing [runner](#runner) that runs a [sequence](#sequence) which is controlled by [supervisor](#supervisor). 
 
 ### Interface
 
@@ -210,10 +210,12 @@ One of the [supervisor's](#supervisor) components, which is responsible for coll
 
 in the context of the Scramjet platform, Cloud Platform Manager is a host management software that provides service-discovery, controls the scaling of individual instances in accordance with the programmed logic and client configuration, providing [API](#api)
 
-### mCPM
+### MultiHost
 <!--TODO-->
-### mSTH
+
+### MultiManager
 <!--TODO-->
+
 ## N
 
 ### npm
@@ -260,7 +262,7 @@ Software Development Kit. A collection of tools and libraries to create a softwa
 
 ### Sequence
 
-Developer's code that consists of chained functions. Minimal [sequence](#sequence) consists of 1 [function](#function)
+It is a compressed package (`*.tar.gz`) containing file with a manifest(eg. `package.json`), describing the app and its configuration (such as main file to run); and a **main file** (eg. `index.js`, `app.ts`) that contains a developer's code that consists of chained functions with a lightweight application business logic . Minimal sequence consists of 1 [function](#function).
 
 ### Socket
 
@@ -335,16 +337,8 @@ User Datagram Protocol - a protocol that allows data to be sent continuously, it
 
 Virtual Machine. Virtualization of a physical machine on a physical machine (it is a kind of Matrix but without Keanu :wink:). There can be several virtual machines on one physical machine. Each VM "eats" the resources of the physical machine (RAM/CPU/disk space). Virtual machines, however, cannot "look" into the resources of other machines, resources are separated (unless we consciously share, for example, a fragment of the disk). If you want to dive deeper into this topic, read also about [overcommitment](https://en.wikipedia.org/wiki/Memory_overcommitment)
 
-### VPN
-
-Virtual Private Network. A network that behaves like a private network (e.g. office or university network), creating an encrypted connection between our computer and the network, e.g. in the cloud, acting as a "virtual router". It is hermetic and inaccessible to people without authorization. More info: [VPN](https://en.wikipedia.org/wiki/Virtual_private_network)
-
 ### Volume
 
 The term volume refers to a device or area of mass storage that is used to store data, such as a hard drive or hard drive partitions. [Docker](#docker) volumes are the preferred persistence mechanism for data generated and used by containers. Binding mount points depend on the directory structure and operating system of the host computer, while volumes are completely managed by Docker
 
 ## Y
-
-### yarn
-
-Yarn (like [npm](#npm)) is a package manager for JS projects
