@@ -31,7 +31,7 @@
 ## **Table of Contents**
 
 1. [Introduction](#1-introduction)
-    * [What is Scramjet Transform Hub (STH)?](#11-what-is-scramjet-transform-hub-STH-?)
+    * [What is Scramjet Transform Hub](#11-what-is-scramjet-transform-hub-STH-?)
     * [Solution concept diagram](#12-solution-concept-diagram)
 2. [Installation](#2-Installation)
     * [Prepare environment](#21-prepare-environment)
@@ -46,9 +46,9 @@
 
 ## **1. Introduction**
 
-### **1.1 What is Scramjet Transform Hub (STH)**
+### **1.1 What is Scramjet Transform Hub**
 
-Scramjet Transform Hub can be treated both as data processing engine and execution platform for multiple sequences running on the same platform and performing various data processing tasks.
+Scramjet Transform Hub (STH) can be treated both as data processing engine and execution platform for multiple sequences running on the same platform and performing various data processing tasks.
 
 STH allows you to deploy and run multiple data processing apps called sequences.
 
@@ -83,7 +83,7 @@ You can interact with host using our dedicated STH CLI that will help you with s
 <br>
 Our vanilla STH engine is based on Node.js and thus allows developers to benefit from rich ecosystem, numerous packages and solutions provided by this vibrant community.
 
-## **2. Solution concept diagram**
+### **1.2 Solution concept diagram**
 
 <img src="./images/sth-diagram.png" width="85%"/>
 
@@ -132,9 +132,9 @@ Our engine outputs can be managed in several ways:
 
 </details>
 
-## **3. Install Scramjet Transform Hub**
+## **2. Installation**
 
-### **3.1 Prepare environment**
+### **2.1 Prepare environment**
 
 In order to install Scramjet Transform Hub, please follow these 3 steps:
 
@@ -142,7 +142,7 @@ In order to install Scramjet Transform Hub, please follow these 3 steps:
 2. Install Docker on this Linux machine ([official Docker instructions are here](https://docs.docker.com/get-docker/))
 3. Install npm on this machine ([official instructions are here](https://nodejs.org/)). Currently we recommend Node.js version 16.x LTS.
 
-### **3.2 Install STH**
+### **2.2 Install STH**
 
 Open one Linux terminal window and issue following commands:
 
@@ -160,9 +160,9 @@ scramjet-transform-hub
 
 > :bulb: **Note:** More detailed installation instructions can be found in our [STH GitHub repository](https://github.com/scramjetorg/transform-hub/tree/main#installation-clamp).
 
-## **4. Run your first sequence**
+## **3. Run your first sequence**
 
-### **4.1 Review the package**
+### **3.1 Review the package**
 
 > :bulb: **Note:** all commands here are executed from the root of this repository.
 
@@ -174,11 +174,11 @@ In this directory you will find two files:
 
 This particular application is written in plain JavaScript to simplify this example. However, you can also write your sequences in TypeScript and build them before packaging and sending sequence to STH.
 
-In the template's [readme](templates/README.md) you will find a more specific descriptions of the particular file's content.
+> In the [template's readme](templates/README.md) you will find a more specific descriptions of the particular file's content.
 
 There is no need to change anything in our `hello-snowman` sequence for a first run. Let's move to the next step.
 
-### **4.2 Prepare and send sequence package**
+### **3.2 Prepare and send sequence package**
 
 Our "sequence" apps need to be packaged before sending to Transform Hub. Package is a simple TAR archive and our STH CLI has a special command to pack an app directory into a sequence tarball.
 
@@ -225,7 +225,7 @@ Now we have uploaded sequence to the host and host assigned to it a random ID (G
 
  Host also exposes REST API endpoint for each sequence and this is also described in this response.
 
-### **4.3 Run the sequence**
+### **3.3 Run the sequence**
 
 We can now use sequence ID to run this uploaded sequence. The command is `si seq start <sequence_id>`. You can also pass arbitrary number of parameters by providing them after `<sequence_id>`, in case of our `hello-snowman` parameters are not used.
 For example for the above sequence we could write:
@@ -257,7 +257,7 @@ Sequence is an app template. Once it is up and running, it will become a new ins
 
 Of course, sequences can be run multiple times. Each run will create a separate instance with a distinct instance ID.
 
-### **4.4 Send data to the sequence**
+### **3.4 Send data to the sequence**
 
 We want to make your life easier and for this very example, we have prepared a special Node.js app that will generate a stream of simple messages and send them to our running instance of `hello-snowman`.
 
@@ -324,7 +324,7 @@ The sample output will be similar to this one:
 
 > Congratulations! :clap::clap::clap: You have run your first Scramjet Transform Hub sequence!
 
-## **5. Where to go next**
+## **4. Where to go next**
 
 Here you can find more resources related to Scramjet Transform Hub:
 
@@ -333,7 +333,7 @@ Here you can find more resources related to Scramjet Transform Hub:
 * [Contribute to STH development](https://github.com/scramjetorg/transform-hub) :construction_worker: - please feel free to contribute to STH development by submitting pull requests or creating issues.
 * [Visit our Scramjet.org page](https://scramjet.org) :globe_with_meridians: - check out our website for more information about our Scramjet team, history and products.
 
-## **6. User's dictionary** :book:
+## **5. User's dictionary** :book:
 
 There is a lot of terminology that we use in our project that may already be known to you. We have prepared a [dictionary](dictionary.md) of terms that you may find useful and which you will learn as you learn about Scramjet Platform. The definitions of the terms we try to keep short and simple.
 
