@@ -1,13 +1,16 @@
 ## crypto-prices  ![bitcoin](../../images/bitcoin1.png) ![zcash](../../images/zcash1.png) ![ethereum](../../images/etherum1.png)
+
 ---
 Sequence that keeps printing current crypto prices for a provided pair of currencies every 1s.
 
 > :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ### Running
+
 Open two terminals and run the following commands:
 
 **The first terminal:**
+
 ```bash
 # start sth
 scramjet-transform-hub

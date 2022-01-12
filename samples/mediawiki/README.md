@@ -1,19 +1,23 @@
 ## mediawiki
+
 ---
 Sequence that keeps printing mediawiki event stream.
 
 > :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ### Running
+
 Open two terminals and run the following commands:
 
 **The first terminal:**
+
 ```bash
 # start sth
 scramjet-transform-hub
 ```
 
 **The second terminal**
+
 ```bash
 # go to 'mediawiki' directory
 cd samples/mediawiki

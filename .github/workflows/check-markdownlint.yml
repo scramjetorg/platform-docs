@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  Lint-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version: [ 16.x ]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Nodejs ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Check all markdown files
+      run: npx markdownlint '**/*.md' --ignore node_modules -c .markdownlint.json
