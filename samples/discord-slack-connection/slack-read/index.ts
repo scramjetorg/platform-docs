@@ -14,7 +14,7 @@ type HasTopicInformation = {
 const messages: String[] = [];
 
 /**
- * Mutli output application.
+ * Multi output application.
  *
  * @param {any} _stream - Dummy input stream
  * @param {String} SOCKET_MODE_TOKEN - Token

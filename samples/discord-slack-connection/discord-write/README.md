@@ -1,4 +1,4 @@
-# Slack write
+# Discord Write
 
 Read messages from topic and write to discord via webhook
 
