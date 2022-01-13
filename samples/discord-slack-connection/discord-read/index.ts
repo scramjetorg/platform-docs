@@ -13,7 +13,6 @@ type HasTopicInformation = {
  * Multi output application.
  *
  * @param {any} _stream - Dummy input stream
- * @param {String} SOCKET_MODE_TOKEN - Token
  */
 
 export = async function (_stream: any) {
