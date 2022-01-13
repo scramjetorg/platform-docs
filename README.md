@@ -85,6 +85,8 @@ Our vanilla STH engine is based on Node.js and thus allows developers to benefit
 
 <img src="./images/sth-diagram.png" width="85%"/>
 
+<u>Glossary:</u>
+
 <details>
 <summary>
     <strong>Inputs</strong>
@@ -128,7 +130,7 @@ Our engine outputs can be managed in several ways:
 * **Stream** - output can be streamed to a particular destination
 * you can mix multiple actions together: you can both send data to remote system/URL and save it locally.
 
-</details>
+</details><br>
 
 ## **2. Installation**
 
