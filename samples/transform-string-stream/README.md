@@ -49,12 +49,17 @@ si inst output <instance-id>
 ```bash
 # Send file to the instance input steam
 si inst input <instance-id> name.txt
-# if file not given the data will be read from stdin
+# the date will be read from the file 'name.txt'
 ```
 
-<!-- TODO Delete when the issue is solved
-Issue created for reading data from stdin https://github.com/scramjetorg/transform-hub/issues/165 ---. ISSUE SOLVED!!! awaits release
--->
+or
+
+```bash
+# Send text to the instance input steam
+si inst input <instance-id>
+> John
+# if file not given the data will be read from stdin
+```
 
 ### Output
 
