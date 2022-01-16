@@ -2,9 +2,12 @@ import { ReadableApp } from "@scramjet/types";
 import { PassThrough } from "stream";
 import axios from 'axios'
 import WebSocket from 'ws';
+import formatter from './utils'
 
 const SLACK_APPS_CONNECTION_OPEN_URL =
     'https://slack.com/api/apps.connections.open';
+
+const TOPIC = "messages";
 
 type HasTopicInformation = {
     contentType?: string,
@@ -12,19 +15,6 @@ type HasTopicInformation = {
 };
 
 const messages: String[] = [];
-
-/**
- * Remove application specific formatting and use internal STH tags instead.
- * 
- * @param {String} input Text to be formatted
- * @returns {String}
- */
-function formatter(input: String): String {
-    return input.replace(/\*\*(\w+)\*\*/, '<sth:b>$1</sth:b>')
-        .replace(/\*(\w+)\*/, '<sth:i>$1</sth:i>')
-        .replace(/~~(\w+)~~/, '<sth:s>$1</sth:s>')
-        .replace(/__(\w+)__/, '<sth:u>$1</sth:u>');
-}
 
 /**
  * Multi output application.
@@ -75,8 +65,7 @@ export = async function (_stream: any, SOCKET_MODE_TOKEN: String) {
         });
     }
 
-
-    ps.topic = "messages"; // TODO: Decide if this can be hardcoded or not
+    ps.topic = TOPIC;
     ps.contentType = "application/x-ndjson";
 
     return ps;

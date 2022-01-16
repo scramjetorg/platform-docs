@@ -4,6 +4,10 @@ import { PassThrough } from "stream";
 import { Client, Intents } from 'discord.js';
 import { token } from './config.json';
 
+import formatter from './utils';
+
+const TOPIC: string = 'messages';
+
 type HasTopicInformation = {
     contentType?: string,
     topic?: string
@@ -28,12 +32,12 @@ export = async function (_stream: any) {
 
     client.on('messageCreate', (message) => {
         console.log(message)
-        ps.write({ id: message.id, text: message.content, channel: message.channelId, /* thread */ });
+        ps.write({ id: message.id, text: formatter(message.content), channel: message.channelId, /* thread */ });
     });
 
     client.login(token);
 
-    ps.topic = "messages"; // TODO: Decide if this can be hardcoded or not
+    ps.topic = TOPIC;
     ps.contentType = "application/x-ndjson";
 
     return ps;
