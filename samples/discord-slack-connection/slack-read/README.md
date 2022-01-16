@@ -2,7 +2,7 @@
 
 Read messages from Slack and write to topic.
 
-### Running
+## Running
 
 ```bash
 # install dependencies

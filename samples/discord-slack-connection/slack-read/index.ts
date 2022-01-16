@@ -4,8 +4,7 @@ import axios from 'axios'
 import WebSocket from 'ws';
 import formatter from './utils'
 
-const SLACK_APPS_CONNECTION_OPEN_URL =
-    'https://slack.com/api/apps.connections.open';
+const SLACK_APPS_CONNECTION_OPEN_URL = 'https://slack.com/api/apps.connections.open';
 
 const TOPIC = "messages";
 
