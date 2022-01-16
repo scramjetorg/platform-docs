@@ -31,7 +31,7 @@ export = async function (_stream: any) {
     });
 
     client.on('messageCreate', (message) => {
-        console.log(message)
+        console.debug(message);
         ps.write({ id: message.id, text: formatter(message.content), channel: message.channelId, /* thread */ });
     });
 

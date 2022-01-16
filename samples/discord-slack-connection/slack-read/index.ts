@@ -40,12 +40,11 @@ export = async function (_stream: any, SOCKET_MODE_TOKEN: String) {
         const socket = new WebSocket(response.url);
 
         socket.on('open', function (e) {
-            console.log('CONNECTED...');
+            console.log('Connected...');
         });
 
         socket.on('message', function (buffer) {
-            console.log('ON MESSAGE EVENT');
-            console.log(buffer.toString());
+            console.debug(buffer.toString());
             const event = JSON.parse(buffer.toString());
 
             if (event.type === 'events_api') {
