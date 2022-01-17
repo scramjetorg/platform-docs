@@ -20,12 +20,9 @@ si pack dist
 # send sequence to transform hub, this will output Sequence ID
 si seq send dist.tar.gz
 
-# start a sequence, this will output Instance ID.
-si seq start <sequence-id> <slack_key>
+# start a sequence, this will output Instance ID. Provide SOCKET_MODE_TOKEN as the second parameter
+si seq start <sequence-id> <SOCKET_MODE_TOKEN>
 
-# See output
-si inst output <instance-id>
-
-# See topic
+# view messages in topic
 si topic get messages
 ```
