@@ -21,7 +21,7 @@ In order to get this working, sequences must keep a track of posted and written 
 
 STH `v0.13` if installed via `npm` has an issue with `objectMode: true`. You will get an error like:
 
-```
+```bash
 TypeError [ERR_INVALID_ARG_TYPE]: The "chunk" argument must be of type string or an instance of Buffer or Uint8Array. 
 Received an instance of Object
 ```

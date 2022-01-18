@@ -4,7 +4,7 @@ Read messages from discord channel and write to topic
 
 [Discord Documentation](https://discord.js.org/#/docs/discord.js/stable/general/welcome)
 
-In order to read messages from Discord we need to create a bot first: 
+In order to read messages from Discord we need to create a bot first:
 
 * Go to Developer Portal and click on [Applications](https://discord.com/developers/applications)
 * Click on `New Application` button and give it a name. Then click on `Create`.
