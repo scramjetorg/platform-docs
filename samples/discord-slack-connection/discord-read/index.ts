@@ -6,7 +6,7 @@ import { token } from './config.json';
 
 import formatter from './utils';
 
-const TOPIC: string = 'messages';
+const TOPIC: string = 'messages-slack-inbound';
 
 type HasTopicInformation = {
     contentType?: string,

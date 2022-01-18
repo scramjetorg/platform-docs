@@ -1,6 +1,15 @@
 # Slack Write
 
-Read messages from topic and write to slack
+Read messages from topic and write to slack.
+
+In order to get SLACK_WEBHOOK_URL you need to create application in Slack first.
+Please refer to notes in [slack-read](../slack-read/) example.
+
+Once you have a application in Slack. Open it and under Features select `Incoming Webhooks`
+
+Activate incoming webhooks and add a new webhook to workspace by clicking on `Add New Webhook to Workspace` button. Follow prompts and select which channel you want to use.
+
+Copy Webhook URL and use it later as `SLACK_WEBHOOK_URL` in the notes below.
 
 ## Running
 

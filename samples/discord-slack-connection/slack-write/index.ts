@@ -4,7 +4,7 @@ import { PassThrough } from "stream";
 import axios from "axios";
 import formatter from './utils';
 
-const TOPIC: string = "messages";
+const TOPIC: string = "messages-slack-inbound";
 
 const mod: (TransformApp | { requires: string, contentType: string })[] = [
     { requires: TOPIC, contentType: "application/x-ndjson" },

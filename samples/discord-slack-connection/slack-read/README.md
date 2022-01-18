@@ -2,6 +2,16 @@
 
 Read messages from Slack and write to topic.
 
+In order to read messages from Slack you need to create application first. Go to [Slack API](https://api.slack.com/apps) and `Create New App`.
+Next, select you app and under `Settings` -> select `Socket Mode`.
+Enable Socket Mode as per message:
+
+> To start receiving payloads in Socket Mode, turn on the toggle below and call the apps.connections.open endpoint using an App Level Token to establish a connection.
+
+After enabling socket mode, follow link to App Level Tokens, scroll down to `App-Level Tokens` and generate new token. Give it a name and select scope: `connections:write`.
+
+Copy SOCKET_MODE_TOKEN. It will look like: `xapp-1-A....`
+
 ## Running
 
 ```bash

@@ -6,7 +6,7 @@ import formatter from './utils'
 
 const SLACK_APPS_CONNECTION_OPEN_URL = 'https://slack.com/api/apps.connections.open';
 
-const TOPIC = "messages";
+const TOPIC = "messages-slack-outbound";
 
 type HasTopicInformation = {
     contentType?: string,
