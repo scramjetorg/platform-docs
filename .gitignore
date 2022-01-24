@@ -26,4 +26,5 @@ lerna-debug.log*
 .npm
 
 # Optional eslint cache
-.eslintcache
+.eslintcache**/dist/
+samples/**/package-lock.json
