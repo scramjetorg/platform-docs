@@ -7,10 +7,9 @@
         "module": "CommonJS",
         "outDir": "./dist",
         "esModuleInterop": true,
-        "resolveJsonModule": true,
-        // "skipLibCheck": true,
+        "resolveJsonModule": true
     },
     "include": [
         "./index.ts"
-    ],
+    ]
 }

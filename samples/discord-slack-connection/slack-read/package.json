@@ -1,31 +1,32 @@
 {
-    "name": "@scramjet/slack-read",
-    "version": "0.0.1",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "build": "tsc -p tsconfig.json"
-    },
-    "author": "Scramjet <open-source@scramjet.org>",
-    "license": "ISC",
-    "keywords": [
-        "slack",
-        "connection",
-        "sth",
-        "scramjet-transform-hub"
-      ],
-    "devDependencies": {
-        "@scramjet/types": "^0.13.3",
-        "@types/node": "15.12.5",
-        "scramjet": "^4.36.0",
-        "typescript": "^4.3.4"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/scramjetorg/scramjet-cloud-docs.git"
-    },
-    "dependencies": {
-        "axios": "^0.24.0",
-        "ws": "^8.4.0"
-    }
+  "name": "@scramjet/slack-read",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "postbuild": "cp -r package.json dist/ && (cd dist && npm i --only=production)"
+  },
+  "author": "Scramjet <open-source@scramjet.org>",
+  "license": "ISC",
+  "keywords": [
+    "slack",
+    "connection",
+    "sth",
+    "scramjet-transform-hub"
+  ],
+  "devDependencies": {
+    "@scramjet/types": "^0.13.3",
+    "@types/node": "15.12.5",
+    "scramjet": "^4.36.0",
+    "typescript": "^4.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scramjetorg/scramjet-cloud-docs.git"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "ws": "^8.4.0"
+  }
 }
