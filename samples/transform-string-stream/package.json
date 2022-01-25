@@ -5,7 +5,8 @@
   "main": "index",
   "types": "dist/index",
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "postbuild": "cp -r package.json dist/ && (cd dist && npm i --only=production)"
   },
   "engines": {
     "node": ">=10"
@@ -27,5 +28,7 @@
     "type": "git",
     "url": "https://github.com/scramjetorg/transform-hub.git"
   },
-  "assets": ["name.txt"]
+  "assets": [
+    "name.txt"
+  ]
 }

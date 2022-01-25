@@ -26,10 +26,7 @@ cd samples/transform-string-stream
 npm install 
 
 # transpile TS->JS to dist/
-npm run build 
-
-# prepare standalone JS package
-cp -r node_modules package.json dist/
+npm run build
 
 # make a compressed package with sequence
 si pack dist/ -o transform-string-stream.tar.gz

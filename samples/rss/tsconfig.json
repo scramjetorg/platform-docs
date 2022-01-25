@@ -2,9 +2,9 @@
     "compilerOptions": {
       "outDir": "./dist",
       "esModuleInterop": true,
-      "resolveJsonModule": true,
+      "resolveJsonModule": true
     },
     "include": [
       "./index.ts"
-    ],
+    ]
 }
