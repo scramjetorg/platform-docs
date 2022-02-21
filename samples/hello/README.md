@@ -1,19 +1,23 @@
 ## hello 🙋‍♂️
+
 ----
 Sequence that modifies incoming stream of strings by saying Hello :).
 
 > :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ### Running
+
 Open three terminals and run the following commands:
 
 **The first terminal:**
+
 ```bash
 # start sth
 scramjet-transform-hub
 ```
 
 **The second terminal**
+
 ```bash
 # go to 'hello' directory
 cd samples/hello
@@ -33,15 +37,19 @@ si seq start <sequence-id>
 # See output of instance process
 si inst output <instance-id>
 ```
+
 **The third terminal**
+
 ```bash
 # Send file to instance input steam
 si inst input <instance-id> name.txt
 # if file not given the data will be read from stdin
 ```
+
 <!-- TODO Delete when the issue is solved
 Issue created for reading data from stdin https://github.com/scramjetorg/transform-hub/issues/165 -------ISSUE SOLVED!!! awaits release
 -->
+
 ### Output
 
 ```bash

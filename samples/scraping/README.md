@@ -1,24 +1,28 @@
 ## scraping
+
 ---
 This is a simple and trivial example of scraping web pages.
 
 The scraper takes URL and CSS ID selector as input parameters and returns data every second.
 
-To test this please use URL: https://www.timeanddate.com/worldclock/poland and ID: `#ct`. Scraper will connect to the website and read (scrap) the current time. Next, it returns this as a stream.
-As URL and ID are parametrized we can use other websites too. For example, URL: https://time.is/ and ID: `#clock`
+To test this please use URL: <https://www.timeanddate.com/worldclock/poland> and ID: `#ct`. Scraper will connect to the website and read (scrap) the current time. Next, it returns this as a stream.
+As URL and ID are parametrized we can use other websites too. For example, URL: <https://time.is/> and ID: `#clock`
 
 > :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ### Running
+
 Open two terminals and run the following commands:
 
 **The first terminal:**
+
 ```bash
 # start sth
 scramjet-transform-hub
 ```
 
 **The second terminal**
+
 ```bash
 # go to 'scraping' directory
 cd samples/scraping
