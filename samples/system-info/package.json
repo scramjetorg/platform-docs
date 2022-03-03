@@ -1,0 +1,13 @@
+{
+    "name": "@scramjet/system-info",
+    "version": "0.18.1",
+    "description": "Sequence that outputs a stream of system information from any server.",
+    "main": "./index.js",
+    "author": "Scramjet <open-source@scramjet.org>",
+    "license": "GPL-3.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/scramjetorg/transform-hub.git"
+    }
+  }
+  
