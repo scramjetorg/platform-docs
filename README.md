@@ -1,5 +1,5 @@
-# **Scramjet Transform Hub - Quick Start**
 
+<h1 align="center"><strong>Scramjet Transform Hub - Quick Start</strong></h1>
 <p align="center">
     <a href=https://github.com/scramjetorg/scramjet-cloud-docs/blob/main/LICENSE>
         <img src="https://img.shields.io/badge/license-MIT-green?color=green&style=plastic" alt="GitHub license"/></a>
@@ -19,7 +19,7 @@
     <img src="https://assets.scramjet.org/sth-logo.svg" alt="Scramjet Transform Hub Logo">
 </p>
 
-> :bulb: **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub.
+> 💡 **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub.
 
 * Developers looking for source code repository should visit the following link [https://github.com/scramjetorg/transform-hub](https://github.com/scramjetorg/transform-hub).
 * You can also find our packages published in NPM:
@@ -40,7 +40,7 @@
     * [Review the package](#31-review-the-package)
     * [Run the sequence](#32-run-the-sequence)
 4. [Where to go next](#4-where-to-go-next)
-5. [User's dictionary](#5-users-dictionary-book)
+5. [User's dictionary](#5-users-dictionary)
 
 ## **1. Introduction**
 
@@ -158,7 +158,7 @@ npm i -g @scramjet/sth @scramjet/cli
 scramjet-transform-hub
 ```
 
-> :point_up: **HINT:** There is also an alias for running STH: `sth`
+> 💡 **HINT:** There is also an alias for running STH: `sth`
 
 More detailed installation instructions can be found in our [STH GitHub repository](https://github.com/scramjetorg/transform-hub/tree/main#installation-clamp).
 
@@ -190,7 +190,7 @@ There are 4 steps to follow in order to run the example sequence:
 
 Every "sequence" app needs to be packaged (compressed) before sending to the Transform Hub. Package is a simple TAR archive and our STH CLI has a special command to pack an app directory into a sequence tarball.
 
-> :bulb: **Note:** any time, you can display STH CLI help by issuing terminal command `si help` (for general help) or `si <command> help` for specific command (ie. `si sequence help`)
+> 💡 **Note:** any time, you can display STH CLI help by issuing terminal command `si help` (for general help) or `si <command> help` for specific command (ie. `si sequence help`)
 
 Please open new terminal window (and keep the first one open with STH running). Then issue following commands in the root directory of this repository:
 
@@ -215,7 +215,7 @@ Send `hello-snowman.tar.gz` to the running host (default localhost API endpoint 
 si sequence send ./samples/hello-snowman.tar.gz
 ```
 
-> :bulb: **Note:** if you receive reply: **Request ok: <http://127.0.0.1:8000/api/v1/sequence> status: 422 Unprocessable Entity**, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue `si sequence send` command again. We are working on fixing this issue in the next STH release. Also, if you keep receiving docker errors you can start sth without docker: `scramjet-transform-hub --no-docker`
+> 💡 **Note:** if you receive reply: **Request ok: <http://127.0.0.1:8000/api/v1/sequence> status: 422 Unprocessable Entity**, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue `si sequence send` command again. We are working on fixing this issue in the next STH release. Also, if you keep receiving docker errors you can start sth without docker: `scramjet-transform-hub --no-docker`
 
 > If you encounter any problems or issues while using our platform, please visit our **[Troubleshooting](https://github.com/scramjetorg/transform-hub#troubleshooting-collision)** section, where some of the problems are already known and described. You can also log an issue/bug there.
 
@@ -353,26 +353,27 @@ The sample output will be similar to this one:
 
 </details><br>
 
-> Congratulations! :clap::clap::clap: You have run your first Scramjet Transform Hub sequence!
+> 🎉 Congratulations! 🥳 You have run your first Scramjet Transform Hub sequence!
 
 ## **4. Where to go next**
 
 Here you can find more resources related to Scramjet Transform Hub:
 
-* [Check out more samples](samples) :books: - we have prepared some ready-to-use apps, which you can either use as a starting point for creating your own sequences or simply run them just to see what they do, and how the STH works with them.
-* [Start from our app templates](templates) :file_folder: - almost  a blank file structure (package) and usage instructions, ready to be used as a starting point for building your own sequences. This is the simplest base we can provide for you to start with.
-* [Contribute to STH development](https://github.com/scramjetorg/transform-hub) :construction_worker: - please feel free to contribute to STH development by submitting pull requests or creating issues.
-* [Visit our Scramjet.org page](https://scramjet.org) :globe_with_meridians: - check out our website for more information about our Scramjet team, history and products.
+* 📚 [Check out more samples](samples) - we have prepared some ready-to-use apps, which you can either use as a starting point for creating your own sequences or simply run them just to see what they do, and how the STH works with them.
+* 📂 [Start from our app templates](templates) - almost  a blank file structure (package) and usage instructions, ready to be used as a starting point for building your own sequences. This is the simplest base we can provide for you to start with.
+* 🧑‍💻 [Contribute to STH development](https://github.com/scramjetorg/transform-hub)  - please feel free to contribute to STH development by submitting pull requests or creating issues.
+* 🌐 [Visit our Scramjet.org page](https://scramjet.org)  - check out our website for more information about our Scramjet team, history and products.
 
-## **5. User's dictionary :book:**
+## **5. User's dictionary**
 
 There is a lot of terminology that we use in our project that may already be known to you. We have prepared a [dictionary](dictionary.md) of terms that you may find useful and which you will learn as you learn about Scramjet Platform. We try to keep the definitions short and simple.
 
 ---
 <br>
 
-### Thank you for reading, we hope you enjoyed it. If not, here is a random cheer up joke, that may make you smile :grin:
+### Thank you for reading, we hope you enjoyed it. If not, here is a random cheer up joke, that may make you smile 😁
 
+<br>
 <p></p>
 <p align="center">
     <a href="https://readme-jokes.vercel.app/api">
