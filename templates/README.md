@@ -9,7 +9,7 @@ You can use it as a base for your own samples 👉 [sample template](https://git
 
 In the following sections we will describe both templates' contents and show you how they can be used in your own project.
 
-## Work with JavaScript (Node.js) 
+## Work with JavaScript (Node.js)
 
 This application package template contains two files:
 

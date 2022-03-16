@@ -261,7 +261,7 @@ Software Development Kit. A collection of tools and libraries to create a softwa
 
 ### Sequence
 
-It is a compressed package (`*.tar.gz`) containing file with a manifest(eg. `package.json`), describing the app and its configuration (such as main file to run); and a **main file** (eg. `index.js`, `app.ts`) that contains a developer's code that consists of chained functions with a lightweight application business logic . Minimal sequence consists of 1 [function](#function).
+It is a package (application) containing a set of files. A file with a manifest(eg. `package.json`), describing the app and its configuration (such as main file to run); and a __main file__ (eg. `index.js`, `app.ts`) that contains a developer's code that consists of chained functions with a lightweight application business logic. Minimal Sequence consists of 1 [function](#function).
 
 ### Socket
 
@@ -277,9 +277,7 @@ standard input/standard output. Application communication channels with the outs
 
 ### STH <!--TODO-->
 
-### Supervisor
-
-An application supervising work of a single [instance](#instance). Communicates with [host](#host), returns health status of the sequence, runner, etc
+shortcut for Scramjet Transform Hub
 
 ### Synchronous
 

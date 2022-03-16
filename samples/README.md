@@ -1,6 +1,6 @@
 # Samples
 
-We have prepared some samples for you. We differentiated them according to the language in which they were written.
+Try out our samples prepared some samples for you. We differentiated them according to the language in which they were written.
 
 > 💡 **Please note that samples below require some previous installations before you start running them. Instructions are [here](../README.md#3-install-scramjet-transform-hub).**
 
