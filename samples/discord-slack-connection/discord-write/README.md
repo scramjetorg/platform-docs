@@ -26,7 +26,7 @@ si pack dist
 si seq send dist.tar.gz
 
 # start a sequence, this will output Instance ID. Provide DISCORD_WEBHOOK_URL as the second parameter
-si seq start <sequence-id> <DISCORD_WEBHOOK_URL>
+si seq start - <DISCORD_WEBHOOK_URL>
 
 # view messages in topic
 si topic get messages

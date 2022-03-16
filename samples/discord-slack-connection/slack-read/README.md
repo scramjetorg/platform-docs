@@ -28,7 +28,7 @@ si pack dist
 si seq send dist.tar.gz
 
 # start a sequence, this will output Instance ID. Provide SOCKET_MODE_TOKEN as the second parameter
-si seq start <sequence-id> <SOCKET_MODE_TOKEN>
+si seq start - <SOCKET_MODE_TOKEN>
 
 # view messages in topic
 si topic get messages

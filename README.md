@@ -40,7 +40,7 @@
     * [Review the package](#31-review-the-package)
     * [Run the sequence](#32-run-the-sequence)
 4. [Where to go next](#4-where-to-go-next)
-5. [User's dictionary](#5-users-dictionary-📖)
+5. [User's dictionary](#5-users-dictionary)
 
 ## **1. Introduction**
 
@@ -364,7 +364,7 @@ Here you can find more resources related to Scramjet Transform Hub:
 * 🧑‍💻 [Contribute to STH development](https://github.com/scramjetorg/transform-hub)  - please feel free to contribute to STH development by submitting pull requests or creating issues.
 * 🌐 [Visit our Scramjet.org page](https://scramjet.org)  - check out our website for more information about our Scramjet team, history and products.
 
-## **5. User's dictionary 📖**
+## **5. User's dictionary**
 
 There is a lot of terminology that we use in our project that may already be known to you. We have prepared a [dictionary](dictionary.md) of terms that you may find useful and which you will learn as you learn about Scramjet Platform. We try to keep the definitions short and simple.
 

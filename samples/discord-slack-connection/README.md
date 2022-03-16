@@ -1,5 +1,7 @@
 # Discord to Slack (and vice versa) Connection
 
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+
 In this project you will find 4 STH sequences:
 
 * [discord-read](./discord-read/)
@@ -17,7 +19,9 @@ As there is no way to map message IDs between the two applications, threads are 
 
 In order to get this working, sequences must keep a track of posted and written IDs.
 
-## Know Issues
+## Known Issues
+
+<!-- TODO - check if this issues still apply -->
 
 STH `v0.13` if installed via `npm` has an issue with `objectMode: true`. You will get an error like:
 

@@ -1,6 +1,5 @@
-## scraping
+# scraping
 
----
 This is a simple and trivial example of scraping web pages.
 
 The scraper takes URL and CSS ID selector as input parameters and returns data every second.
@@ -8,9 +7,9 @@ The scraper takes URL and CSS ID selector as input parameters and returns data e
 To test this please use URL: <https://www.timeanddate.com/worldclock/poland> and ID: `#ct`. Scraper will connect to the website and read (scrap) the current time. Next, it returns this as a stream.
 As URL and ID are parametrized we can use other websites too. For example, URL: <https://time.is/> and ID: `#clock`
 
-> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open two terminals and run the following commands:
 
@@ -43,21 +42,21 @@ si pack dist
 si seq send dist.tar.gz
 
 # start a sequence, this will output Instance ID. As the CSS ID has # (hash) sign surround it with quotes:
-si seq start <sequence-id> https://www.timeanddate.com/worldclock/poland '#ct'
+si seq start - https://www.timeanddate.com/worldclock/poland '#ct'
 
 # See output
-si inst output <instance-id>
+si inst output -
 
 # Optional commands below:
 
 # Check console.log messages
-si inst stdout <instance-id>
+si inst stdout -
 
 # Check console.error messages
-si inst stderr <instance-id>
+si inst stderr -
 ```
 
-### Output
+## Output
 
 ```bash
 $ si instance output 41783884-2e97-4b78-9639-aac5d7ff8447

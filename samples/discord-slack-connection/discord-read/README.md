@@ -15,8 +15,8 @@ In order to read messages from Discord we need to create a bot first:
 * Expand `OAuth2` and select `URL Generator`
 * Select `bot` under scopes and `Read Messages/View Channels` under bot permissions. Copy URL
 * Paste the URL into web browser address bar. Connect to Discord message will appear. Select your server from `Add To Server` dropdown and click on `Continue`
-* Confirm permissions on the next screen by clicking `Authorise` button.
-* You will get a confirmation saying: _you may now close this window or tab_.
+* Confirm permissions on the next screen by clicking `Authorize` button.
+* You will get a confirmation saying: *you may now close this window or tab*.
 
 Create a file called `config.json` and add:
 
@@ -44,7 +44,7 @@ si pack dist
 si seq send dist.tar.gz
 
 # start a sequence, this will output Instance ID.
-si seq start <sequence-id>
+si seq start -
 
 # view messages in topic
 si topic get messages

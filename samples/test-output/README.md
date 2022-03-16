@@ -1,11 +1,10 @@
-## test-output
+# test-output
 
----
 Sequence that just writes random values to output stream.
 
 > :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open two terminals and run the following commands:
 
@@ -32,13 +31,13 @@ si pack . -o test-output.tar.gz
 si seq send test-output.tar.gz
 
 # start a sequence, this will output Instance ID
-si seq start <sequence-id>
+si seq start -
 
 # See output of instance process
-si inst output <instance-id>
+si inst output -
 ```
 
-### Output
+## Output
 
 ```bash
 Test 6

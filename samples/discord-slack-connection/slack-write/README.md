@@ -27,7 +27,7 @@ si pack dist
 si seq send dist.tar.gz
 
 # start a sequence, this will output Instance ID. Provide SLACK_WEBHOOK_URL as the second parameter
-si seq start <sequence-id> <SLACK_WEBHOOK_URL>
+si seq start - <SLACK_WEBHOOK_URL>
 
 # view messages in topic
 si topic get messages

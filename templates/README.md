@@ -1,4 +1,4 @@
-# Templates :pencil:
+# Templates
 
 We have prepared for you some templates. User templates allow you to apply predefined settings to start building your own applications. Using templates, you can easily set up multiple applications with similar settings.
 
@@ -56,13 +56,13 @@ module.exports = function(input) {
 };
 ```
 
-And this is what our template app does, it takes any input that will be sent or piped to it and simply writes it to the output stream. Of course you can add some logic to this function, but to keep the template simple we will just write the data to the output stream.
+This is what our template app does, it takes any input that will be sent or piped to it and simply writes it to the output stream. Of course you can add some logic to this function, but to keep the template simple we will just write the data to the output stream.
 
 To see how this template works you can run it with a few simple commands written below:
 
-> :bulb: **Note!** To run this template you need to have those two packages installed: `npm install -g @scramjet/sth @scramjet/cli`
+> 💡 **Note!** To run this template you need to have those two packages installed: `npm install -g @scramjet/sth @scramjet/cli`
 
-### **Open 3 terminals** and run the following commands and let the magic begin :magic_wand::
+### **Open 3 terminals** and run the following commands and let the magic begin 🪄
 
 #### 1️⃣ terminal:
 
@@ -88,11 +88,11 @@ The command below will run the app in the background. The app generates random n
 
 What you can see in the attached image is 3 terminals that illustrates the template's workflow:
 
-Terminal :one: shows the logs of running `scramjet-transform-hub` process.
+Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
 
-Terminal :two: shows the output of the program that we launched using STH CLI.
+Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
 
-Terminal :three: shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input.
+Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input.
 
 ## Work with TypeScript (ts-node)
 
@@ -100,7 +100,7 @@ TypeScript compiles to JavaScript. It is a superset of JavaScript, which means t
 
 This application package template contains files:
 
-- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](##Work-with-JavaScript-(Node.js)) with a small but :exclamation: **VERY IMPORTANT** :exclamation: difference is that the entry file given in `"main"` property must be typed in without any extension, like in the example below. This is because this `package.jason` will be copied into the `dist` directory, which eventually will be archived into a `.tar.gz` format and sent to the STH.
+- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](##Work-with-JavaScript-(Node.js)) with a small but ❗**VERY IMPORTANT**❗ difference. The file given in `"main"` property must be typed in without any extension, like in the example below. This is because this `package.json` will be copied into the `dist` directory, which eventually will be archived into a `.tar.gz` format and sent to the STH.
 
 ```json
 {
@@ -129,7 +129,7 @@ This application package template contains files:
 }
 ```
 
-:nerd_face:  If you would like to learn more about the configuration in TypeScript projects, please refer to the documentation on [TypeScript official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) and [ts-node official website](https://typestrong.org/ts-node/).
+🤓 If you would like to learn more about the configuration in TypeScript projects, please refer to the documentation on [TypeScript official website](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) and [ts-node official website](https://typestrong.org/ts-node/).
 
 - **dist** - this is a folder where the compiled JavaScript files will be stored. It will be created after running this script: `npm run build` together with compiled `index.js` file.
 
@@ -140,7 +140,7 @@ This file will be compiled into manila JavaScript and stores in `index.js` file 
 
 In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
 
-> :book: In the example below we use `@scramjet/types` module. Scramjet is a very nice and functional stream programming framework. You might find it very useful while writing your app or dealing with streams in general. More info, examples and usage you can find [here](https://www.npmjs.com/package/scramjet).
+> 📖 In the example below we use `@scramjet/types` module. Scramjet is a very nice and functional stream programming framework. You might find it very useful while writing your app or dealing with streams in general. More info, examples and usage you can find [here](https://www.npmjs.com/package/scramjet).
 
 ```typescript
 import { ReadableApp } from "@scramjet/types";
@@ -177,7 +177,7 @@ And this is what our template app does, it takes any input that will be sent or 
 
 To see how this template works you can run it with a few simple commands written below:
 
-> :bulb: **Note!** To run this template you need to have those two packages installed: `npm install -g @scramjet/sth @scramjet/cli`
+> 💡 **Note!** To run this template you need to have those two packages installed: `npm install -g @scramjet/sth @scramjet/cli`
 
 ### **Open 3 terminals** and run the following commands and let the magic begin :magic_wand::
 
@@ -208,8 +208,8 @@ The command below will run the app in the background. The app generates random n
 
 What you can see in the attached image is 3 terminals that illustrates the template's workflow:
 
-Terminal :one: shows the logs of running `scramjet-transform-hub` process.
+Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
 
-Terminal :two: shows the output of the program that we launched using STH CLI.
+Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
 
-Terminal :three: shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input.
+Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input.

@@ -1,11 +1,10 @@
-## simple-counter
+# simple-counter
 
----
 A simple sequence, that counts and logs the number in one-second intervals. As a default, the counter is started with 0 and ends with 1000. These values can be changed by passing the `start` and `end` parameters.
 
-> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open two terminals and run the following commands:
 
@@ -32,13 +31,13 @@ si pack . -o simple-counter-js.tar.gz
 si seq send simple-counter-js.tar.gz
 
 # start a sequence, this will output Instance ID
-si seq start <sequence-id>
+si seq start -
 
 # See output of instance process
-si inst stdout <instance-id>
+si inst stdout -
 ```
 
-### Output
+## Output
 
 ```bash
 { x: 1 }
@@ -58,7 +57,7 @@ si inst stdout <instance-id>
 ...
 ```
 
-### Running the same sequence but with different parameters
+## Running the same sequence but with some parameters
 
 ```bash
 # go to 'simple-counter-js' directory
@@ -74,13 +73,13 @@ si pack . -o simple-counter-js.tar.gz
 si seq send simple-counter-js.tar.gz
 
 # start a sequence with "start" and "end" parameters, this will output Instance ID
-si seq start <sequence-id> 100 2000
+si seq start - 100 2000
 
 # See output of instance process
-si inst stdout <instance-id>
+si inst stdout -
 ```
 
-### Output
+## Output
 
 ```bash
 # the counter will start counting at 100 and finish at 200

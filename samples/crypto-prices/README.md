@@ -1,11 +1,10 @@
-## crypto-prices  ![bitcoin](../../images/bitcoin1.png) ![zcash](../../images/zcash1.png) ![ethereum](../../images/etherum1.png)
+# crypto-prices ![bitcoin](../../images/bitcoin1.png) ![zcash](../../images/zcash1.png) ![ethereum](../../images/etherum1.png)
 
----
-Sequence that keeps printing current crypto prices for a provided pair of currencies every 1s.
+Sequence that keeps printing current crypto prices for a provided pair of currencies every 3 seconds.
 
-> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open two terminals and run the following commands:
 
@@ -35,15 +34,15 @@ si pack dist/ -o crypto-prices.tar.gz
 si seq send crypto-prices.tar.gz
 
 # start a sequence with currency parameters, this will output Instance ID
-si seq start <sequence-id> ETH USD
+si seq start - ETH USD
 
 # See output
-si inst output <instance-id>
+si inst output -
 ```
 
-### Output
+## Output
 
-Once you run `si inst output <instance-id>` command you will get output like this one:
+Once you run `si inst output -` command you will get output like this one:
 
 ```bash
 Request ok: http://127.0.0.1:8000/api/v1/instance/87442a03-a8ca-451c-b89f-d5371774c2f3/output status: 200 OK

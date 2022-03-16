@@ -1,11 +1,10 @@
-## transform-string-stream
+# transform-string-stream
 
-----
 Sequence that modifies incoming stream of strings by adding a prefix and a suffix.
 
-> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open three terminals and run the following commands:
 
@@ -35,17 +34,17 @@ si pack dist/ -o transform-string-stream.tar.gz
 si seq send transform-string-stream.tar.gz
 
 # start a sequence, this will output Instance ID
-si seq start <sequence-id> Hello Bye
+si seq start - Hello Bye
 
 # See output of instance process
-si inst output <instance-id>
+si inst output -
 ```
 
 **The third terminal**
 
 ```bash
 # Send file to the instance input steam
-si inst input <instance-id> name.txt
+si inst input - name.txt
 # the date will be read from the file 'name.txt'
 ```
 
@@ -53,12 +52,12 @@ or
 
 ```bash
 # Send text to the instance input steam
-si inst input <instance-id>
+si inst input -
 > John
 # if file not given the data will be read from stdin
 ```
 
-### Output
+## Output
 
 ```bash
 # Now you should see "Hello John Bye" in output console
