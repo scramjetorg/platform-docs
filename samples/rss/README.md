@@ -7,7 +7,7 @@ If score is grater than 0 it gets added to a list of links and short details are
 
 ## Configuration
 
-Pass SLACK_WEBHOOK_URL as input parameter when starting sequence.
+Pass SLACK_WEBHOOK_URL as input parameter when starting Sequence.
 
 Keywords are configured in `./config/keywords.json` file. Use `word` and `weight` as in the example:
 
@@ -26,13 +26,13 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send dist.tar.gz
 
-# start a sequence, this will output Instance ID. Provide slack webhook URL as input parameter
+# start a Sequence, this will output Instance ID. Provide slack webhook URL as input parameter
 si seq start - <SLACK_WEBHOOK_URL>
 
 # See output - actual output will be send to slack channel

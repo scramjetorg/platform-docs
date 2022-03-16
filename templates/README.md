@@ -2,14 +2,14 @@
 
 We have prepared for you some templates. User templates allow you to apply predefined settings to start building your own applications. Using templates, you can easily set up multiple applications with similar settings.
 
-You can use it as a base for your own samples 👉 [sample template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/main/templates). For this moment we support two variants of template in two programming languages:
+You can use it as a base for your own samples 👉 [sample template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/HEAD/templates). For this moment we support two variants of template in two programming languages:
 
-- JavaScript (Node.js) 👉 [template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/main/templates/template-js)
-- TypeScript (ts-node) 👉 [template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/main/templates/template-ts)
+- JavaScript (Node.js) 👉 [template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/HEAD/templates/template-js)
+- TypeScript (ts-node) 👉 [template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/HEAD/templates/template-ts)
 
 In the following sections we will describe both templates' contents and show you how they can be used in your own project.
 
-## Work with JavaScript (Node.js)
+## Work with JavaScript (Node.js) 
 
 This application package template contains two files:
 
@@ -73,14 +73,14 @@ To see how this template works you can run it with a few simple commands written
 - `cd templates`
 - `si pack template-js`
 - `si seq send template-js.tar.gz`
-- `si sequence start <sequence-id>`
-- `si instance output <instance-id>`
+- `si sequence start -` which is the same as `si sequence start <sequence-id>`
+- `si q output -` which is the same as `si q output <q-id>`
 
 #### 3️⃣ terminal:
 
-The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to instance's `/input` endpoint (to instance which will be run on sth). In this way we are sending an input stream that will be consumed by our template app.
+The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to q's `/input` endpoint (to q which will be run on STH). In this way we are sending an input stream that will be consumed by our template app.
 
-- `node ./tools/stream-gen-tool/numbers-gen.js <instance-id>`
+- `node ./tools/stream-gen-tool/numbers-gen.js <q-id>`
 
 ### **Expected output:**
 
@@ -92,7 +92,7 @@ Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
 
 Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
 
-Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input.
+Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the q's input.
 
 ## Work with TypeScript (ts-node)
 
@@ -193,14 +193,14 @@ To see how this template works you can run it with a few simple commands written
 - `cp -r node_modules/ package.json dist/` - it copies node_modules and package.json to the dist folder
 - `si pack dist` - it creates a tar.gz archive of the dist folder
 - `si sequence send dist.tar.gz` - it sends the archive to STH
-- `si sequence start <sequence-id>` - it starts the sequence (started sequence turns into instance)
-- `si instance output <instance-id>`- it shows the instance's output stream in the terminal
+- `si sequence start <sequence-id>` - it starts the Sequence (started Sequence turns into Instance)
+- `si inst output <instance-id>`- it shows the Instance's output stream in the terminal
 
 #### 3️⃣ terminal:
 
-The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to instance's `/input` endpoint (to instance which will be run on sth). In this way we are sending an input stream that will be consumed by our template app.
+The command below will run the app in the background. The app generates random numbers from 1 to 10 and write them to q's `/input` endpoint (to q which will be run on STH). In this way we are sending an input stream that will be consumed by our template app.
 
-- `node ./tools/stream-gen-tool/numbers-gen.js <instance-id>`
+- `node ./tools/stream-gen-tool/numbers-gen.js <q-id>`
 
 ### **Expected output:**
 
@@ -212,4 +212,4 @@ Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
 
 Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
 
-Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the instances's input.
+Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the q's input.

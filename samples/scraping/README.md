@@ -35,13 +35,13 @@ npm run build
 # prepare standalone JS package
 cp -r node_modules package.json dist/
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send dist.tar.gz
 
-# start a sequence, this will output Instance ID. As the CSS ID has # (hash) sign surround it with quotes:
+# start a Sequence, this will output Instance ID. As the CSS ID has # (hash) sign surround it with quotes:
 si seq start - https://www.timeanddate.com/worldclock/poland '#ct'
 
 # See output

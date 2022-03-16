@@ -1,6 +1,6 @@
 # Slack Write
 
-Read messages from topic and write to slack.
+Read messages from topic and write to Slack.
 
 In order to get SLACK_WEBHOOK_URL you need to create application in Slack first.
 Please refer to notes in [slack-read](../slack-read/) example.
@@ -20,13 +20,13 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send dist.tar.gz
 
-# start a sequence, this will output Instance ID. Provide SLACK_WEBHOOK_URL as the second parameter
+# start a Sequence, provide SLACK_WEBHOOK_URL as the second parameter
 si seq start - <SLACK_WEBHOOK_URL>
 
 # view messages in topic

@@ -27,13 +27,13 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist/ -o mediawiki.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send mediawiki.tar.gz
 
-# start a sequence, this will output Instance ID. Search is optional and can be used to filter out results, e.g. "data.server_name === 'en.wikipedia.org'"
+# start a Sequence, this will output Instance ID. Search is optional and can be used to filter out results, e.g. "data.server_name === 'en.wikipedia.org'"
 si seq start - [<search>]
 
 # See output

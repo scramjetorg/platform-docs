@@ -24,16 +24,16 @@ cd samples/test-output
 # install dependencies
 npm install
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack . -o test-output.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send test-output.tar.gz
 
-# start a sequence, this will output Instance ID
+# start a Sequence, this will output Instance ID
 si seq start -
 
-# See output of instance process
+# See output of Instance process
 si inst output -
 ```
 

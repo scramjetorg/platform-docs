@@ -36,13 +36,13 @@ si seq send crypto-prices.tar.gz
 # start a sequence with currency parameters, this will output Instance ID
 si seq start - ETH USD
 
-# See output
+# see output
 si inst output -
 ```
 
 ## Output
 
-Once you run `si inst output -` command you will get output like this one:
+Once you run `si inst output -` command you should get an output similar to this one:
 
 ```bash
 Request ok: http://127.0.0.1:8000/api/v1/instance/87442a03-a8ca-451c-b89f-d5371774c2f3/output status: 200 OK

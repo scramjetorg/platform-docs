@@ -29,16 +29,16 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send dist.tar.gz
 
-# start a sequence, this will output Instance ID. Provide number of minutes that we pause between request to SO API. API key is optional
+# start a Sequence, this will output Instance ID. Provide number of minutes that we pause between request to SO API. API key is optional
 si seq start - <minutes> <request_key>
 
-# See output
+# See Instance output
 si inst output -
 
 # Optional commands below:

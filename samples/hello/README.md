@@ -24,23 +24,23 @@ cd samples/hello
 # install dependencies
 npm install
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack . -o hello.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send hello.tar.gz
 
-# start a sequence, this will output Instance ID
+# start a Sequence, this will output I ID
 si seq start -
 
-# See output of instance process
+# See output
 si inst output -
 ```
 
 **The third terminal**
 
 ```bash
-# Send file to instance input steam
+# Send file to Instance input steam
 si inst input -
 # if file not given the data will be read from stdin
 # type "John"
@@ -52,6 +52,6 @@ John
 ```bash
 # Now you should see "Hello John" in output console
 $ si inst output 7a1ffd59-9d1a-4e8f-a246-020124803931
-Request ok: http://127.0.0.1:8000/api/v1/instance/7a1ffd59-9d1a-4e8f-a246-020124803931/output status: 200 OK
+Request ok: http://127.0.0.1:8000/api/v1/I/7a1ffd59-9d1a-4e8f-a246-020124803931/output status: 200 OK
 Hello John
 ```

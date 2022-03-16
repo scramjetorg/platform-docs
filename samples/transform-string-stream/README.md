@@ -27,23 +27,23 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist/ -o transform-string-stream.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send transform-string-stream.tar.gz
 
-# start a sequence, this will output Instance ID
+# start a Sequence, this will output Instance ID
 si seq start - Hello Bye
 
-# See output of instance process
+# See output of Instance process
 si inst output -
 ```
 
 **The third terminal**
 
 ```bash
-# Send file to the instance input steam
+# Send file to the Instance input steam
 si inst input - name.txt
 # the date will be read from the file 'name.txt'
 ```
@@ -51,7 +51,7 @@ si inst input - name.txt
 or
 
 ```bash
-# Send text to the instance input steam
+# Send text to the Instance input steam
 si inst input -
 > John
 # if file not given the data will be read from stdin

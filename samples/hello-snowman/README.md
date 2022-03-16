@@ -2,17 +2,17 @@
 
 Sequence that reads incoming stream (input), and and modifies it by adding a text message according to the incoming data.
 
-Stream is generated in [stream-gen.js](../tools/stream-gen-tool/stream-gen.js) file, where numbers in range of <-50,50> are randomly chosen and sent as Celsius degrees to `hello-snowman` instance API endpoint `/input`.
+Stream is generated in [stream-gen.js](../tools/stream-gen-tool/stream-gen.js) file, where numbers in range of <-50,50> are randomly chosen and sent as Celsius degrees to `hello-snowman` Instance API endpoint `/input`.
 
 Our `hello-snowman` app will read and interpret these Celsius degrees, and will inform us about state of our Snowman:
 
-- if temperature will be 0 or below, sequence will return message:
+- if temperature will be 0 or below, Sequence will return message:
 
 ```bash
 Snowman ⛄ is freezing 🥶 Winter is coming ❄️ ❄️ ❄️ ❄️ ❄️
 ```
 
-- in the other case (temperature above 0 degrees), sequence will return message:
+- in the other case (temperature above 0 degrees), Sequence will return message:
 
 ```bash
  Snowman ⛄ is melting! 🥵
@@ -40,23 +40,23 @@ cd samples/hello-snowman
 # install dependencies
 npm install
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack . -o hello-snowman.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send hello-snowman.tar.gz
 
-# start a sequence, this will output Instance ID
+# start a Sequence, this will output Instance ID
 si seq start -
 
-# See output of instance process
+# See output of Instance process
 si inst output -
 ```
 
 **In the third terminal**
 
 ```bash
-# Start stream generator tool with instance ID as parameter
+# Start stream generator tool with Instance ID as parameter
 node ./tools/stream-gen-tool/stream-gen.js <instance_id>
 ```
 

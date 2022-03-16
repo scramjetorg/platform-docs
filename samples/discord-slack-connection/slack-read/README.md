@@ -21,13 +21,13 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send dist.tar.gz
 
-# start a sequence, this will output Instance ID. Provide SOCKET_MODE_TOKEN as the second parameter
+# start a Sequence, provide SOCKET_MODE_TOKEN as the second parameter
 si seq start - <SOCKET_MODE_TOKEN>
 
 # view messages in topic
