@@ -1,6 +1,6 @@
 [Home](README.md)
 
-# Dictionary :book:
+# Dictionary 📖
 
 The idea of dictionary is not new. This one is meant to bring closer the terminology that we use in our project.
 Even when we think that some word has a different meaning in the outside world, here we have description what it means in case of Scramjet Platform project.
@@ -14,10 +14,7 @@ If you think that some word definitions are missing, please feel free to contact
 
 ### Account
 
-User's account for the Scramjet platform. It is used to store user's data and to authenticate user's actions. We differentiate between two types of accounts:
-
-- business account
-- individual account
+User's account for the Scramjet platform. It is used to store user's data and to authenticate user's actions.
 
 ### API
 
@@ -31,6 +28,10 @@ Collection of [sequences](#sequence) implementing a given business requirement d
 
 Application Interface is an interface exposed by [Sequence](#sequence) to communicate with the [Runner](runner)
 
+### Arguments
+
+Instance parameters, also known as function arguments. They are passed to a Sequence during start and are used as Instance parameters, affecting how the Instance works. Specific handling of the parameters depends on the Sequence code. Arguments are optional, in particular, the Sequence might not require any arguments to be passed.
+
 ### Artifact
 
 Artifacts are byproducts of software development, e.g. project diagrams, plans, etc. In fact, this dictionary is also an [artifact](https://en.wikipedia.org/wiki/Artifact_(software_development))
@@ -43,7 +44,7 @@ Asynchronous execution of operations allows multiple processes/functions to happ
 
 ### CLI
 
-Command Line Interface. Command line tool to allows control over the platform
+Command Line Interface. Command line tool that allows to control over the platform
 
 ### Client
 
@@ -51,7 +52,11 @@ Client is a very multi meaning word so let's try not to use it. It is allowed in
 
 ### Compilation
 
-Compilation is a process of transforming a source code written in any programming language(human readable) into machine code(machine language), which is executed by the computer
+Compilation is a process of transforming a source code written in any programming language (human readable) into machine code (machine language), which is executed by the computer
+
+### Config
+
+<!-- TODO -->
 
 ### Container
 
@@ -59,6 +64,7 @@ Compilation is a process of transforming a source code written in any programmin
 
 ### CSH
 
+<!-- TODO - if "Host" will be deprecated -> change to "Hub" -->
 Cloud Server Host -> [Host](#host)
 
 ### CSH Client
@@ -111,7 +117,19 @@ ESLint is a tool for a static code analysis ([linter](#linter)). It identifies a
 
 ### Endpoint
 
-<!--TODO-->
+This is an API endpoint which can be considered as a specific point of entry and also a point that can be referenced by sending requests. For example it is very common do refer to the endpoint to download soma data
+
+### Event
+
+In the context of Scramjet Cloud Platform event is a [JSON](#json) message that you send to the [Instance](#instance), that is interpreted by the Instance logic - can be processed or affect how the Instance works (change parameters). Handling the Instance message is specific for the [Sequence](#sequence) and depends on your Sequence code. More general event definition and functionality is explained by [wiki](https://en.wikipedia.org/wiki/Event_(computing))
+
+#### Event name
+
+<!-- TODO -->
+
+#### Event message
+
+<!-- TODO -->
 ## F
 
 ### Function
@@ -126,9 +144,16 @@ Gherkin is a domain-specific programming language created to write behavior desc
 
 ## H
 
+### Health Check
+
+<!-- TODO -->
+
 ### Host
 
-A set of [instances](#instance) installed on the single operating system (host) together with software that controls instances and allows communication with external elements of the system via protocols (e.g. http)
+A set of [nstances](#instance) installed on the single operating system (host) together with software that controls instances and allows communication with external elements of the system via protocols (e.g. http)
+
+### Hub
+<!-- TODO - should we replace it with a "Host" ?? -->
 
 ## I
 
@@ -138,7 +163,8 @@ An interface for managing the space in which the [prerunner](#prerunner) and [ru
 
 ### Instance
 
-It is a running [sequence](#sequence). A bundle containing [runner](#runner) that runs a [sequence](#sequence) which is controlled by [supervisor](#supervisor).
+It is a running [Sequence](#sequence). After Sequence has been started it becomes an Instance. As Sequence can be started multiple times (e.g. with different parameters) it means that every Instance is literally an instance of a Sequence. Instance comes with its own [CLI](#cli), which you can explore in the [npm docs](https://www.npmjs.com/package/@scramjet/cli)
+ or by using command `si inst help` (install CLI first -> `npm install -g @scramjet/cli`)
 
 ### Interface
 
@@ -146,9 +172,8 @@ In the context of Object-Oriented Programming (OOP), it is a set of methods and 
 
 ### Input
 
-Input is a set of parameters/values that are passed to the function.
-
 <!--TODO-->
+Input is a set of parameters/values that are passed to the function(s) defined in a [Sequence](#sequence). It is delivered to the [Instance](#instance) as a stream in any form of data (JSON, text, buffer, etc.).
 
 ### Image
 
@@ -171,7 +196,8 @@ The image can exist without the container. A container needs an image to run it 
 
 ### LifeCycle Controller (LCC)
 
-Key [instance](#instance) element, [Supervisor's](#supervisor) component, supervising its work:
+<!-- TODO - edit due to Supervisor removal -->
+Key [Instance](#instance) element, [Supervisor's](#supervisor) component, supervising its work:
 
 - receives a stream with a sequence from [CSH](#host),
 - passes this stream to [LiveCycle Docker Adapter](#lifecycle-docker-adapter-lcda)
@@ -184,6 +210,7 @@ Key [instance](#instance) element, [Supervisor's](#supervisor) component, superv
 
 ### LifeCycle Docker Adapter (LCDA)
 
+<!-- TODO - edit due to Supervisor removal -->
 One of the [supervisor's](#supervisor) components. LCDA is an interface that inherits from [IlifeCycle](#ilifecycle-ilc), it is responsible for communication with Docker:
 
 - accepts stream with sequence from [LCC](#lifecycle-controller-lcc),
@@ -201,12 +228,14 @@ Lifecycle Interface is an interface that lets [LifeCycle Controller](#lifecycle-
 
 ### Loadcheck
 
+<!-- TODO - edit due to Supervisor removal -->
 One of the [supervisor's](#supervisor) components, which is responsible for collecting information about the work status of an [instance](#instance) and forwarding it to [LCC](#lifecycle-controller-lcc)
 
 ## M
 
 ### Manager
 
+<!-- TODO - do we want the user to know that? -->
 in the context of the Scramjet platform, Cloud Platform Manager is a host management software that provides service-discovery, controls the scaling of individual instances in accordance with the programmed logic and client configuration, providing [API](#api)
 
 ### MultiHost
@@ -231,6 +260,10 @@ in the context of the Scramjet platform, Cloud Platform Manager is a host manage
 
 Complete, default working environment for our users. Application, host and instance management center
 
+### Ports
+
+<!-- TODO -->
+
 ## R
 
 ### Routing
@@ -247,9 +280,12 @@ Catching a query from the user and redirecting it to the appropriate API functio
 
 ### Runner
 
-An executable written in one of the supported programming languages that starts the [sequence](#sequence) created by developer, inside the container controlled by the [supervisor](#supervisor)
+An executable written in one of the supported programming languages that starts the [Sequence](#sequence) created by developer, inside the container
 
 ## S
+
+### Scalability
+<!-- TODO -->
 
 ### Scramjet
 
@@ -261,7 +297,7 @@ Software Development Kit. A collection of tools and libraries to create a softwa
 
 ### Sequence
 
-It is a package (application) containing a set of files. A file with a manifest(eg. `package.json`), describing the app and its configuration (such as main file to run); and a __main file__ (eg. `index.js`, `app.ts`) that contains a developer's code that consists of chained functions with a lightweight application business logic. Minimal Sequence consists of 1 [function](#function).
+It is a package (application) containing a set of files. A file with a manifest(eg. `package.json`), describing the app and its configuration (such as main file to run); and a __main file__ (eg. `index.js`, `app.ts`) that contains a developer's code that consists of chained functions with a lightweight application business logic. Minimal Sequence consists of 1 [function](#function). It needs to be packed (compressed into `tar.gz` format) before sending it to [STH](#sth)
 
 ### Socket
 
@@ -271,12 +307,14 @@ Socket is a kind of an endpoint in a two-way communication channel between the s
 
 [Secure Shell](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)). It's a network cryptographic protocol
 
-### stdin/stdout/stderr <!--TODO-->
+### stdin/stdout/stderr
 
-standard input/standard output. Application communication channels with the outside world (e.g. the console). Stdin allows you to enter information into an application (e.g. from the keyboard). stdout allows you to display messages from the application, e.g. on a monitor/printer, etc
+<!--TODO-->
+standard input/standard output/standard error. Application communication channels with the outside world (e.g. the console). Stdin allows you to enter information into an application (e.g. from the keyboard). stdout allows you to display messages from the application, e.g. on a monitor/printer, etc., stderr is a channel which expose the effects of error handling in the application
 
-### STH <!--TODO-->
+### STH
 
+<!--TODO-->
 shortcut for Scramjet Transform Hub
 
 ### Synchronous
