@@ -1,13 +1,12 @@
-## stack-overflow
+# stack-overflow
 
----
 Get number of changes in Stack Overflow tag count.
 
 This queries SO API every X minutes, gathers, compares and outputs result as difference.
 
-> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open two terminals and run the following commands:
 
@@ -30,28 +29,28 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send dist.tar.gz
 
-# start a sequence, this will output Instance ID. Provide number of minutes that we pause between request to SO API. API key is optional
-si seq start <sequence-id> <minutes> <request_key>
+# start a Sequence, this will output Instance ID. Provide number of minutes that we pause between request to SO API. API key is optional
+si seq start - <minutes> <request_key>
 
-# See output
-si inst output <instance-id>
+# See Instance output
+si inst output -
 
 # Optional commands below:
 
 # Check console.log messages
-si inst stdout <instance-id>
+si inst stdout -
 
 # Check console.error messages
-si inst stderr <instance-id>
+si inst stderr -
 ```
 
-### Example output
+## Example output
 
 ```bash
 {"diff":{"python":1,"c#":1,"android":1,"html":2,"jquery":1,"c++":1,"css":1,"node.js":1,"reactjs":1,".net":1,"swift":2,"xml":1,"vb.net":1,"amazon-web-services":1,"function":-1,"csv":1},"timestamp":1632986938780}

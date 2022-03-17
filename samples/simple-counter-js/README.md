@@ -1,11 +1,10 @@
-## simple-counter
+# simple-counter
 
----
-A simple sequence, that counts and logs the number in one-second intervals. As a default, the counter is started with 0 and ends with 1000. These values can be changed by passing the `start` and `end` parameters.
+A simple Sequence, that counts and logs the number in one-second intervals. As a default, the counter is started with 0 and ends with 1000. These values can be changed by passing the `start` and `end` parameters.
 
-> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open two terminals and run the following commands:
 
@@ -25,20 +24,20 @@ cd samples/simple-counter-js
 # instal dependencies
 npm install
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack . -o simple-counter-js.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send simple-counter-js.tar.gz
 
-# start a sequence, this will output Instance ID
-si seq start <sequence-id>
+# start a Sequence, this will output Instance ID
+si seq start -
 
-# See output of instance process
-si inst stdout <instance-id>
+# See output of Instance process
+si inst stdout -
 ```
 
-### Output
+## Output
 
 ```bash
 { x: 1 }
@@ -58,7 +57,7 @@ si inst stdout <instance-id>
 ...
 ```
 
-### Running the same sequence but with different parameters
+## Running the same Sequence but with some parameters
 
 ```bash
 # go to 'simple-counter-js' directory
@@ -67,20 +66,20 @@ cd samples/simple-counter-js
 # instal node_modules
 npm install
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack . -o simple-counter-js.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send simple-counter-js.tar.gz
 
-# start a sequence with "start" and "end" parameters, this will output Instance ID
-si seq start <sequence-id> 100 2000
+# start a Sequence with "start" and "end" parameters, this will output Instance ID
+si seq start - 100 2000
 
-# See output of instance process
-si inst stdout <instance-id>
+# See output
+si inst stdout -
 ```
 
-### Output
+## Output
 
 ```bash
 # the counter will start counting at 100 and finish at 200

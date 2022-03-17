@@ -1,11 +1,10 @@
-## mediawiki
+# mediawiki
 
----
 Sequence that keeps printing mediawiki event stream.
 
-> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open two terminals and run the following commands:
 
@@ -28,29 +27,29 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist/ -o mediawiki.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send mediawiki.tar.gz
 
-# start a sequence, this will output Instance ID. Search is optional and can be used to filter out results, e.g. "data.server_name === 'en.wikipedia.org'"
-si seq start <sequence-id> [<search>]
+# start a Sequence, this will output Instance ID. Search is optional and can be used to filter out results, e.g. "data.server_name === 'en.wikipedia.org'"
+si seq start - [<search>]
 
 # See output
-si inst output <instance-id>
+si inst output -
 
 # Check console.log messages
-si inst stdout <instance-id>
+si inst stdout -
 
 # Check console.error messages
-si inst stderr <instance-id>
+si inst stderr -
 
 # Send event, e.g. `drain`: `si inst emit <instance-id> drain "{}"`
-si inst emit <instance-id> <event> <payload>
+si inst emit - <event> <payload>
 ```
 
-#### Example Event
+## Example Event
 
 ID
 

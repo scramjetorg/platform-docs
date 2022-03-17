@@ -1,11 +1,10 @@
-## test-output
+# test-output
 
----
 Sequence that just writes random values to output stream.
 
 > :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open two terminals and run the following commands:
 
@@ -25,20 +24,20 @@ cd samples/test-output
 # install dependencies
 npm install
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack . -o test-output.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send test-output.tar.gz
 
-# start a sequence, this will output Instance ID
-si seq start <sequence-id>
+# start a Sequence, this will output Instance ID
+si seq start -
 
-# See output of instance process
-si inst output <instance-id>
+# See output of Instance process
+si inst output -
 ```
 
-### Output
+## Output
 
 ```bash
 Test 6

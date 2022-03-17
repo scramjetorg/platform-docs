@@ -1,11 +1,10 @@
-## transform-string-stream
+# transform-string-stream
 
-----
 Sequence that modifies incoming stream of strings by adding a prefix and a suffix.
 
-> :bulb: **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
+> 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
-### Running
+## Running
 
 Open three terminals and run the following commands:
 
@@ -28,37 +27,37 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with sequence
+# make a compressed package with Sequence
 si pack dist/ -o transform-string-stream.tar.gz
 
-# send sequence to transform hub, this will output Sequence ID
+# send Sequence to transform hub, this will output Sequence ID
 si seq send transform-string-stream.tar.gz
 
-# start a sequence, this will output Instance ID
-si seq start <sequence-id> Hello Bye
+# start a Sequence, this will output Instance ID
+si seq start - Hello Bye
 
-# See output of instance process
-si inst output <instance-id>
+# See output of Instance process
+si inst output -
 ```
 
 **The third terminal**
 
 ```bash
-# Send file to the instance input steam
-si inst input <instance-id> name.txt
+# Send file to the Instance input steam
+si inst input - name.txt
 # the date will be read from the file 'name.txt'
 ```
 
 or
 
 ```bash
-# Send text to the instance input steam
-si inst input <instance-id>
+# Send text to the Instance input steam
+si inst input -
 > John
 # if file not given the data will be read from stdin
 ```
 
-### Output
+## Output
 
 ```bash
 # Now you should see "Hello John Bye" in output console
