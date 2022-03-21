@@ -14,7 +14,10 @@ If you think that some word definitions are missing, please feel free to contact
 
 ### Account
 
-User's account for the Scramjet platform. It is used to store user's data and to authenticate user's actions.
+User's account for the Scramjet platform. It is used to store user's data and to authenticate user's actions. We differentiate between two types of accounts:
+
+- business account
+- individual account
 
 ### API
 
@@ -64,7 +67,6 @@ Compilation is a process of transforming a source code written in any programmin
 
 ### CSH
 
-<!-- TODO - if "Host" will be deprecated -> change to "Hub" -->
 Cloud Server Host -> [Host](#host)
 
 ### CSH Client
@@ -150,10 +152,16 @@ Gherkin is a domain-specific programming language created to write behavior desc
 
 ### Host
 
-A set of [nstances](#instance) installed on the single operating system (host) together with software that controls instances and allows communication with external elements of the system via protocols (e.g. http)
+A set of instances installed on the single operating system (host) together with software that controls instances and allows communication with external elements of the system via protocols (e.g. http)
+
+- host -  a source of information or signals. The term can refer to a computer, smartphone, tablet or any electronic device. In a network, clients (users' machines) and servers are hosts because they are both sources of information in contrast to network devices, such as routers and switches, which only direct traffic.
+
+- host program - software/program that runs in a computer that provides the source of information or signals.
 
 ### Hub
-<!-- TODO - should we replace it with a "Host" ?? -->
+<!-- TODO - what is the difference between Hub and Host, we still use both terms.
+Maybe "Host" should be described in general context and "Hub" as a host in scramjet cloud platform's context?
+-->
 
 ## I
 
@@ -171,7 +179,6 @@ In the context of Object-Oriented Programming (OOP), it is a set of methods and 
 
 ### Input
 
-<!--TODO-->
 Input is a set of parameters/values that are passed to the function(s) defined in a [Sequence](#sequence). It is delivered to the [Instance](#instance) as a stream in any form of data (JSON, text, buffer, etc.).
 
 ### Image
@@ -234,11 +241,11 @@ One of the [supervisor's](#supervisor) components, which is responsible for coll
 
 ### Manager
 
-<!-- TODO - do we want the user to know that? -->
+<!-- TODO - do we want the user to know that? It will reveal the structure of our platform -->
 in the context of the Scramjet platform, Cloud Platform Manager is a host management software that provides service-discovery, controls the scaling of individual instances in accordance with the programmed logic and client configuration, providing [API](#api)
 
 ### MultiHost
-<!--TODO-->
+<!-- TODO - do we want the user to know that? It will reveal the structure of our platform -->
 
 ### MultiManager
 <!--TODO  DO WE WANT OUR USER TO KNOW THAT????-->
@@ -267,9 +274,9 @@ archived folder into `tar.gz` format ready to be sent to the Hub. Package contai
 
 Complete, default working environment for our users. Application, host and instance management center
 
-### Ports
+### Port
 
-<!-- TODO -->
+Port is a part of communication point. It is represented by a number and always associated with a host's IP address and the type of transport protocol used for communication.
 
 ## R
 
@@ -294,6 +301,10 @@ An executable written in one of the supported programming languages that starts 
 ### Scalability
 <!-- TODO -->
 
+
+### Scope
+<!-- TODO -->
+
 ### Scramjet
 
 Project as whole. Common misspell: __u__ instead of __a__. Beware!
@@ -310,13 +321,16 @@ A User's program to be executed on the Host, that contains a developer's code th
 
 Socket is a kind of an endpoint in a two-way communication channel between the server and the receiving software (client). Typically the socket is used for a specific flow of events. In the case of the client-server model, the socket on the server listens when requested by the client. The client connects to the server through the socket. The socket can be a socket on the disk or it can be an IP socket - so you can actually serve HTTP API on your disk - for real!
 
+
+### Space
+<!-- TODO -->
+
 ### SSH
 
 [Secure Shell](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)). It's a network cryptographic protocol
 
 ### stdin/stdout/stderr
 
-<!--TODO-->
 standard input/standard output/standard error. Application communication channels with the outside world (e.g. the console). Stdin allows you to enter information into an application (e.g. from the keyboard). stdout allows you to display messages from the application, e.g. on a monitor/printer, etc., stderr is a channel which expose the effects of error handling in the application
 
 ### STH
