@@ -119,7 +119,7 @@ ESLint is a tool for a static code analysis ([linter](#linter)). It identifies a
 
 ### Endpoint
 
-This is an API endpoint which can be considered as a specific point of entry and also a point that can be referenced by sending requests. For example it is very common do refer to the endpoint to download soma data
+This is an API endpoint which can be considered as a specific point of entry and also a point that can be referenced by sending the requests. For example, it is very common to send a request to API endpoint to get certain data.
 
 ### Event
 
@@ -159,6 +159,7 @@ A set of instances installed on the single operating system (host) together with
 - host program - software/program that runs in a computer that provides the source of information or signals.
 
 ### Hub
+
 <!-- TODO - what is the difference between Hub and Host, we still use both terms.
 Maybe "Host" should be described in general context and "Hub" as a host in scramjet cloud platform's context?
 -->
@@ -264,10 +265,10 @@ in the context of the Scramjet platform, Cloud Platform Manager is a host manage
 
 ### Package
 
-archived folder into `tar.gz` format ready to be sent to the Hub. Package contains:
+A folder archived in `tar.gz` format, which is ready to be sent to the Hub. Package contains:
 
 - [Sequence](#sequence) (e.g. `index.ts` or `main.js`, etc.),
-- configuration file in [JSON](#json) format and,
+- configuration file in [JSON](#json) format (named `package.json`) and,
 - all the dependencies needed to run the program on the Hub
 
 ### Platform
@@ -301,9 +302,8 @@ An executable written in one of the supported programming languages that starts 
 ### Scalability
 <!-- TODO -->
 
-
 ### Scope
-<!-- TODO -->
+A scope is a handy organization unit that lets a user switch between the currently used spaces and hubs. It is a named pair consisting of one space and one hub. This named pair is saved in the session config, which lets user work with different spaces and hubs sessions simultaneously. There can be multiple scopes, but only one can be used at once in a given session.
 
 ### Scramjet
 
@@ -320,7 +320,6 @@ A User's program to be executed on the Host, that contains a developer's code th
 ### Socket
 
 Socket is a kind of an endpoint in a two-way communication channel between the server and the receiving software (client). Typically the socket is used for a specific flow of events. In the case of the client-server model, the socket on the server listens when requested by the client. The client connects to the server through the socket. The socket can be a socket on the disk or it can be an IP socket - so you can actually serve HTTP API on your disk - for real!
-
 
 ### Space
 <!-- TODO -->
