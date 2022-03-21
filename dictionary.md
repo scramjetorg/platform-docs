@@ -163,8 +163,7 @@ An interface for managing the space in which the [prerunner](#prerunner) and [ru
 
 ### Instance
 
-It is a running [Sequence](#sequence). After Sequence has been started it becomes an Instance. As Sequence can be started multiple times (e.g. with different parameters) it means that every Instance is literally an instance of a Sequence. Instance comes with its own [CLI](#cli), which you can explore in the [npm docs](https://www.npmjs.com/package/@scramjet/cli)
- or by using command `si inst help` (install CLI first -> `npm install -g @scramjet/cli`)
+An Instance (computing instance) is a [Sequence](#sequence) that has been run and is currently being executed on the Hub. As Sequence can be started multiple times (e.g. with different parameters) it means that every Instance is literally an instance of a Sequence. Instance also can process an enormous amount of data on the fly without losing persistence. Instance comes with its own [CLI](#cli), which you can explore in the [npm docs](https://www.npmjs.com/package/@scramjet/cli) or by using command `si inst help` (install CLI first -> `npm install -g @scramjet/cli`)
 
 ### Interface
 
@@ -242,7 +241,7 @@ in the context of the Scramjet platform, Cloud Platform Manager is a host manage
 <!--TODO-->
 
 ### MultiManager
-<!--TODO-->
+<!--TODO  DO WE WANT OUR USER TO KNOW THAT????-->
 
 ## N
 
@@ -255,6 +254,14 @@ in the context of the Scramjet platform, Cloud Platform Manager is a host manage
 [Node Version Manager](https://github.com/nvm-sh/nvm). In the context of Scramjet it is the version manager for [npm](#npm)
 
 ## P
+
+### Package
+
+archived folder into `tar.gz` format ready to be sent to the Hub. Package contains:
+
+- [Sequence](#sequence) (e.g. `index.ts` or `main.js`, etc.),
+- configuration file in [JSON](#json) format and,
+- all the dependencies needed to run the program on the Hub
 
 ### Platform
 
@@ -297,7 +304,7 @@ Software Development Kit. A collection of tools and libraries to create a softwa
 
 ### Sequence
 
-It is a package (application) containing a set of files. A file with a manifest(eg. `package.json`), describing the app and its configuration (such as main file to run); and a __main file__ (eg. `index.js`, `app.ts`) that contains a developer's code that consists of chained functions with a lightweight application business logic. Minimal Sequence consists of 1 [function](#function). It needs to be packed (compressed into `tar.gz` format) before sending it to [STH](#sth)
+A User's program to be executed on the Host, that contains a developer's code that consists of one or more [function](#function)s with a lightweight application business logic. It needs to be packed into a [Package](#package) together with its dependencies (compressed into `tar.gz` format) before sending it to [STH](#sth)
 
 ### Socket
 
