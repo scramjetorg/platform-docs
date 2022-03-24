@@ -148,7 +148,45 @@ Gherkin is a domain-specific programming language created to write behavior desc
 
 ### Health Check
 
-<!-- TODO -->
+Information about the health of Instance. It informs whether an Instance is running and what is its resource consumption.
+
+It can be accessed directly through Instance API, in the CLI or Panel.
+
+The Instance API health check endpoint is /health. The following is an example health check from the Instance obtained with curl:
+
+```bash
+$ curl http://127.0.0.1:8000/api/v1/instance/e9432a4f-2a64-41a2-82f1-39503a2a18df/health |jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   226    0   226    0     0   220k      0 --:--:-- --:--:-- --:--:--  220k
+{
+  "cpuTotalUsage": 223212751,
+  "healthy": true,
+  "limit": 536870912,
+  "memoryMaxUsage": 14352384,
+  "memoryUsage": 12136448,
+  "networkRx": 19852,
+  "networkTx": 20174,
+  "containerId": "df0aa7adf027465da1dfb08edd0a66dc8ffc8e0bd1f5d0fc7fafecbefdac72c6"
+}
+```
+
+While the below is an example of health check from the same Instance but executed using the CLI interface:
+
+```bash
+$ si inst health e9432a4f-2a64-41a2-82f1-39503a2a18df
+Request ok: http://127.0.0.1:8000/api/v1/instance/e9432a4f-2a64-41a2-82f1-39503a2a18df/health status: 200 OK
+{
+  cpuTotalUsage: 203802417,
+  healthy: true,
+  limit: 536870912,
+  memoryMaxUsage: 14352384,
+  memoryUsage: 11980800,
+  networkRx: 16266,
+  networkTx: 15358,
+  containerId: 'df0aa7adf027465da1dfb08edd0a66dc8ffc8e0bd1f5d0fc7fafecbefdac72c6'
+}
+```
 
 ### Host
 
@@ -157,12 +195,6 @@ A set of instances installed on the single operating system (host) together with
 - host -  a source of information or signals. The term can refer to a computer, smartphone, tablet or any electronic device. In a network, clients (users' machines) and servers are hosts because they are both sources of information in contrast to network devices, such as routers and switches, which only direct traffic.
 
 - host program - software/program that runs in a computer that provides the source of information or signals.
-
-### Hub
-
-<!-- TODO - what is the difference between Hub and Host, we still use both terms.
-Maybe "Host" should be described in general context and "Hub" as a host in scramjet cloud platform's context?
--->
 
 ## I
 
@@ -240,16 +272,7 @@ One of the [supervisor's](#supervisor) components, which is responsible for coll
 
 ## M
 
-### Manager
-
-<!-- TODO - do we want the user to know that? It will reveal the structure of our platform -->
-in the context of the Scramjet platform, Cloud Platform Manager is a host management software that provides service-discovery, controls the scaling of individual instances in accordance with the programmed logic and client configuration, providing [API](#api)
-
-### MultiHost
-<!-- TODO - do we want the user to know that? It will reveal the structure of our platform -->
-
-### MultiManager
-<!--TODO  DO WE WANT OUR USER TO KNOW THAT????-->
+<!--### Manager- in the context of the Scramjet platform, Cloud Platform Manager is a host management software that provides service-discovery, controls the scaling of individual instances in accordance with the programmed logic and client configuration, providing [API](#api)-->
 
 ## N
 
@@ -299,10 +322,8 @@ An executable written in one of the supported programming languages that starts 
 
 ## S
 
-### Scalability
-<!-- TODO -->
-
 ### Scope
+
 A scope is a handy organization unit that lets a user switch between the currently used spaces and hubs. It is a named pair consisting of one space and one hub. This named pair is saved in the session config, which lets user work with different spaces and hubs sessions simultaneously. There can be multiple scopes, but only one can be used at once in a given session.
 
 ### Scramjet
@@ -334,8 +355,7 @@ standard input/standard output/standard error. Application communication channel
 
 ### STH
 
-<!--TODO-->
-shortcut for Scramjet Transform Hub
+shortcut for Scramjet Transform Hub. It is a data processing engine for our Scramjet Cloud Platform
 
 ### Synchronous
 

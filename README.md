@@ -37,7 +37,7 @@
     * [Prepare environment](#21-prepare-environment)
     * [Install STH](#22-install-sth)
 3. [Run your first Sequence](#3-run-your-first-sequence)
-    * [Review the package](#31-review-the-package)
+    * [Review the Sequence package](#31-review-the-sequence-package)
     * [Run the Sequence](#32-run-the-sequence)
 4. [Where to go next](#4-where-to-go-next)
 5. [User's dictionary](#5-users-dictionary)
@@ -61,22 +61,22 @@ We named our apps "Sequences" and that term describes well its nature, as they p
 </details>
 <br>
 
-The core part of our STH engine is called the "host".
+The core part of our STH engine is called the "Hub".
 
 <details>
 <summary>
-    <strong>Host</strong>
+    <strong>Hub</strong>
 </summary>
 
-**Host** is responsible for maintaining and deploying Sequences, keeping them running and managing its lifecycle.
+**Hub** is responsible for maintaining and deploying Sequences, keeping them running and managing its lifecycle.
 
-Host exposes also its own REST API to provide and receive data and manage Sequences and host itself.
+Hub exposes also its own REST API to provide and receive data and manage Sequences and Hub itself.
 
-What we also do on the host level is that we apply a set of algorithms to optimize and speed up data processing execution in Sequences.
+What we also do on the Hub level is that we apply a set of algorithms to optimize and speed up data processing execution in Sequences.
 
 > We call our processing optimization algorithms **"IFCA"** meaning "Intelligent Function Composition Algorithms".
 
-You can interact with host using our dedicated STH CLI that will help you with Sequences deployment, running and monitoring.
+You can interact with Hub using our dedicated STH CLI that will help you with Sequences deployment, running and monitoring.
 </details>
 <br>
 Our vanilla STH engine is based on Node.js and thus allows developers to benefit from its rich ecosystem, numerous packages and solutions provided by this vibrant community.
@@ -103,16 +103,17 @@ Our vanilla STH engine is based on Node.js and thus allows developers to benefit
 
 <details>
 <summary>
-    <strong>Host</strong>
+    <strong>Hub</strong>
 </summary>
 
 This is a solution for the central processing and management unit with the following major components:
 
-1. **Sequences** - these are the actual "STH" apps. It is a package containing at least two files:
-    * **package.json** - JSON manifest file describing the app and its configuration; such as main file to run
-    * **main file** - file such as `index.js` or `index.ts` that contains a lightweight application business logic.
-2. **Instance** - once a Sequence is run, the host will create a separate runtime environment for it and will execute Sequence code inside this runtime entity. This is an Instance.
-3. **API & CLI** - our Application Programming Interface and CLI connecting to it allows both for **Data operations** (sending input data and receiving output data) and **Management operations** (manage host itself and its entities: Sequences or Instances)
+1. **Sequence** - a user's program to be executed on the Hub, that contains a developer's code that consists of one or more functions with a lightweight application business logic. It needs to be packed into a package together with its dependencies (compressed into `tar.gz` format) before sending it to STH.
+2. **Instance** - once a Sequence is run, the Hub will create a separate runtime environment for it and will execute Sequence code inside this runtime entity. This is an Instance.
+3. **API & CLI** - our Application Programming Interface and Command Line Interface that allow for:
+
+    * **Data operations** - sending input data and receiving output data
+    * **Management operations** - manage Hub itself and its entities: Sequences or Instances
 
 </details>
 
@@ -158,21 +159,17 @@ npm i -g @scramjet/sth @scramjet/cli
 scramjet-transform-hub
 ```
 
-> 💡 **HINT:** There is also an alias for running STH:
->
->```bash
->sth
->```
+> 💡 **HINT:** There is also an alias for running STH: `sth`
 
 More detailed installation instructions can be found in our [STH GitHub repository](https://github.com/scramjetorg/transform-hub//HEAD/#installation-clamp).
 
 ## **3. Run your first Sequence**
 
-### **3.1 Review the package**
+### **3.1 Review the Sequence package**
 
-Before running your first Sequence let's have a quick look what's inside the Sequence package.
+Before running the Sequence let's have a quick look what's inside the Sequence package.
 
-We have prepared for you a simple JavaScript sample Sequence "hello-snowman". This Sequence is available in the directory `samples/hello-snowman` in this repository. In this directory you will find two files:
+We have prepared for you a simple JavaScript sample Sequence "hello-snowman". This Sequence is available in the directory [samples/hello-snowman](./samples/hello-snowman/) in this repository. In this directory you will find two files:
 
 * `package.json` - manifest file that describes this particular Sequence
 * `index.js` - file containing main application logic.
@@ -185,16 +182,16 @@ There is no need to change anything in our `hello-snowman` Sequence for a first 
 
 ### **3.2 Run the Sequence**
 
-There are 4 steps to follow in order to run the example Sequence:
+There are 5 steps to follow in order to run the example Sequence:
 
 <details>
 <summary>
-    <strong>1. Pack your Sequence into a package</strong>
+    <strong>1. Pack your Sequence into a <code>*.tar.gz</code> package</strong>
 </summary>
 
-Every "Sequence" app needs to be packaged (compressed) before sending to the Transform Hub. Package is a simple TAR archive and our STH CLI has a special command to pack an app directory into a Sequence tarball.
+Every Sequence app needs to be packaged (compressed) before sending to the Transform Hub. Package is a simple TAR archive and our STH CLI has a special command to pack an app directory into a Sequence tarball.
 
-> 💡 **Note:** any time, you can display STH CLI help by issuing terminal command `si help` (for general help) or `si <command> help` for specific command (ie. `si sequence help`)
+> 💡 **Note:** any time, you can display STH CLI help by issuing terminal command `si help` (for general help). For more information on a specific command, type help + command-name (ie. `si sequence help`)
 
 Please open new terminal window (and keep the first one open with STH running). Then issue following commands in the root directory of this repository:
 
@@ -213,7 +210,7 @@ There is no output shown in the terminal but you can verify with `ls` that tarba
     <strong>2. Send the Sequence package</strong>
 </summary>
 
-Send `hello-snowman.tar.gz` to the running host (default localhost API endpoint will be used by the CLI send command) by issuing following command:
+Send `hello-snowman.tar.gz` to the running Hub (default localhost API endpoint will be used by the CLI send command) by issuing following command:
 
 ```bash
 si sequence send ./samples/hello-snowman.tar.gz
@@ -221,7 +218,7 @@ si sequence send ./samples/hello-snowman.tar.gz
 
 > 💡 **Note:** if you receive reply: **Request ok: <http://127.0.0.1:8000/api/v1/sequence> status: 422 Unprocessable Entity**, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue `si sequence send` command again. We are working on fixing this issue in the next STH release. Also, if you keep receiving docker errors you can start STH without docker: `scramjet-transform-hub --no-docker`
 
-> If you encounter any problems or issues while using our platform, please visit our **[Troubleshooting](https://github.com/scramjetorg/transform-hub#troubleshooting-collision)** section, where some of the problems are already known and described. You can also log an issue/bug there.
+> If you encounter any problems or issues while using our platform, please visit our **[Troubleshooting](https://github.com/scramjetorg/transform-hub#troubleshooting-collision)** section, where some of the problems are already known and described. You are also very welcome to [log an issue/bug](https://github.com/scramjetorg/transform-hub/issues/new/choose) on GitHub any time.
 
 The output will look similar to this one:
 
@@ -240,11 +237,11 @@ SequenceClient {
 }
 ```
 
-Now we have uploaded Sequence to the host and host assigned to it a random ID (GUID), in this case our Sequence ID is:
+Now we have uploaded Sequence to the Hub. Each time a Sequence is loaded into the Hub, a random ID (GUID) number is assigned to it, in this case our Sequence ID is:
 
 `_id: 'cf775cc1-105b-473d-b929-6885a0c2182c'`
 
- Host also exposes REST API endpoint for each Sequence and this is also described in this response.
+ Hub also exposes REST API endpoint for each Sequence and this is also described in this response.
 
  Exposed Sequence ID allows us to move to the next step where we will start the Sequence.
 
@@ -288,7 +285,7 @@ InstanceClient {
 }
 ```
 
-Sequence is an app template. Once it is up and running, it will become a new Instance. The Instance also receives its own ID (GUID). In this case the Instance ID is:
+Once Sequence is up and running, it becomes an Instance. The Instance also receives its own unique ID (GUID). In this case the Instance ID is:
 
 `_id: 'e70222d1-acfc-4e00-b046-4a3a9481c53b'`
 
@@ -344,7 +341,7 @@ OUTPUT| Snowman ⛄ is freezing 🥶 Winter is coming ❄️ ❄️ ❄️ ❄�
 Our Sequence generator app does two things here:
 
 * Sends stream of messages; each one containing number with temperature value
-* Reads output from Host API that is generated by our `hello-snowman` Sequence
+* Reads output from the Hub API that is generated by our `hello-snowman` Sequence
 
 Separately, you can also open a new terminal window and see log of this particular Instance with command `si instance log <instance_id>` or by using alias `si instance log -`. In our case this would be:
 
