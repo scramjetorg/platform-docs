@@ -1,6 +1,6 @@
 [Home](README.md)
 
-# Dictionary :book:
+# Dictionary 📖
 
 The idea of dictionary is not new. This one is meant to bring closer the terminology that we use in our project.
 Even when we think that some word has a different meaning in the outside world, here we have description what it means in case of Scramjet Platform project.
@@ -31,6 +31,10 @@ Collection of [sequences](#sequence) implementing a given business requirement d
 
 Application Interface is an interface exposed by [Sequence](#sequence) to communicate with the [Runner](runner)
 
+### Arguments
+
+Instance parameters, also known as function arguments. They are passed to a Sequence during start and are used as Instance parameters, affecting how the Instance works. Specific handling of the parameters depends on the Sequence code. Arguments are optional, in particular, the Sequence might not require any arguments to be passed.
+
 ### Artifact
 
 Artifacts are byproducts of software development, e.g. project diagrams, plans, etc. In fact, this dictionary is also an [artifact](https://en.wikipedia.org/wiki/Artifact_(software_development))
@@ -43,7 +47,7 @@ Asynchronous execution of operations allows multiple processes/functions to happ
 
 ### CLI
 
-Command Line Interface. Command line tool to allows control over the platform
+Command Line Interface. Command line tool that allows to control over the platform
 
 ### Client
 
@@ -51,7 +55,11 @@ Client is a very multi meaning word so let's try not to use it. It is allowed in
 
 ### Compilation
 
-Compilation is a process of transforming a source code written in any programming language(human readable) into machine code(machine language), which is executed by the computer
+Compilation is a process of transforming a source code written in any programming language (human readable) into machine code (machine language), which is executed by the computer
+
+### Config
+
+<!-- TODO -->
 
 ### Container
 
@@ -111,7 +119,19 @@ ESLint is a tool for a static code analysis ([linter](#linter)). It identifies a
 
 ### Endpoint
 
-<!--TODO-->
+This is an API endpoint which can be considered as a specific point of entry and also a point that can be referenced by sending the requests. For example, it is very common to send a request to API endpoint to get certain data.
+
+### Event
+
+In the context of Scramjet Cloud Platform event is a [JSON](#json) message that you send to the [Instance](#instance), that is interpreted by the Instance logic - can be processed or affect how the Instance works (change parameters). Handling the Instance message is specific for the [Sequence](#sequence) and depends on your Sequence code. More general event definition and functionality is explained by [wiki](https://en.wikipedia.org/wiki/Event_(computing))
+
+#### Event name
+
+<!-- TODO -->
+
+#### Event message
+
+<!-- TODO -->
 ## F
 
 ### Function
@@ -126,9 +146,55 @@ Gherkin is a domain-specific programming language created to write behavior desc
 
 ## H
 
+### Health Check
+
+Information about the health of Instance. It informs whether an Instance is running and what is its resource consumption.
+
+It can be accessed directly through Instance API, in the CLI or Panel.
+
+The Instance API health check endpoint is /health. The following is an example health check from the Instance obtained with curl:
+
+```bash
+$ curl http://127.0.0.1:8000/api/v1/instance/e9432a4f-2a64-41a2-82f1-39503a2a18df/health |jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   226    0   226    0     0   220k      0 --:--:-- --:--:-- --:--:--  220k
+{
+  "cpuTotalUsage": 223212751,
+  "healthy": true,
+  "limit": 536870912,
+  "memoryMaxUsage": 14352384,
+  "memoryUsage": 12136448,
+  "networkRx": 19852,
+  "networkTx": 20174,
+  "containerId": "df0aa7adf027465da1dfb08edd0a66dc8ffc8e0bd1f5d0fc7fafecbefdac72c6"
+}
+```
+
+While the below is an example of health check from the same Instance but executed using the CLI interface:
+
+```bash
+$ si inst health e9432a4f-2a64-41a2-82f1-39503a2a18df
+Request ok: http://127.0.0.1:8000/api/v1/instance/e9432a4f-2a64-41a2-82f1-39503a2a18df/health status: 200 OK
+{
+  cpuTotalUsage: 203802417,
+  healthy: true,
+  limit: 536870912,
+  memoryMaxUsage: 14352384,
+  memoryUsage: 11980800,
+  networkRx: 16266,
+  networkTx: 15358,
+  containerId: 'df0aa7adf027465da1dfb08edd0a66dc8ffc8e0bd1f5d0fc7fafecbefdac72c6'
+}
+```
+
 ### Host
 
-A set of [instances](#instance) installed on the single operating system (host) together with software that controls instances and allows communication with external elements of the system via protocols (e.g. http)
+A set of instances installed on the single operating system (host) together with software that controls instances and allows communication with external elements of the system via protocols (e.g. http)
+
+- host -  a source of information or signals. The term can refer to a computer, smartphone, tablet or any electronic device. In a network, clients (users' machines) and servers are hosts because they are both sources of information in contrast to network devices, such as routers and switches, which only direct traffic.
+
+- host program - software/program that runs in a computer that provides the source of information or signals.
 
 ## I
 
@@ -138,7 +204,7 @@ An interface for managing the space in which the [prerunner](#prerunner) and [ru
 
 ### Instance
 
-It is a running [sequence](#sequence). A bundle containing [runner](#runner) that runs a [sequence](#sequence) which is controlled by [supervisor](#supervisor).
+An Instance (computing instance) is a [Sequence](#sequence) that has been run and is currently being executed on the Hub. As Sequence can be started multiple times (e.g. with different parameters) it means that every Instance is literally an instance of a Sequence. Instance also can process an enormous amount of data on the fly without losing persistence. Instance comes with its own [CLI](#cli), which you can explore in the [npm docs](https://www.npmjs.com/package/@scramjet/cli) or by using command `si inst help` (install CLI first -> `npm install -g @scramjet/cli`)
 
 ### Interface
 
@@ -146,9 +212,7 @@ In the context of Object-Oriented Programming (OOP), it is a set of methods and 
 
 ### Input
 
-Input is a set of parameters/values that are passed to the function.
-
-<!--TODO-->
+Input is a set of parameters/values that are passed to the function(s) defined in a [Sequence](#sequence). It is delivered to the [Instance](#instance) as a stream in any form of data (JSON, text, buffer, etc.).
 
 ### Image
 
@@ -171,7 +235,8 @@ The image can exist without the container. A container needs an image to run it 
 
 ### LifeCycle Controller (LCC)
 
-Key [instance](#instance) element, [Supervisor's](#supervisor) component, supervising its work:
+<!-- TODO - edit due to Supervisor removal -->
+Key [Instance](#instance) element, [Supervisor's](#supervisor) component, supervising its work:
 
 - receives a stream with a sequence from [CSH](#host),
 - passes this stream to [LiveCycle Docker Adapter](#lifecycle-docker-adapter-lcda)
@@ -184,6 +249,7 @@ Key [instance](#instance) element, [Supervisor's](#supervisor) component, superv
 
 ### LifeCycle Docker Adapter (LCDA)
 
+<!-- TODO - edit due to Supervisor removal -->
 One of the [supervisor's](#supervisor) components. LCDA is an interface that inherits from [IlifeCycle](#ilifecycle-ilc), it is responsible for communication with Docker:
 
 - accepts stream with sequence from [LCC](#lifecycle-controller-lcc),
@@ -201,19 +267,12 @@ Lifecycle Interface is an interface that lets [LifeCycle Controller](#lifecycle-
 
 ### Loadcheck
 
+<!-- TODO - edit due to Supervisor removal -->
 One of the [supervisor's](#supervisor) components, which is responsible for collecting information about the work status of an [instance](#instance) and forwarding it to [LCC](#lifecycle-controller-lcc)
 
 ## M
 
-### Manager
-
-in the context of the Scramjet platform, Cloud Platform Manager is a host management software that provides service-discovery, controls the scaling of individual instances in accordance with the programmed logic and client configuration, providing [API](#api)
-
-### MultiHost
-<!--TODO-->
-
-### MultiManager
-<!--TODO-->
+<!--### Manager- in the context of the Scramjet platform, Cloud Platform Manager is a host management software that provides service-discovery, controls the scaling of individual instances in accordance with the programmed logic and client configuration, providing [API](#api)-->
 
 ## N
 
@@ -227,9 +286,21 @@ in the context of the Scramjet platform, Cloud Platform Manager is a host manage
 
 ## P
 
+### Package
+
+A folder archived in `tar.gz` format, which is ready to be sent to the Hub. Package contains:
+
+- [Sequence](#sequence) (e.g. `index.ts` or `main.js`, etc.),
+- configuration file in [JSON](#json) format (named `package.json`) and,
+- all the dependencies needed to run the program on the Hub
+
 ### Platform
 
 Complete, default working environment for our users. Application, host and instance management center
+
+### Port
+
+Port is a part of communication point. It is represented by a number and always associated with a host's IP address and the type of transport protocol used for communication.
 
 ## R
 
@@ -247,9 +318,13 @@ Catching a query from the user and redirecting it to the appropriate API functio
 
 ### Runner
 
-An executable written in one of the supported programming languages that starts the [sequence](#sequence) created by developer, inside the container controlled by the [supervisor](#supervisor)
+An executable written in one of the supported programming languages that starts the [Sequence](#sequence) created by developer, inside the container
 
 ## S
+
+### Scope
+
+A scope is a handy organization unit that lets a user switch between the currently used spaces and hubs. It is a named pair consisting of one space and one hub. This named pair is saved in the session config, which lets user work with different spaces and hubs sessions simultaneously. There can be multiple scopes, but only one can be used at once in a given session.
 
 ### Scramjet
 
@@ -261,23 +336,26 @@ Software Development Kit. A collection of tools and libraries to create a softwa
 
 ### Sequence
 
-It is a package (application) containing a set of files. A file with a manifest(eg. `package.json`), describing the app and its configuration (such as main file to run); and a __main file__ (eg. `index.js`, `app.ts`) that contains a developer's code that consists of chained functions with a lightweight application business logic. Minimal Sequence consists of 1 [function](#function).
+A User's program to be executed on the Host, that contains a developer's code that consists of one or more [function](#function)s with a lightweight application business logic. It needs to be packed into a [Package](#package) together with its dependencies (compressed into `tar.gz` format) before sending it to [STH](#sth)
 
 ### Socket
 
 Socket is a kind of an endpoint in a two-way communication channel between the server and the receiving software (client). Typically the socket is used for a specific flow of events. In the case of the client-server model, the socket on the server listens when requested by the client. The client connects to the server through the socket. The socket can be a socket on the disk or it can be an IP socket - so you can actually serve HTTP API on your disk - for real!
 
+### Space
+<!-- TODO -->
+
 ### SSH
 
 [Secure Shell](https://en.wikipedia.org/wiki/SSH_(Secure_Shell)). It's a network cryptographic protocol
 
-### stdin/stdout/stderr <!--TODO-->
+### stdin/stdout/stderr
 
-standard input/standard output. Application communication channels with the outside world (e.g. the console). Stdin allows you to enter information into an application (e.g. from the keyboard). stdout allows you to display messages from the application, e.g. on a monitor/printer, etc
+standard input/standard output/standard error. Application communication channels with the outside world (e.g. the console). Stdin allows you to enter information into an application (e.g. from the keyboard). stdout allows you to display messages from the application, e.g. on a monitor/printer, etc., stderr is a channel which expose the effects of error handling in the application
 
-### STH <!--TODO-->
+### STH
 
-shortcut for Scramjet Transform Hub
+shortcut for Scramjet Transform Hub. It is a data processing engine for our Scramjet Cloud Platform
 
 ### Synchronous
 

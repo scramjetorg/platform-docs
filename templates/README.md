@@ -2,16 +2,18 @@
 
 We have prepared for you some templates. User templates allow you to apply predefined settings to start building your own applications. Using templates, you can easily set up multiple applications with similar settings.
 
-You can use it as a base for your own samples 👉 [sample template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/HEAD/templates). For this moment we support two variants of template in two programming languages:
+For this moment we support two variants of template in two programming languages:
 
-- JavaScript (Node.js) 👉 [template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/HEAD/templates/template-js)
+- JavaScript (node) 👉 [template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/HEAD/templates/template-js)
 - TypeScript (ts-node) 👉 [template](https://github.com/scramjetorg/scramjet-cloud-docs/tree/HEAD/templates/template-ts)
 
 In the following sections we will describe both templates' contents and show you how they can be used in your own project.
 
+> 💡 **Note!** Please refer to methods and definitions described in [AppContext](/docs/types/AppContext) when writing a Sequence code.
+
 ## Work with JavaScript (Node.js)
 
-This application package template contains two files:
+This application template contains two files:
 
 - **package.json** - this file holds all the important information about the project in plain JSON Object format. It contains human-readable metadata about the project (like the project name and description) as well as functional metadata like the package version number or dependencies required by the application.`package.json` file is one of the basic requirement to have in the root of every project. This is the heart of any Node.js project, used by the application to find its dependencies to install, scripts to run, etc. If you would like to start your project from scratch, without using our js-template, you would need to create a directory and run `npm init` inside. This command would create a `package.json` file for you with all the obligatory properties, for example:
 
@@ -73,8 +75,8 @@ To see how this template works you can run it with a few simple commands written
 - `cd templates`
 - `si pack template-js`
 - `si seq send template-js.tar.gz`
-- `si sequence start -` which is the same as `si sequence start <sequence-id>`
-- `si q output -` which is the same as `si q output <q-id>`
+- `si seq start -` which is the same as `si sequence start <sequence-id>`
+- `si inst output -` which is the same as `si instance output <q-id>`
 
 #### 3️⃣ terminal:
 
@@ -88,26 +90,24 @@ The command below will run the app in the background. The app generates random n
 
 What you can see in the attached image is 3 terminals that illustrates the template's workflow:
 
-Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
-
-Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
-
-Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the q's input.
+- Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
+- Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
+- Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the Instances's input.
 
 ## Work with TypeScript (ts-node)
 
 TypeScript compiles to JavaScript. It is a superset of JavaScript, which means that you can use all the features of JavaScript plus some new features and advantages of TypeScript, then compile it and get regular JavaScript.
 
-This application package template contains files:
+This application template contains files:
 
-- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](##Work-with-JavaScript-(Node.js)) with a small but ❗**VERY IMPORTANT**❗ difference. The file given in `"main"` property must be typed in without any extension, like in the example below. This is because this `package.json` will be copied into the `dist` directory, which eventually will be archived into a `.tar.gz` format and sent to the STH.
+- **package.json** - function of this file is similar to `package.json` file in [JavaScript template](<##Work-with-JavaScript-(node)>).
 
 ```json
 {
   "name": "@template/template-ts",
   "private": true,
   "version": "1.0.0",
-  "main": "index",   // the entry file MUST be named without any extension!
+  "main": "index.js",
   "description": "This package is a User's template for ts-node projects",
   "author": "Scramjet <open-source@signicode.com>",
   "license": "GPL-3.0",
@@ -138,9 +138,9 @@ This application package template contains files:
 - **index.ts** - this is where you should put your code and all the logic of the application you create. It will be the entry point of your application.
 This file will be compiled into manila JavaScript and stores in `index.js` file in `dist` directory.
 
-In our template we introduce you to a very straight forward application, which simply reads input stream and write it to the output stream.
+In our template we introduce you to a very straight forward application, which simply reads input stream and writes to the output stream.
 
-> 📖 In the example below we use `@scramjet/types` module. Scramjet is a very nice and functional stream programming framework. You might find it very useful while writing your app or dealing with streams in general. More info, examples and usage you can find [here](https://www.npmjs.com/package/scramjet).
+> 📘 In the example below we use one of application type from [@scramjet/types](https://www.npmjs.com/package/@scramjet/types) module. Scramjet is a very nice and functional stream programming framework that you might find very useful while writing your app or dealing with streams in general. More read about Scramjet Framework and examples of usage you can find on [npm scramjet](https://www.npmjs.com/package/scramjet) or [GitHub](https://github.com/scramjetorg/scramjet).
 
 ```typescript
 import { ReadableApp } from "@scramjet/types";
@@ -179,7 +179,7 @@ To see how this template works you can run it with a few simple commands written
 
 > 💡 **Note!** To run this template you need to have those two packages installed: `npm install -g @scramjet/sth @scramjet/cli`
 
-### **Open 3 terminals** and run the following commands and let the magic begin :magic_wand::
+### **Open 3 terminals** and run the following commands and let the magic begin ✨:
 
 #### 1️⃣ terminal:
 
@@ -193,8 +193,8 @@ To see how this template works you can run it with a few simple commands written
 - `cp -r node_modules/ package.json dist/` - it copies node_modules and package.json to the dist folder
 - `si pack dist` - it creates a tar.gz archive of the dist folder
 - `si sequence send dist.tar.gz` - it sends the archive to STH
-- `si sequence start <sequence-id>` - it starts the Sequence (started Sequence turns into Instance)
-- `si inst output <instance-id>`- it shows the Instance's output stream in the terminal
+- `si sequence start - ` - this command starts the Sequence (started Sequence turns into Instance)
+- `si inst output - `- this command the Instance's output stream in the terminal
 
 #### 3️⃣ terminal:
 
@@ -208,8 +208,6 @@ The command below will run the app in the background. The app generates random n
 
 What you can see in the attached image is 3 terminals that illustrates the template's workflow:
 
-Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
-
-Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
-
-Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the q's input.
+- Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
+- Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
+- Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the Instances's input.
