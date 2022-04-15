@@ -1,44 +1,30 @@
-import { ReadableApp } from "@scramjet/types";
+import { ReadableApp, HasTopicInformation } from "@scramjet/types";
 import { PassThrough } from "stream";
-
 import { Client, Intents } from 'discord.js';
-import { token } from './config.json';
-
 import formatter from './utils';
 
-const TOPIC: string = 'messages-slack-inbound';
+const TOPIC = "messages-slack-inbound";
 
-type HasTopicInformation = {
-    contentType?: string,
-    topic?: string
-};
-
-/**
- * Multi output application.
- *
- * @param {any} _stream - Dummy input stream
- */
-
-export = async function (_stream: any) {
-    const ps: PassThrough & HasTopicInformation = new PassThrough({ objectMode: true });
+export = async function (_stream: any, token: string) {
+    const out: PassThrough & HasTopicInformation = new PassThrough({ objectMode: true });
 
     const client = new Client({
         intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
     });
 
+    
     client.on('ready', () => {
-        console.log(`Logged in as ${client.user.tag}!`);
+        console.log(`Connected to Discord API as ${client.user.tag}!`);
     });
-
+    
     client.on('messageCreate', (message) => {
-        console.debug(message);
-        ps.write({ id: message.id, text: formatter(message.content), channel: message.channelId, /* thread */ });
+        out.write({ id: message.id, text: formatter(message.content), channel: message.channelId });
     });
+    
+    await client.login(token);
 
-    client.login(token);
+    out.topic = TOPIC;
+    out.contentType = "application/x-ndjson";
 
-    ps.topic = TOPIC;
-    ps.contentType = "application/x-ndjson";
-
-    return ps;
+    return out;
 } as ReadableApp<any>;

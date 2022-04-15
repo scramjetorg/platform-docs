@@ -1,23 +1,21 @@
-import { Streamable, TransformApp } from "@scramjet/types";
-import { StringStream } from "scramjet";
-import { PassThrough } from "stream";
+import { Streamable, WritableApp } from "@scramjet/types";
+import { DataStream } from "scramjet";
 import axios from "axios";
 import formatter from './utils';
 
-const TOPIC: string = "messages-slack-inbound";
+const TOPIC = "messages-slack-inbound";
 
-const mod: (TransformApp | { requires: string, contentType: string })[] = [
-    { requires: TOPIC, contentType: "application/x-ndjson" },
-    function (input: Streamable<any>, SLACK_WEBHOOK_URL: string) {
-        const out = new PassThrough({ objectMode: true });
-
-        (input as StringStream)
-            .map(async (data: any) => {
-                await axios.post(SLACK_WEBHOOK_URL, { text: formatter(data.text) });
-            })
-
-        return out;
+const sequence: [{ requires: string, contentType: string }, WritableApp] = [
+    {
+        requires: TOPIC,
+        contentType: "application/x-ndjson"
+    },
+    function (input: Streamable<any>, slackWebhookUrl: string) {
+        (input as DataStream)
+            .map((data) => 
+                axios.post(slackWebhookUrl, { text: formatter(data.text) })
+            )
     }
 ];
 
-export default mod;
+export default sequence;
