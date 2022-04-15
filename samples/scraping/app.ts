@@ -8,11 +8,15 @@ const app: ReadableApp<string, [string, string]> = async function* (
     selectorStr,
     interval = 5000,
 ) {
-    while(true) {
-        const timer = sleep(interval);
-        yield await scrape(url, selectorStr) + '\n'
-        
-        await timer;
+    try {
+        while(true) {
+            const timer = sleep(interval);
+            yield await scrape(url, selectorStr) + '\n'
+            
+            await timer;
+        }
+    } catch(err){
+        console.error(`Application ERROR: ${err}`)
     }
 }
 

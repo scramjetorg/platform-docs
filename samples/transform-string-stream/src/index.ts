@@ -7,6 +7,6 @@ const app: TransformApp = (
     suffix: string = "|Suffix"
 ) =>
     DataStream.from(input)
-        .map(name => prefix + name + suffix);
+        .map(name => prefix + name + suffix + "\n");
 
 export default app;

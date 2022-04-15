@@ -40,17 +40,24 @@ cd samples/hello-snowman
 # install dependencies
 npm install
 
-# make a compressed package with Sequence
-si pack . -o hello-snowman.tar.gz
+# go back to samples/ directory
+cd ../
 
-# send Sequence to transform hub, this will output Sequence ID
-si seq send hello-snowman.tar.gz
+# deploy 'hello-snowman' Sequence
+si seq deploy hello-snowman
 
-# start a Sequence, this will output Instance ID
-si seq start -
+# see the Instance output
+si inst output -    # nothing happens until some is sent to input
+```
 
-# See output of Instance process
-si inst output -
+> 💡**NOTE:** Command `deploy` performs three actions at once: `pack`, `send` and `start` the Sequence. It is the same as if you would run those three commands separately:
+
+```bash
+si seq pack . -o hello-snowman.tar.gz    # compress 'hello-snowman/' directory into file named 'hello-snowman.tar.gz'
+
+si seq send hello-snowman.tar.gz    # send compressed Sequence to STH, this will output Sequence ID
+
+si seq start -    # start the Sequence, this will output Instance ID
 ```
 
 **In the third terminal**
@@ -65,6 +72,7 @@ node ./tools/stream-gen-tool/stream-gen.js <instance_id>
 Now you should see the output in the console:
 
 ```js
+$ si inst output -
 ----------------------------------------
 Message# 1 | Temperature measure
 INPUT | -16

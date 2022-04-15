@@ -14,7 +14,7 @@ const ONE_MINUTE = 60000;
  * @param {number} ms Number of milliseconds to sleep
  * @returns {Promise}
  */
- async function sleep(ms): Promise<unknown> {
+  async function sleep(ms): Promise<unknown> {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 

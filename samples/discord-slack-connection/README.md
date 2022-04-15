@@ -1,5 +1,11 @@
 # Discord to Slack (and vice versa) Connection
 
+___
+
+### The execution of this sample has been visualized in the form of a short video that is available on our [YouTube](https://www.youtube.com/channel/UChgTmKeuAsKj8kDnylkmP6Q) channel [How to Connect Discord and Slack in 4 minutes](https://www.youtube.com/watch?v=y2L1f-f-wLM&t=1s).
+
+___
+
 > 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 In this project you will find 4 STH Sequences:
