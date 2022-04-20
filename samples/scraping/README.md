@@ -9,7 +9,7 @@ As URL and ID are parametrized we can use other websites too. For example, URL: 
 
 ___
 
-### The execution of this sample has been visualized in the form of a short video that is available on our [YouTube](https://www.youtube.com/channel/UChgTmKeuAsKj8kDnylkmP6Q) channel 👉 [How to scrape websites using Scramjet Transform Hub?](https://www.youtube.com/watch?v=w7c_YgBvcGo&t=3s)
+### The video that illustrates the execution of the sample is on our [YouTube](https://www.youtube.com/channel/UChgTmKeuAsKj8kDnylkmP6Q) channel 👉 [How to scrape websites using Scramjet Transform Hub?](https://www.youtube.com/watch?v=w7c_YgBvcGo&t=3s)
 
 ___
 
