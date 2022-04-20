@@ -2,6 +2,12 @@
 
 Sequence that keeps printing current crypto prices for a provided pair of currencies every 3 seconds.
 
+___
+
+### The video that illustrates the execution of the sample is on our [YouTube](https://www.youtube.com/channel/UChgTmKeuAsKj8kDnylkmP6Q) channel [How to check cryptocurrency prices using Scramjet?](https://www.youtube.com/watch?v=BPLKPVVyHNY&t=3s)
+
+___
+
 > 💡 **Please note that the sample below requires some previous installations before you start running it, you will find them [here](../../README.md#3-install-scramjet-transform-hub).**
 
 ## Running
@@ -27,17 +33,21 @@ npm install
 # transpile TS->JS and copy node_modules and package.json to dist/
 npm run build
 
-# make a compressed package with sequence
-si pack dist/ -o crypto-prices.tar.gz
+# deploy the Sequence from the dist/ directory, which contains transpiled code, package.json and node_modules
+si seq deploy dist
 
-# send sequence to transform hub, this will output Sequence ID
-si seq send crypto-prices.tar.gz
-
-# start a sequence with currency parameters, this will output Instance ID
-si seq start - ETH USD
-
-# see output
+# see the Instance output
 si inst output -
+```
+
+> 💡**NOTE:** Command `deploy` performs three actions at once: `pack`, `send` and `start` the Sequence. It is the same as if you would run those three commands separately:
+
+```bash
+si seq pack dist/ -o crypto-prices.tar.gz    # compress 'dist/' directory into file named 'crypto-prices.tar.gz'
+
+si seq send crypto-prices.tar.gz    # send packed Sequence to STH, this will output Sequence ID
+
+si seq start -    # start the Sequence, this will output Instance ID
 ```
 
 ## Output
@@ -45,8 +55,13 @@ si inst output -
 Once you run `si inst output -` command you should get an output similar to this one:
 
 ```bash
-Request ok: http://127.0.0.1:8000/api/v1/instance/87442a03-a8ca-451c-b89f-d5371774c2f3/output status: 200 OK
-"{\"data\":{\"base\":\"ETH\",\"currency\":\"USD\",\"amount\":\"3231.79\"}}"
-"{\"data\":{\"base\":\"ETH\",\"currency\":\"USD\",\"amount\":\"3232.98\"}}"
-"{\"data\":{\"base\":\"ETH\",\"currency\":\"USD\",\"amount\":\"3231.79\"}}"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
+"{\"data\":{\"base\":\"BTC\",\"currency\":\"USD\",\"amount\":\"40989.61\"}}\r\n"
 ```

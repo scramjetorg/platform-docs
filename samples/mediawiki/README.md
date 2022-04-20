@@ -27,14 +27,8 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with Sequence
-si pack dist/ -o mediawiki.tar.gz
-
-# send Sequence to transform hub, this will output Sequence ID
-si seq send mediawiki.tar.gz
-
-# start a Sequence, this will output Instance ID. Search is optional and can be used to filter out results, e.g. "data.server_name === 'en.wikipedia.org'"
-si seq start - [<search>]
+# deploy the Sequence from the dist/ directory, which contains transpiled code, package.json and node_modules
+si seq deploy dist
 
 # See output
 si inst output -
@@ -47,6 +41,16 @@ si inst stderr -
 
 # Send event, e.g. `drain`: `si inst emit <instance-id> drain "{}"`
 si inst emit - <event> <payload>
+```
+
+> 💡**NOTE:** Command `deploy` performs three actions at once: `pack`, `send` and `start` the Sequence. It is the same as if you would run those three commands separately:
+
+```bash
+si seq pack dist/ -o mediawiki.tar.gz    # compress 'dist/' directory into file named 'mediawiki.tar.gz'
+
+si seq send mediawiki.tar.gz    # send packed Sequence to STH, this will output Sequence ID
+
+si seq start - [<search>]   # start the Sequence, this will output Instance ID. Search is optional and can be used to filter out results, e.g. "data.server_name === 'en.wikipedia.org'"
 ```
 
 ## Example Event

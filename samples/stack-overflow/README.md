@@ -29,14 +29,8 @@ npm install
 # transpile TS->JS to dist/
 npm run build
 
-# make a compressed package with Sequence
-si pack dist
-
-# send Sequence to transform hub, this will output Sequence ID
-si seq send dist.tar.gz
-
-# start a Sequence, this will output Instance ID. Provide number of minutes that we pause between request to SO API. API key is optional
-si seq start - <minutes> <request_key>
+# deploy the Sequence from the dist/ directory, which contains transpiled code, package.json and node_modules
+si seq deploy dist --args '[minutes, "request_key"]'
 
 # See Instance output
 si inst output -
@@ -48,6 +42,16 @@ si inst stdout -
 
 # Check console.error messages
 si inst stderr -
+```
+
+> 💡**NOTE:** Command `deploy` performs three actions at once: `pack`, `send` and `start` the Sequence. It is the same as if you would run those three commands separately:
+
+```bash
+si seq pack dist/ -o stack-overflow.tar.gz    # compress 'dist/' directory into file named 'stack-overflow.tar.gz'
+
+si seq send stack-overflow.tar.gz    # send packed Sequence to STH, this will output Sequence ID
+
+si seq start - --args '[minutes, "request_key"]'   # start the Sequence with arguments ("request_key" argument is optional), this will output Instance ID
 ```
 
 ## Example output

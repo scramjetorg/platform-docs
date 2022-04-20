@@ -24,17 +24,24 @@ cd samples/simple-counter-js
 # instal dependencies
 npm install
 
-# make a compressed package with Sequence
-si pack . -o simple-counter-js.tar.gz
+# go back to samples/ directory
+cd ../
 
-# send Sequence to transform hub, this will output Sequence ID
-si seq send simple-counter-js.tar.gz
-
-# start a Sequence, this will output Instance ID
-si seq start -
+# deploy 'simple-counter-js' Sequence
+si seq deploy simple-counter-js
 
 # See output of Instance process
 si inst stdout -
+```
+
+> 💡**NOTE:** Command `deploy` performs three actions at once: `pack`, `send` and `start` the Sequence. It is the same as if you would run those three commands separately:
+
+```bash
+si seq pack . -o simple-counter-js.tar.gz    # compress 'simple-counter-js/' directory into file named 'simple-counter-js.tar.gz'
+
+si seq send simple-counter-js.tar.gz    # send compressed Sequence to STH, this will output Sequence ID
+
+si seq start -    # start the Sequence, this will output Instance ID
 ```
 
 ## Output

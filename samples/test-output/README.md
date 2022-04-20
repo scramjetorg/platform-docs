@@ -24,17 +24,24 @@ cd samples/test-output
 # install dependencies
 npm install
 
-# make a compressed package with Sequence
-si pack . -o test-output.tar.gz
+# go back to samples/ directory
+cd ../
 
-# send Sequence to transform hub, this will output Sequence ID
-si seq send test-output.tar.gz
-
-# start a Sequence, this will output Instance ID
-si seq start -
+# deploy 'hello' Sequence
+si seq deploy test-output
 
 # See output of Instance process
 si inst output -
+```
+
+> 💡**NOTE:** Command `deploy` performs three actions at once: `pack`, `send` and `start` the Sequence. It is the same as if you would run those three commands separately:
+
+```bash
+si seq pack . -o test-output.tar.gz    # compress 'test-output/' directory into file named 'test-output.tar.gz'
+
+si seq send test-output.tar.gz    # send compressed Sequence to STH, this will output Sequence ID
+
+si seq start -    # start the Sequence, this will output Instance ID
 ```
 
 ## Output
