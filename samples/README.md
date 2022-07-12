@@ -6,6 +6,12 @@ Every sample contains a short readme with a guidance describing the procedure fo
 
 > 💡 **Please note that samples below require some previous installations before you start running them. Instructions are [here](../README.md#3-install-scramjet-transform-hub).**
 
+## Python samples
+
+Python packages work in a similar way to all the others. They need to pack the dependencies and carry over anything they may need to run the program. They also need a `package.json` file.
+
+- [voice-recognition](voice-recognition) - a sample Sequence that performs voice recognition in real time.
+
 ## JavaScript samples
 
 JavaScript packages are pretty straight forward in use. After the dependency installation is performed inside the Sequence package it is ready to be compressed and sent to STH.
