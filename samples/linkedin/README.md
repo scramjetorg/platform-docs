@@ -5,11 +5,11 @@ Sequence that reads CSV input (e.g. dump of companies from crunchbase), uses Rap
 ## Pre-configuration
 
 Create `config.json` file with following content:
+
 ```json
 {
-    "XRapidAPIKey": YOUR_RAPID_API_KEY_GOES_HERE
+    "XRapidAPIKey": "YOUR_RAPID_API_KEY_GOES_HERE"
 }
-
 ```
 
 ## Running
@@ -58,7 +58,7 @@ cat companies.csv | si inst input INSTANCE_ID
 
 Example response:
 
-```
+```json
 {
   schema_version: 13,
   profile_id: '50ed2922fc4156a1',
