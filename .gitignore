@@ -28,3 +28,4 @@ lerna-debug.log*
 # Optional eslint cache
 .eslintcache
 **/dist/
+samples/linkedin/config.json
