@@ -63,7 +63,14 @@ async function getDataFromRapiAPI(companyName: String | null) {
 async function scrape(url: string) {
     if (!url) return null;
 
-    const html = (await axios.get(url)).data;
+    let html;
+    try {
+        html = (await axios.get(url)).data;
+    } catch (error) {
+        // In case of an error handle it gracefully
+        console.log(error);
+        return null;
+    }
 
     const $ = cheerio.load(html);
     const title = $('head > title').text();
