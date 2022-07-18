@@ -93,7 +93,7 @@ const app: TransformApp = (
         if (data["Organization Name"] === "Organization Name") return;
 
         // Deliberately slow down in order to not exceed API requests limits.
-        // Rate Limit 5 requests per second => 12 seconds
+        // Rate Limit 5 requests per second => 200 milliseconds
         stream.pause();
         await sleep(RATE_LIMIT_MS);
 
