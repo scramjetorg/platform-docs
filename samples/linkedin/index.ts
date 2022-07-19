@@ -3,7 +3,6 @@ import { PassThrough } from "stream";
 import csv from 'csv-parser';
 import axios, { AxiosRequestConfig } from 'axios';
 import * as cheerio from 'cheerio';
-import { RAPID_API_KEY } from './config.json'
 
 const sleep = (timeMs: number) => new Promise(res => setTimeout(res, timeMs));
 
@@ -80,11 +79,9 @@ async function scrape(url: string) {
     return { title, description, keywords, body };
 }
 
-const app: TransformApp = (
-    input, RATE_LIMIT_MS = 200
-) => {
+const app: TransformApp = function (input, RATE_LIMIT_MS = 200) {
 
-    // const RAPID_API_KEY = this.config.RAPID_API_KEY ? `${this.config.RAPID_API_KEY}` : "";
+    const RAPID_API_KEY = this.config.RAPID_API_KEY ? `${this.config.RAPID_API_KEY}` : "";
     if (!RAPID_API_KEY) throw new Error("No API key provided in config");
 
     const out = new PassThrough({ encoding: "utf-8" });
