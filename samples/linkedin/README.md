@@ -40,7 +40,9 @@ npm install
 npm run build
 
 # deploy the Sequence from the dist/ directory, which contains transpiled code, package.json and node_modules
-si seq deploy dist
+si seq deploy dist -f config.json
+# optionally you can provide the rate limit from command line also.
+si seq deploy dist -f config.json 150
 # copy instance _id - you'll use this in 3rd terminal window
 
 # see the Instance output

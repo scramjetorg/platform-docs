@@ -1,13 +1,11 @@
 import { TransformApp } from "@scramjet/types";
-// import { DataStream } from "scramjet";
 import { PassThrough } from "stream";
 import csv from 'csv-parser';
 import axios, { AxiosRequestConfig } from 'axios';
 import * as cheerio from 'cheerio';
-import { XRapidAPIKey } from './config.json';
+import { RAPID_API_KEY } from './config.json'
 
 const sleep = (timeMs: number) => new Promise(res => setTimeout(res, timeMs));
-const RATE_LIMIT_MS = 200;
 
 interface Company {
     LinkedIn: string
@@ -35,10 +33,11 @@ function getCompanyName(company: Company): String | null {
 /**
  * Get company data from Rapid API
  * 
- * @param {String} companyName 
+ * @param {String} companyName
+ * @param {String} apiKey - Rapid API key
  * @returns {Object}
  */
-async function getDataFromRapiAPI(companyName: String | null) {
+async function getDataFromRapiAPI(companyName: String | null, apiKey: String) {
     if (companyName === null) return null;
 
     const options = {
@@ -46,7 +45,7 @@ async function getDataFromRapiAPI(companyName: String | null) {
         url: 'https://linkedin-companies-data.p.rapidapi.com/',
         params: { vanity_name: companyName },
         headers: {
-            'X-RapidAPI-Key': XRapidAPIKey,
+            'X-RapidAPI-Key': apiKey,
             'X-RapidAPI-Host': 'linkedin-companies-data.p.rapidapi.com',
         },
     };
@@ -82,8 +81,12 @@ async function scrape(url: string) {
 }
 
 const app: TransformApp = (
-    input
+    input, RATE_LIMIT_MS = 200
 ) => {
+
+    // const RAPID_API_KEY = this.config.RAPID_API_KEY ? `${this.config.RAPID_API_KEY}` : "";
+    if (!RAPID_API_KEY) throw new Error("No API key provided in config");
+
     const out = new PassThrough({ encoding: "utf-8" });
 
     const stream = input.pipe(csv());
@@ -99,7 +102,7 @@ const app: TransformApp = (
 
         const companyName = getCompanyName(data);
 
-        const apiResponse = await getDataFromRapiAPI(companyName);
+        const apiResponse = await getDataFromRapiAPI(companyName, RAPID_API_KEY);
         data.Employees = apiResponse?.employees_num;
 
         const webResponse = await scrape(data.Website);
