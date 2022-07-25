@@ -8,7 +8,7 @@ Create `config.json` file with following content:
 
 ```json
 {
-    "XRapidAPIKey": "YOUR_RAPID_API_KEY_GOES_HERE"
+    "RAPID_API_KEY": "YOUR_RAPID_API_KEY_GOES_HERE"
 }
 ```
 
