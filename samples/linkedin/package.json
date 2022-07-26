@@ -1,0 +1,27 @@
+{
+    "name": "@scramjet/linkedin",
+    "version": "0.13.1",
+    "description": "This sequence processes CSV input and retrieves additional company data from LinkedIn via RapidAPI",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "postbuild": "cp -r package.json dist/ && (cd dist && npm i --only=production)"
+    },
+    "author": "Scramjet <open-source@scramjet.org>",
+    "license": "GPL-3.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/scramjetorg/transform-hub.git"
+    },
+    "dependencies": {
+        "axios": "^0.21.4",
+        "cheerio": "*",
+        "csv-parser": "^3.0.0",
+        "scramjet": "^4.36.0"
+    },
+    "devDependencies": {
+        "@scramjet/types": "^0.22.0",
+        "@types/node": "15.12.5",
+        "typescript": "^4.3.4"
+    }
+}
