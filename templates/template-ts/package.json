@@ -5,7 +5,7 @@
   "main": "index",
   "description": "This package is a User's template for ts-node projects",
   "author": "Scramjet <open-source@signicode.com>",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/scramjetorg/scrmajet-cloud-docs.git"

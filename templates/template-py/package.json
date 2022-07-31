@@ -1,5 +1,5 @@
 {
-  "name": "@scramjet/template-py",
+  "name": "@template/template-py",
   "version": "0.18.7",
   "main": "./main.py",
   "author": "Who are you <who@example.com>",
