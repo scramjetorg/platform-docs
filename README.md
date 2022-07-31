@@ -18,8 +18,6 @@
     <img src="https://assets.scramjet.org/sth-logo.svg" alt="Scramjet Transform Hub Logo">
 </p>
 
-> 💡 **Note**: This repository contains introductory documentation and code samples for Scramjet Transform Hub.
-
 * Developers looking for source code repository should visit the following link [https://github.com/scramjetorg/transform-hub](https://github.com/scramjetorg/transform-hub).
 * You can also find our packages published in NPM:
   * STH [https://www.npmjs.com/package/@scramjet/sth](https://www.npmjs.com/package/@scramjet/sth)
@@ -175,7 +173,9 @@ More detailed installation instructions can be found in our [STH GitHub reposito
 
 Before running your first Sequence let's have a quick look what's inside the Sequence package.
 
-We have prepared for you a simple JavaScript sample Sequence "hello-snowman". This Sequence is available in the directory `samples/hello-snowman` in this repository. In this directory you will find two files:
+We have prepared for you a simple JavaScript sample Sequence "hello-snowman". This Sequence is available in the directory `javascript/hello-snowman` in the [Scramjet Cloud Platform Samples repository](https://github.com/scramjetorg/platform-samples). 
+
+In this directory you will find two files:
 
 * `package.json` - manifest file that describes this particular Sequence
 * `index.js` - file containing main application logic.
@@ -204,10 +204,10 @@ Please open new terminal window (and keep the first one open with STH running). 
 Pack directory `hello-snowman` into archive `hello-sequence.tar.gz`:
 
 ```bash
-si pack ./samples/hello-snowman/ -o ./samples/hello-snowman.tar.gz
+si pack /javascript/hello-snowman/ -o ./dist/hello-snowman.tar.gz
 ```
 
-There is no output shown in the terminal but you can verify with `ls` that tarball package is created inside `samples` directory. Please move to the next step.
+There is no output shown in the terminal but you can verify with `ls` that tarball package is created inside `dist` directory. Please move to the next step.
 
 </details>
 
@@ -219,7 +219,7 @@ There is no output shown in the terminal but you can verify with `ls` that tarba
 Send `hello-snowman.tar.gz` to the running host (default localhost API endpoint will be used by the CLI send command) by issuing following command:
 
 ```bash
-si sequence send ./samples/hello-snowman.tar.gz
+si sequence send ./javascript/hello-snowman.tar.gz
 ```
 
 > 💡 **Note:** if you receive reply: **Request ok: <http://127.0.0.1:8000/api/v1/sequence> status: 422 Unprocessable Entity**, it means that STH Docker images are not yet pulled from DockerHub. Please wait 2-3 minutes and try to issue `si sequence send` command again. We are working on fixing this issue in the next STH release. Also, if you keep receiving docker errors you can start STH without docker: `scramjet-transform-hub --no-docker`
@@ -429,7 +429,7 @@ Snowman ⛄ is freezing 🥶 Winter is coming ❄️ ❄️ ❄️ ❄️ ❄️
 
 Here you can find more resources related to Scramjet Transform Hub:
 
-* 📚 [Check out more samples](samples) - we have prepared some ready-to-use apps, which you can either use as a starting point for creating your own Sequences or simply run them just to see what they do, and how the STH works with them.
+* 📚 [Check out more sequence samples](https://github.com/scramjetorg/platform-samples) - we have prepared some ready-to-use apps, which you can either use as a starting point for creating your own Sequences or simply run them just to see what they do, and how the STH works with them.
 * 📂 [Start from our app templates](templates) - almost  a blank file structure (package) and usage instructions, ready to be used as a starting point for building your own Sequences. This is the simplest base we can provide for you to start with.
 * 🧑‍💻 [Contribute to STH development](https://github.com/scramjetorg/transform-hub)  - please feel free to contribute to STH development by submitting pull requests or creating issues.
 * 🌐 [Visit our Scramjet.org page](https://scramjet.org)  - check out our website for more information about our Scramjet team, history and products.
