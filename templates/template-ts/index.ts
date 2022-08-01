@@ -1,5 +1,5 @@
 import { TransformApp } from "@scramjet/types";
-import { PassThrough } from "stream";
+import { PassThrough } from "node:stream";
 
 
 const app: TransformApp<string> = async function(input: any) {

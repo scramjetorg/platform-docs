@@ -1,0 +1,19 @@
+{
+  "name": "@template/template-py",
+  "version": "0.18.7",
+  "main": "./main.py",
+  "author": "Who are you <who@example.com>",
+  "license": "MIT",
+  "engines": {
+    "python3": "3.5.0"
+  },
+  "scripts": {
+    "build": "mkdir -p dist/__pypackages__/ && cp *.py package.json dist/ && pip3 install -t dist/__pypackages__/ -r requirements.txt",
+    "clean": "rm -rf ./dist ./*.tar.gz",
+    "pack": "si seq pack ./dist/",
+    "pack:pub": "DIST_DIR=${DIST_DIR:-.}; si seq pack ./dist -o ${DIST_DIR}/$(basename $(readlink -f ../))-$(basename $(readlink -f .)).tar.gz"
+  },
+  "devDependencies": {
+    "@scramjet/cli": "^0.26.1"
+  }
+}
