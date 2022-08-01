@@ -173,7 +173,7 @@ More detailed installation instructions can be found in our [STH GitHub reposito
 
 Before running your first Sequence let's have a quick look what's inside the Sequence package.
 
-We have prepared for you a simple JavaScript sample Sequence "hello-snowman". This Sequence is available in the directory `javascript/hello-snowman` in the [Scramjet Cloud Platform Samples repository](https://github.com/scramjetorg/platform-samples). 
+We have prepared for you a simple JavaScript sample Sequence "hello-snowman". This Sequence is available in the directory `javascript/hello-snowman` in the [Scramjet Cloud Platform Samples repository](https://github.com/scramjetorg/platform-samples).
 
 In this directory you will find two files:
 
