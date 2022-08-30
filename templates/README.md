@@ -214,3 +214,80 @@ Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
 Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
 
 Terminal 3️⃣ shows the output of the `node` command that runs the app which generates random numbers and sends them to the q's input.
+
+## Work with Python
+
+You can also run Python application, however, there are a few things to keep in mind. This application package template contains files:
+
+- **package.json** - function of this file is similar to `package.json` file in JavaScript template and Typescript template, however it is slighlty different build.
+
+```json
+{
+  "name": "@template/template-py",
+  "version": "0.18.7",
+  "main": "./main.py", // naturally, it must be a *.py file
+  "engines": {
+    "python3": "3.5.0" // you need to specify python3 key in engines
+  },
+  "scripts": {
+    "build": "mkdir -p dist/__pypackages__/ && cp *.py package.json dist/ && pip3 install -t dist/__pypackages__/ -r requirements.txt", // this script copy all *.py files and any needed resources to proper directory and install all needed libs from requirements.txt file
+    "clean": "rm -rf ./dist ./*.tar.gz",
+  },
+  "author": "Who are you <who@example.com>",
+  "license": "MIT",
+}
+```
+
+- **requirements.txt** - a file listing all the dependencies needed for application. It is Pythonic way to list all needed dependencies.
+
+```text
+kafka-python==2.0.2
+scramjet-framework-py
+```
+
+In our template we introduce you to a very simple application, which reads input stream and write it to the output stream with some extra information. We simulate saving entry to database.
+
+```python
+async def save_entry_to_db(id: str) -> None:
+   return f'saved to db: {id}'
+
+async def run(context, input):
+   async for id in input:
+      yield await save_entry_to_db(id)
+```
+
+To see how this template works you can run it with a few simple commands written below:
+
+> 💡 **Note!** To run this template you need to have those two packages installed: `npm install -g @scramjet/sth @scramjet/cli`
+
+#### 1️⃣ terminal:
+
+- run command `scramjet-transform-hub`
+
+#### 2️⃣ terminal:
+
+- `cd templates/template-py`
+- `npm install`
+- `npm run build` - it runs build script in the template's package.json file
+- `npm run pack` - it creates a tar.gz archive of the dist folder
+- `si sequence send dist.tar.gz` - it sends the archive to STH
+- `si sequence start <sequence-id>` - it starts the Sequence (started Sequence turns into Instance)
+- `si inst output <instance-id>`- it shows the Instance's output stream in the terminal
+
+#### 3️⃣ terminal:
+
+The command below allows to write directly to instance input anything you want. In this way we are sending an input stream that will be consumed by our template app.
+
+- `si inst input <instance-id>`
+
+### **Expected output:**
+
+![template1](../images/template3.png)
+
+What you can see in the attached image is 3 terminals that illustrates the template's workflow:
+
+Terminal 1️⃣ shows the logs of running `scramjet-transform-hub` process.
+
+Terminal 2️⃣ shows the output of the program that we launched using STH CLI.
+
+Terminal 3️⃣ shows the input we send to program.
