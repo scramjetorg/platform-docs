@@ -1,10 +1,5 @@
-
-<h1 align="center"><strong>Scramjet Transform Hub - Quick Start</strong></h1>
+<h1 align="center"><strong>Scramjet Cloud Platform</strong></h1>
 <p align="center">
-    <a href=https://github.com/scramjetorg/scramjet-cloud-docs/blob/main/LICENSE>
-        <img src="https://img.shields.io/badge/license-MIT-green?color=green&style=plastic" alt="GitHub license"/></a>
-    <a href=https://github.com/scramjetorg/scramjet-cloud-docs/stargazers>
-        <img src="https://img.shields.io/github/stars/scramjetorg/scramjet-cloud-docs?color=pink&style=plastic" alt="GitHub stars" /></a>
     <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7F7V65C43EBMW">
         <img src="https://img.shields.io/badge/Donate-PayPal-green.svg?color=yellow&style=plastic" alt="Donate" /></a>
     <a href="https://scramjet.org/">
@@ -13,9 +8,9 @@
     <a href="https://www.linkedin.com/company/scramjet/">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=plastic&logo=linkedin&logoColor=white" alt="Slack"/></a>
 </p>
-<p align="center">⭐ Star us on GitHub — it motivates us a lot! 🚀 </p>
+<p align="center">⭐ <a href="https://github.com/scramjetorg/scramjet-cloud-docs/stargazers">Star us on GitHub</a> — it motivates us a lot! 🚀 </p>
 <p align="center">
-    <img src="https://assets.scramjet.org/sth-logo.svg" alt="Scramjet Transform Hub Logo">
+    <img src="images/cloud-platform.svg" alt="Scramjet Transform Hub Logo">
 </p>
 
 * Developers looking for source code repository should visit the following link [https://github.com/scramjetorg/transform-hub](https://github.com/scramjetorg/transform-hub).
@@ -27,10 +22,10 @@
 
 ## **Table of Contents**
 
-1. [Introduction](#1-introduction)
-    * [What is Scramjet Transform Hub](#11-what-is-scramjet-transform-hub)
-    * [Solution concept diagram](#12-solution-concept-diagram)
-2. [Installation](#2-installation)
+1. [Scramjet Cloud Platform](#1-scramjet-cloud-platform)
+    * [Introduction](#1-1-introduction)
+    * [Platform Quick Start](#1-2-platform-quick-start)
+2. [Self hosted install](#2-self-hosted-installation)
     * [Prepare environment](#21-prepare-environment)
     * [Install STH](#22-install-sth)
 3. [Run your first Sequence](#3-run-your-first-sequence)
@@ -39,101 +34,100 @@
 4. [Where to go next](#4-where-to-go-next)
 5. [User's dictionary](#5-users-dictionary)
 
-## **1. Introduction**
+## **1. Scramjet Cloud Platform**
 
-### **1.1 What is Scramjet Transform Hub**
+### **1.1. Introduction**
 
-Scramjet Transform Hub (STH) can be treated both as data processing engine and execution platform for multiple Sequences running on the same platform and performing various data processing tasks.
+Scramjet Cloud Platform is a Serverless End-to-End Distributed Data Transformation Platform working in the Transform-as-a-Service model that can by itself acquire, transform and process data in real-time pipelines spanning across environments in different physical locations and cloud infrastructure providers.
 
-STH allows you to deploy and run multiple data processing apps called Sequences.
+The platform is used for uploading and executing programs, connecting their outputs with inputs using Topics and finally accessing the outputs via a centrally available API. You don't need to set up servers, operating systems and such, just write your program, package it, send it to us and let us know when you want them to start. We'll take care of the rest.
 
-<details>
-<summary>
-    <strong>Sequences</strong>
-</summary>
+Scramjet Cloud Platform allows you to:
 
-[**Sequences**](dictionary.md#sequence) are specific apps, not just any apps. They specialize in efficient data processing.
+- write and deploy simple long-running data processing programs called Sequences,
+- invoke Sequences with a simple CLI or programmatically via API or a set of client programs,
+- monitor and control running Sequences via one central, publicly available, secure API,
+- send and receive data produces and required by running Sequences,
+- share data between multiple Sequences by enclosing them in Spaces,
+- connect self-hosted servers to existing Data Spaces with minimum configuration,
+- create execution environments at multiple cloud providers with a click of a button.
 
-We named our apps "Sequences" and that term describes well its nature, as they process data through a Sequence of chained functions. Therefore, usually our Sequences are concise, easy to write and powerful at the same time.
-</details>
-<br>
+### **1.2. Platform Quick Start**
 
-The core part of our STH engine is called the "host".
 
-<details>
-<summary>
-    <strong>Host</strong>
-</summary>
+> **Deploy** and **execute** long running data **programs** that, **​transform** **in real-time** and transport **data** ​between multiple clouds and **on-premise** machines, just as **simply** as starting a program on a laptop, ​with no tedious configurations, VPNs or DevOps work.​
 
-**Host** is responsible for maintaining and deploying Sequences, keeping them running and managing its lifecycle.
+<!-- ## Joining the Beta Program to register
 
-Host exposes also its own REST API to provide and receive data and manage Sequences and host itself.
+<BetaBanner /> -->
 
-What we also do on the host level is that we apply a set of algorithms to optimize and speed up data processing execution in Sequences.
+#### Log in to Scramjet Cloud Platform Beta Panel
 
-> We call our processing optimization algorithms **"IFCA"** meaning "Intelligent Function Composition Algorithms".
+<div className="w-200"></div>
 
-You can interact with host using our dedicated STH CLI that will help you with Sequences deployment, running and monitoring.
-</details>
-<br>
-Our vanilla STH engine is based on Node.js and thus allows developers to benefit from its rich ecosystem, numerous packages and solutions provided by this vibrant community.
+| ![Scramjet Welcome Page](images/welcome-page.png) |  To use our platform **free of charge for a year**, please [sign up for the beta program](https://scr.je/join-beta-docs). <br/> If you are already our user, please log in to the [Scramjet Cloud Platform Beta Panel](https://console.beta.scramjet.cloud/) through your provided mail and set the new password by clicking `Forgot the password`. |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-### **1.2 Solution concept diagram**
+#### Start the journey with Scramjet 🚀
 
-[![Solution concept diagram](https://scramjet.org/images/sth-diagram.jpg)](https://scramjet.org/#join-beta)
+There are only three simple steps!
 
-<u>Glossary:</u>
+- [Set up the environment](https://console.beta.scramjet.cloud/settings).
+- [Deploy one of the demo Transform Sequence programs](https://docs.scramjet.org/platform/samples).
+- Write your own Transform Sequence from [templates](https://docs.scramjet.org/platform/templates) in [JavaScript](https://docs.scramjet.org/platform/development-guide-js), [TypeScript](https://docs.scramjet.org/platform/development-guide-ts) or [Python](https://docs.scramjet.org/platform/development-guide-py)
 
-<details>
-<summary>
-    <strong>Inputs</strong>
-</summary>
+#### Step 1: Set up the environment
 
-1. STH can handle any input that can be handled by Node.js application.
-2. You, as a developer, are free to process variety of inputs in your Sequence applications, such as: Text, JSON, XML, SOAP, Audio, Video and more.
-3. Inputs can be either:
-    * Provided to STH via its REST API; or
-    * Consumed from various local or remote sources by the app; such as: Stream, STDIN, File, API, URL
-    * Generated by the app itself
+Dear user, in order to use our Beta Space, you need to have Linux based operating system installed eg. Ubuntu.
+You will also need Node.js together with its package manager npm. Please refer to installation helper for node and npm in case of any problems. You must have Bash installed while using Windows.
 
-</details>
+Open the command prompt and follow the steps below to configure Scramjet Cloud Platform (SCP).
 
-<details>
-<summary>
-    <strong>Host</strong>
-</summary>
+1. Check if the SCP Command Line Interface (SCP CLI) is installed by typing `si` into the terminal. If not, install SCP CLI by the command.
 
-This is a solution for the central processing and management unit with the following major components:
+   ```bash
+   npm i -g @scramjet/cli && si --help
+   ```
 
-1. **Sequences** - these are the actual "STH" apps. It is a package containing at least two files:
-    * **package.json** - JSON manifest file describing the app and its configuration; such as main file to run
-    * **main file** - file such as `index.js` or `index.ts` that contains a lightweight application business logic.
-2. **Instance** - once a Sequence is run, the host will create a separate runtime environment for it and will execute Sequence code inside this runtime entity. This is an Instance.
-3. **API & CLI** - our Application Programming Interface and CLI connecting to it allows both for **Data operations** (sending input data and receiving output data) and **Management operations** (manage host itself and its entities: Sequences or Instances)
+2. Generate SCP CLI Token.
 
-</details>
+   [![Token will not be saved. After generation, please store it on your device.](../../images/screens/generate-token.png)](https://console.beta.scramjet.cloud/settings)
 
-<details>
-<summary>
-    <strong>Outputs</strong>
-</summary>
+   After token generation copy and paste the following CLI command for setting up config.
 
-Our engine outputs can be managed in several ways:
+   ```bash
+   si config set json '{"middlewareApiUrl": "https://api.beta.scramjet.cloud/api/v1", "env": "production", "token": "<GeneratedToken>"}'
+   ```
 
-* **File** - you can save your output to a local or a remote file
-* **STDOUT** - output can be directed to system STDOUT (STDERR is supported as well)
-* **API** - output can be consumed from our STH REST API
-* **URL Request** - you can write your app in a way to request URL, webhook, etc.
-* **Stream** - output can be streamed to a particular destination
-* you can mix multiple actions together: you can both send data to remote system/URL and save it locally.
+3. Check if your setup is working properly by listing your programs (Sequences).
 
-</details><br>
+   ```bash
+   si seq list
+   ```
 
-### Cloud Platform Beta is coming 🥳 <!-- omit in toc -->
+4. There should be sample program listed. Start it using the command:
 
-[![Beta program](https://scramjet.org/images/join-scramjet-cloud-beta.png)](https://scramjet.org/#join-beta)
+   ```bash
+   si seq start <sequence-id>
+   ```
 
-## **2. Installation**
+5. After the program starts the Instance id will be returned.
+
+   Show output data form the running program (instance).
+
+   ```bash
+   si inst output <instance-id>
+   ```
+
+6. Open the new terminal and type the commend below and hit enter.
+
+   ```bash
+   si inst input <instance-id>
+   ```
+
+After the command execution, running Instance awaits for data to be passed as stdin. To do that please type into the command prompt, for example "John" and hit enter. In the terminal window where we read the Instance output the message: "Hello John" should appear.
+
+## **2. Self Hosted Installation**
 
 ### **2.1 Prepare environment**
 
@@ -433,6 +427,7 @@ Here you can find more resources related to Scramjet Transform Hub:
 * 📂 [Start from our app templates](templates) - almost  a blank file structure (package) and usage instructions, ready to be used as a starting point for building your own Sequences. This is the simplest base we can provide for you to start with.
 * 🧑‍💻 [Contribute to STH development](https://github.com/scramjetorg/transform-hub)  - please feel free to contribute to STH development by submitting pull requests or creating issues.
 * 🌐 [Visit our Scramjet.org page](https://scramjet.org)  - check out our website for more information about our Scramjet team, history and products.
+* 🏖️ [Donate to our team's fun fund](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7F7V65C43EBMW)
 
 ## **5. User's dictionary**
 
