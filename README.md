@@ -44,22 +44,17 @@ The platform is used for uploading and executing programs, connecting their outp
 
 Scramjet Cloud Platform allows you to:
 
-- write and deploy simple long-running data processing programs called Sequences,
-- invoke Sequences with a simple CLI or programmatically via API or a set of client programs,
-- monitor and control running Sequences via one central, publicly available, secure API,
-- send and receive data produces and required by running Sequences,
-- share data between multiple Sequences by enclosing them in Spaces,
-- connect self-hosted servers to existing Data Spaces with minimum configuration,
-- create execution environments at multiple cloud providers with a click of a button.
+* write and deploy simple long-running data processing programs called Sequences,
+* invoke Sequences with a simple CLI or programmatically via API or a set of client programs,
+* monitor and control running Sequences via one central, publicly available, secure API,
+* send and receive data produces and required by running Sequences,
+* share data between multiple Sequences by enclosing them in Spaces,
+* connect self-hosted servers to existing Data Spaces with minimum configuration,
+* create execution environments at multiple cloud providers with a click of a button.
 
 ### **1.2. Platform Quick Start**
 
-
 > **Deploy** and **execute** long running data **programs** that, **​transform** **in real-time** and transport **data** ​between multiple clouds and **on-premise** machines, just as **simply** as starting a program on a laptop, ​with no tedious configurations, VPNs or DevOps work.​
-
-<!-- ## Joining the Beta Program to register
-
-<BetaBanner /> -->
 
 #### Log in to Scramjet Cloud Platform Beta Panel
 
@@ -72,9 +67,9 @@ Scramjet Cloud Platform allows you to:
 
 There are only three simple steps!
 
-- [Set up the environment](https://console.beta.scramjet.cloud/settings).
-- [Deploy one of the demo Transform Sequence programs](https://docs.scramjet.org/platform/samples).
-- Write your own Transform Sequence from [templates](https://docs.scramjet.org/platform/templates) in [JavaScript](https://docs.scramjet.org/platform/development-guide-js), [TypeScript](https://docs.scramjet.org/platform/development-guide-ts) or [Python](https://docs.scramjet.org/platform/development-guide-py)
+* [Set up the environment](https://console.beta.scramjet.cloud/settings).
+* [Deploy one of the demo Transform Sequence programs](https://docs.scramjet.org/platform/samples).
+* Write your own Transform Sequence from [templates](https://docs.scramjet.org/platform/templates) in [JavaScript](https://docs.scramjet.org/platform/development-guide-js), [TypeScript](https://docs.scramjet.org/platform/development-guide-ts) or [Python](https://docs.scramjet.org/platform/development-guide-py)
 
 #### Step 1: Set up the environment
 
