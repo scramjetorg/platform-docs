@@ -60,7 +60,7 @@ Scramjet Cloud Platform allows you to:
 
 <div className="w-200"></div>
 
-| ![Scramjet Welcome Page](images/welcome-page.png) |  To use our platform **free of charge for a year**, please [sign up for the beta program](https://scr.je/join-beta-docs). <br/> If you are already our user, please log in to the [Scramjet Cloud Platform Beta Panel](https://console.beta.scramjet.cloud/) through your provided mail and set the new password by clicking `Forgot the password`. |
+| ![Scramjet Welcome Page](images/cp-welcome-page.png) |  To use our platform **free of charge for a year**, please [sign up for the beta program](https://scr.je/join-beta-docs). <br/> If you are already our user, please log in to the [Scramjet Cloud Platform Beta Panel](https://console.beta.scramjet.cloud/) through your provided mail and set the new password by clicking `Forgot the password`. |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
 #### Start the journey with Scramjet 🚀
