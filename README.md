@@ -108,7 +108,7 @@ Open the command prompt and follow the steps below to configure Scramjet Cloud P
 
 5. After the program starts the Instance id will be returned.
 
-   Show output data form the running program (instance).
+   Show output data from the running program (instance).
 
    ```bash
    si inst output <instance-id>
