@@ -23,8 +23,8 @@
 ## **Table of Contents**
 
 1. [Scramjet Cloud Platform](#1-scramjet-cloud-platform)
-    * [Introduction](#1-1-introduction)
-    * [Platform Quick Start](#1-2-platform-quick-start)
+    * [Introduction](#11-introduction)
+    * [Platform Quick Start](#12-platform-quick-start)
 2. [Self hosted install](#2-self-hosted-installation)
     * [Prepare environment](#21-prepare-environment)
     * [Install STH](#22-install-sth)
