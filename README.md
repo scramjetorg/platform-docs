@@ -86,7 +86,7 @@ Open the command prompt and follow the steps below to configure Scramjet Cloud P
 
 2. Generate SCP CLI Token.
 
-   [![Token will not be saved. After generation, please store it on your device.](../../images/screens/generate-token.png)](https://console.beta.scramjet.cloud/settings)
+   [![Token will not be saved. After generation, please store it on your device.](../../images/generate-token.png)](https://console.beta.scramjet.cloud/settings)
 
    After token generation copy and paste the following CLI command for setting up config.
 
