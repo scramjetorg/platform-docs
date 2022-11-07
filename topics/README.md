@@ -9,21 +9,23 @@ The topics are also available under their own API endpoints. Topics API endpoint
 ## Topics Visibility
 
 The topics are created in a Space and can be accessible only within that Space. A Space is Scramjet environment which provides data isolation.
-By default, a user account has one Space and one Hub. A Hub is an engine which runs user programs (Sequences). 
+By default, a user account has one Space and one Hub. A Hub is an engine which runs user programs (Sequences).
 
-A Space can be visible in the Platform Panel:
+A Space can be visible in the Platform Panel ():
+
 ![space](../images/si-space.png)
 
-
 You can also list your Spaces using the [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli):
+
 ```bash
 si space ls
 ```
+
 ## Topic API
 
 The dedicated topic endpoint has an endpoint:
 
-```
+```bash
 {API Base}/topic/:name​
 ```
 
@@ -32,12 +34,14 @@ where ```:name``` is the topic name of your choice.
 When you send the first request to this endpoint, the topic is automatically created and ready to be used.
 
 You can send data to to the topic with a simple POST request:
-```
+
+```bash
 [ POST ] {API Base}/topic/:name​ 
 ```
 
 and recieve it with the GET request under the same endpoint:
-```
+
+```bash
 [ GET ] {API Base}/topic/:name​ 
 ```
 
@@ -98,7 +102,7 @@ Full Sequence code can be found [here](https://github.com/scramjetorg/reference-
 ## Accessing Topics via CLI
 
 If you wish to give the topics a test drive a convenient way to do it is through the [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli)
-[The Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli) has a full topics support enablinng;
+[The Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli) has full topics support enabling;
 
 - Sending data to a topic from the standard input or a file
 - Receiving data from a topic
