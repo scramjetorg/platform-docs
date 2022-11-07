@@ -1,25 +1,52 @@
 # Topics
 
-Topics enable building highly efficient data streaming pipelines.
+Topics enable building highly efficient data streaming pipelines. The topic data pipelines can be used to transfer data between your Instances.
 
-These data pipelines can be built to transfer data between your Instances.
+Each Instance can be either producer and/or customer of one topic.
 
-Each Instance can be either producer and/or customer of a topic.
+The topics are also available under their own API endpoints. Topics API endpoint can have multiple producers and consumers.
 
-## Topic Producer
+## Topic API
+
+The dedicated topic endpoint has an endpoint:
+
+```
+{API Base}/topic/:name​
+```
+
+where ```:name``` is the topic name of your choice.
+
+When you send the first request to this endpoint, the topic is automatically created and ready to be used.
+
+You can send data to to the topic with a simple POST request:
+```
+[ POST ] {API Base}/topic/:name​ 
+```
+
+and recieve it with the GET request under the same endpoint:
+```
+[ GET ] {API Base}/topic/:name​ 
+```
+
+More information on Topics API can be found in [Scramjet API reference](https://docs.scramjet.org/platform/api-reference#topics-operation-on-data).
+
+## Instance Topic Producer
 
 Indicating that your Instance is a producer is as easy as setting the two attributes on the output stream returned from the Instance. These attributes are topic name and topic content type.
 
 Below is JavaScript snippet example of creating a topic producer Instance for the topic named ```names``` of content type ```application/x-ndjson```:
 
 ```js
+// The function exported in the main file of your Sequence. The main file of your Sequence is specified in the "package.json" configuration file.
 export = async function(_input) {
+    // Initiating a stream which will be used as a topic stream in this Sequence.
     const ps: PassThrough & HasTopicInformation = new PassThrough({ objectMode: true });
 
+    // Everything written to this stream will be available in the topic stream.
      const data = { name: "Hulk" };
      ps.write(data);
     
-    // Indicating that this Instance produces data to topic named "names".
+    // Indicating that this stream produces data to topic named "names" which has content type "application/x-ndjson".
     ps.topic = "names";
     ps.contentType = "application/x-ndjson";
 
@@ -29,14 +56,14 @@ export = async function(_input) {
 
 Full Sequence code can be found [here](https://github.com/scramjetorg/reference-apps/blob/main/js/endless-names-output/index.ts)
 
-## Topic Consumer
+## Instance Topic Consumer
 
 If you wish to now create an Instance that would be a consumer of this topic you need to export from your main file an array. The first element of this array will be an object indicating the required Topic name and content type.
 
 ```js
-// In the main Sequence file we export an array.
+// The array exported in the main file of your Sequence. The main file of your Sequence is specified in the "package.json" configuration file.
 const mod: (TransformApp | { requires: string, contentType: string})[] = [
-    // The first element of this array includes topic name ("names") and content type ("application/x-ndjson")
+    // The first element of this array specifies the topic name as "names" and content type as "application/x-ndjson".
     { requires: "names", contentType: "application/x-ndjson" },
     // The second element of the array is the first Sequence function we wish to call
     function(input: Streamable<any>) {
@@ -54,3 +81,5 @@ export default mod;
 ```
 
 Full Sequence code can be found [here](https://github.com/scramjetorg/reference-apps/blob/main/js/hello-input-out/src/index.ts)
+
+## Accessing Topics via CLI
