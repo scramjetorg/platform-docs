@@ -11,7 +11,7 @@ The topics are also available under their own API endpoints. Topics API endpoint
 The topics are created in a Space and can be accessible only within that Space. A Space is Scramjet environment which provides data isolation.
 By default, a user account has one Space and one Hub. A Hub is an engine which runs user programs (Sequences).
 
-A Space can be visible in the Platform Panel ():
+A Space can be visible in the Platform Panel:
 
 ![space](../images/si-space.png)
 
@@ -19,6 +19,12 @@ You can also list your Spaces using the [Scramjet CLI](https://www.npmjs.com/pac
 
 ```bash
 si space ls
+```
+
+or directly by API:
+
+```bash
+curl https://api.beta.scramjet.cloud/api/v1/spaces -H 'accept: */*' -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' -H 'cache-control: no-cache' -H 'content-type: application/json'
 ```
 
 ## Topic API
@@ -39,10 +45,22 @@ You can send data to to the topic with a simple POST request:
 [ POST ] {API Base}/topic/:name​ 
 ```
 
+Example:
+
+```bash
+curl https://api.beta.scramjet.cloud/api/v1/space/<space-ID>/api/v1/sth/<hub-ID>/api/v1/topic/topicTestName -H 'accept: */*' -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' -H 'cache-control: no-cache' -H 'content-type: application/json' -d '{"test": 1}'
+```
+
 and recieve it with the GET request under the same endpoint:
 
 ```bash
 [ GET ] {API Base}/topic/:name​ 
+```
+
+Example:
+
+```bash
+curl https://api.beta.scramjet.cloud/api/v1/space/<space-ID>/api/v1/sth/<hub-ID>/api/v1/topic/topicTestName -H 'accept: */*' -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' -H 'cache-control: no-cache' -H 'content-type: application/json'
 ```
 
 More information on Topics API can be found in [Scramjet API reference](https://docs.scramjet.org/platform/api-reference#topics-operation-on-data).
