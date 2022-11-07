@@ -29,7 +29,7 @@ curl https://api.beta.scramjet.cloud/api/v1/spaces -H 'accept: */*' -H 'authoriz
 
 ## Topic API
 
-The dedicated topic endpoint has an endpoint:
+The Topic API has a dedicated endpoint ```/topic```:
 
 ```bash
 {API Base}/topic/:name​
