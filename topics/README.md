@@ -6,6 +6,19 @@ Each Instance can be either producer and/or customer of one topic.
 
 The topics are also available under their own API endpoints. Topics API endpoint can have multiple producers and consumers.
 
+## Topics Visibility
+
+The topics are created in a Space and can be accessible only within that Space. A Space is Scramjet environment which provides data isolation.
+By default, a user account has one Space and one Hub. A Hub is an engine which runs user programs (Sequences). 
+
+A Space can be visible in the Platform Panel:
+![space](../images/si-space.png)
+
+
+You can also list your Spaces using the [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli):
+```bash
+si space ls
+```
 ## Topic API
 
 The dedicated topic endpoint has an endpoint:
@@ -83,3 +96,12 @@ export default mod;
 Full Sequence code can be found [here](https://github.com/scramjetorg/reference-apps/blob/main/js/hello-input-out/src/index.ts)
 
 ## Accessing Topics via CLI
+
+If you wish to give the topics a test drive a convenient way to do it is through the [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli)
+[The Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli) has a full topics support enablinng;
+
+- Sending data to a topic from the standard input or a file
+- Receiving data from a topic
+- Listing the topics created on Space
+
+![listtopics](../images/si-topic-help.png)
