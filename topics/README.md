@@ -73,20 +73,20 @@ Below is JavaScript snippet example of creating a topic producer Instance for th
 
 ```js
 // The function exported in the main file of your Sequence. The main file of your Sequence is specified in the "package.json" configuration file.
-export = async function(_input) {
-    // Initiating a stream which will be used as a topic stream in this Sequence.
-    const ps: PassThrough & HasTopicInformation = new PassThrough({ objectMode: true });
+module.exports = async function(_inputStream) {
+     // Initiate an Instance output stream.
+    const outputStream = new PassThrough({ objectMode: true });
 
-    // Everything written to this stream will be available in the topic stream.
+    // Write something to the Instance output stream.
      const data = { name: "Hulk" };
-     ps.write(data);
+     outputStream.write(data);
     
-    // Indicating that this stream produces data to topic named "names" which has content type "application/x-ndjson".
-    ps.topic = "names";
-    ps.contentType = "application/x-ndjson";
+    // Indicate that this stream produces data to topic named "names" which has content type "application/x-ndjson".
+    outputStream.topic = "names";
+    outputStream.contentType = "application/x-ndjson";
 
-    return ps;
-} as ReadableApp<any>;
+    return outputStream;
+};
 ```
 
 Full Sequence code can be found [here](https://github.com/scramjetorg/reference-apps/blob/main/js/endless-names-output/index.ts)
@@ -97,22 +97,23 @@ If you wish to now create an Instance that would be a consumer of this topic you
 
 ```js
 // The array exported in the main file of your Sequence. The main file of your Sequence is specified in the "package.json" configuration file.
-const mod: (TransformApp | { requires: string, contentType: string})[] = [
+module.exports = [
     // The first element of this array specifies the topic name as "names" and content type as "application/x-ndjson".
     { requires: "names", contentType: "application/x-ndjson" },
-    // The second element of the array is the first Sequence function we wish to call
-    function(input: Streamable<any>) {
-        const out = new PassThrough({ objectMode: true });
+    // The second element of the array is the first Sequence function we wish to call.
+    function(inputStream) {
+        // Initiate Instance output stream
+        const outputStream = new PassThrough({ objectMode: true });
 
-       // Consume topic "names and write something to an output stream, e.g.
-        (input as StringStream)
-            .map((data: any) => "Name is: " + data.name + "\n")
-            .pipe(out);
+        // Data from the topic stream "names" are written to the Instance input stream.
+        // You can e.g. transform the input data and write them to the Instance output stream.
+        (inputStream)
+            .map((data) => `Hello ${data.name}! \n`)
+            .pipe(outputStream);
 
-        return out;
+        return outputStream;
     }
 ];
-export default mod;
 ```
 
 Full Sequence code can be found [here](https://github.com/scramjetorg/reference-apps/blob/main/js/hello-input-out/src/index.ts)
