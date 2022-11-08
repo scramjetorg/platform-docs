@@ -88,8 +88,8 @@ module.exports = async function(_inputStream) {
     return outputStream;
 };
 ```
-
-Full Sequence code can be found [here](https://github.com/scramjetorg/reference-apps/blob/main/js/endless-names-output/index.ts)
+Full Sequence source code can be found [here](./topic-provider-js/index.js).
+This Sequence is also available in a form of [an already packed tar.gz](./topic-provider-js.tar.gz) ready to be run on the Hub.
 
 ## Instance Topic Consumer
 
@@ -116,7 +116,10 @@ module.exports = [
 ];
 ```
 
-Full Sequence code can be found [here](https://github.com/scramjetorg/reference-apps/blob/main/js/hello-input-out/src/index.ts)
+Full Sequence source code can be found [here](./topic-consumer-js/index.js)
+This Sequence is also available in a form of [an already packed tar.gz](./topic-consumer.tar.gz) ready to be run on the Hub.
+
+## Change Instance Provider or Consumer Topic Name
 
 ## Accessing Topics via CLI
 
