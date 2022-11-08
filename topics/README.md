@@ -24,7 +24,11 @@ si space ls
 or directly by API:
 
 ```bash
-curl https://api.beta.scramjet.cloud/api/v1/spaces -H 'accept: */*' -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' -H 'cache-control: no-cache' -H 'content-type: application/json'
+curl https://api.beta.scramjet.cloud/api/v1/spaces \
+    -H 'accept: */*' \
+    -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' \
+    -H 'cache-control: no-cache' \
+    -H 'content-type: application/json'
 ```
 
 ## Topic API
@@ -39,7 +43,7 @@ where ```:name``` is the topic name of your choice.
 
 When you send the first request to this endpoint, the topic is automatically created and ready to be used.
 
-You can send data to to the topic with a simple POST request:
+You can send data to the topic with a simple POST request:
 
 ```bash
 [ POST ] {API Base}/topic/:name​ 
@@ -48,10 +52,15 @@ You can send data to to the topic with a simple POST request:
 Example:
 
 ```bash
-curl https://api.beta.scramjet.cloud/api/v1/space/<space-ID>/api/v1/sth/<hub-ID>/api/v1/topic/topicTestName -H 'accept: */*' -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' -H 'cache-control: no-cache' -H 'content-type: application/json' -d '{"test": 1}'
+curl https://api.beta.scramjet.cloud/api/v1/space/<space-ID>/api/v1/sth/<hub-ID>/api/v1/topic/topicTestName \
+    -H 'accept: */*' \
+    -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' \
+    -H 'cache-control: no-cache' \
+    -H 'content-type: application/json' \
+    -d '{"test": 1}'
 ```
 
-and recieve it with the GET request under the same endpoint:
+and receive it with the GET request under the same endpoint:
 
 ```bash
 [ GET ] {API Base}/topic/:name​ 
@@ -60,7 +69,27 @@ and recieve it with the GET request under the same endpoint:
 Example:
 
 ```bash
-curl https://api.beta.scramjet.cloud/api/v1/space/<space-ID>/api/v1/sth/<hub-ID>/api/v1/topic/topicTestName -H 'accept: */*' -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' -H 'cache-control: no-cache' -H 'content-type: application/json'
+curl https://api.beta.scramjet.cloud/api/v1/space/<space-ID>/api/v1/sth/<hub-ID>/api/v1/topic/topicTestName \
+    -H 'accept: */*' \
+    -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' \
+    -H 'cache-control: no-cache' \
+    -H 'content-type: application/json'
+```
+
+What is also interesting, the topic is created not only in response to a POST request but also with a simple GET request. This means that every GET / POST request sent to the endpoint `/topic/:name` will initiate a new topic, no matter if some data is sent there or not. You can visualize this like this → a GET request opens a pipe with the given topic name (`/:name`), which is ready for data transfer, then every POST request will be filling this pipe with data.
+
+All topics available in the space can be listed by sending GET request to `/topics` endpoint.
+
+```bash
+[ GET ] {API Base}/topics​ 
+```
+
+Example:
+
+```bash
+curl https://api.beta.scramjet.cloud/api/v1/space/<space-ID>/api/v1/sth/<hub-ID>/api/v1/topics \
+    -H 'accept: */*' \
+    -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' |jq
 ```
 
 More information on Topics API can be found in [Scramjet API reference](https://docs.scramjet.org/platform/api-reference#topics-operation-on-data).
@@ -72,9 +101,10 @@ Indicating that your Instance is a producer is as easy as setting the two attrib
 Below is JavaScript snippet example of creating a topic producer Instance for the topic named ```names``` of content type ```application/x-ndjson```:
 
 ```js
-// The function exported in the main file of your Sequence. The main file of your Sequence is specified in the "package.json" configuration file.
+// The main file of your Sequence is specified in the "package.json" configuration file.
+// The function exported in the main file of your Sequence.
 module.exports = async function(_inputStream) {
-     // Initiate an Instance output stream.
+    // Initiate an Instance output stream.
     const outputStream = new PassThrough({ objectMode: true });
 
     // Write something to the Instance output stream.
@@ -88,6 +118,7 @@ module.exports = async function(_inputStream) {
     return outputStream;
 };
 ```
+
 Full Sequence source code can be found [here](./topic-provider-js/index.js).
 This Sequence is also available in a form of [an already packed tar.gz](./topic-provider-js.tar.gz) ready to be run on the Hub.
 
@@ -96,7 +127,8 @@ This Sequence is also available in a form of [an already packed tar.gz](./topic-
 If you wish to now create an Instance that would be a consumer of this topic you need to export from your main file an array. The first element of this array will be an object indicating the required Topic name and content type.
 
 ```js
-// The array exported in the main file of your Sequence. The main file of your Sequence is specified in the "package.json" configuration file.
+// The main file of your Sequence is specified in the "package.json" configuration file.
+// The array exported in the main file of your Sequence.
 module.exports = [
     // The first element of this array specifies the topic name as "names" and content type as "application/x-ndjson".
     { requires: "names", contentType: "application/x-ndjson" },

@@ -28,9 +28,9 @@
 ## **Table of Contents**
 
 1. [Introduction](#1-introduction)
-    * [What is Scramjet Transform Hub](#11-what-is-scramjet-transform-hub-STH-?)
+    * [What is Scramjet Transform Hub](#11-what-is-scramjet-transform-hub)
     * [Solution concept diagram](#12-solution-concept-diagram)
-2. [Installation](#2-Installation)
+2. [Installation](#2-installation)
     * [Prepare environment](#21-prepare-environment)
     * [Install STH](#22-install-sth)
 3. [Run your first Sequence](#3-run-your-first-sequence)
