@@ -9,6 +9,9 @@ ___
 Open the terminal and run the following commands:
 
 ```bash
+# go to sequence directory
+cd topic-provider
+
 # install dependencies
 npm install
 

@@ -1,0 +1,12 @@
+{
+  "name": "@scramjet/topic-provider-js",
+  "version": "0.1.0",
+  "description": "Topic provider. Sequence that produces/writes data under topic called 'names'.",
+  "main": "index.js",
+  "author": "Scramjet <open-source@scramjet.org>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scramjetorg/transform-hub.git"
+  }
+}

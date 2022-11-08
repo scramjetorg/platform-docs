@@ -1,5 +1,5 @@
 {
-  "name": "@scramjet/hello-input-out",
+  "name": "@scramjet/topic-consumer",
   "version": "0.1.0",
   "description": "Topic consumer. Sequence that reads the data under topic called 'names'.",
   "main": "index",
@@ -11,9 +11,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "postbuild": "cp -r package.json dist/ && (cd dist && npm i --only=production)",
-    "pack:pub": "DIST_DIR=${DIST_DIR:-.}; si seq pack ./dist -o ${DIST_DIR}/$(basename $(readlink -f ../))-$(basename $(readlink -f .)).tar.gz",
-    "pack": "si seq pack ./dist/"
+    "postbuild": "cp -r package.json dist/ && (cd dist && npm i --only=production)"
   },
   "author": "Scramjet <open-source@scramjet.org>",
   "license": "GPL-3.0",

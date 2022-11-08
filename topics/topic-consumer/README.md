@@ -9,6 +9,9 @@ ___
 Open the terminal and run the following commands:
 
 ```bash
+# go to sequence directory
+cd topic-consumer
+
 # install dependencies
 npm install
 
@@ -30,5 +33,17 @@ si inst output -
 Once you run `si inst output -` command you should get an output similar to this one:
 
 ```bash
-
+$ si inst output -
+Hello Alice! 
+Hello Ada! 
+Hello Aga! 
+Hello Michael! 
+Hello Patrick! 
+Hello Rafael! 
+Hello Aida! 
+Hello Barbra! 
+Hello Natalie! 
+Hello Tom! 
+Hello Jerry!
+...
 ```
