@@ -9,9 +9,11 @@ The topics are also available under their own API endpoints. Topics API endpoint
 ## Topics Visibility
 
 The topics are created in a Space and can be accessible only within that Space. A Space is Scramjet environment which provides data isolation.
-By default, a user account has one Space and one Hub. A Hub is an engine which runs user programs (Sequences).
+By default, a user account has one Space and one Hub. A Hub is an engine which runs user programs (Sequences). When Hub is connected to
+Space all topics created on this Hub are also accessible on the Space and on all Hubs connected to this Space.
+This enables transferring data between your Instances even if they are running on different Hubs.
 
-A Space can be visible in the Platform Panel:
+A Space and a Hub can be visible in the Platform Panel:
 
 ![space](../images/si-space.png)
 
@@ -21,7 +23,13 @@ You can also list your Spaces using the [Scramjet CLI](https://www.npmjs.com/pac
 si space ls
 ```
 
-or directly by API:
+and all Hubs connected to the given Space with:
+
+```bash
+si hub ls
+```
+
+You can also list Spaces directly using [SCP API](https://docs.scramjet.org/platform/api-reference#hub-operations):
 
 ```bash
 curl https://api.beta.scramjet.cloud/api/v1/spaces \
@@ -30,6 +38,8 @@ curl https://api.beta.scramjet.cloud/api/v1/spaces \
     -H 'cache-control: no-cache' \
     -H 'content-type: application/json'
 ```
+
+You will need a Space ID if you want to send data to a topic using [Topics API](#Topic API).
 
 ## Topic API
 
