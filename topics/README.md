@@ -168,7 +168,8 @@ You can override the topic name used in your Sequence source code when you start
 It can be easily done when starting the Instance using [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli).
 
 The CLI command to start a Sequence supports overriding topic which Instances produces and consumes with two corresponding options;
-```--output-topic``` and ```--input-topic```:
+```--output-topic``` and ```--input-topic```.
+
 ## Override Instance Provider Topic Name
 
 Let's take [our example Sequence which produces data](./topic-consumer-js/index.j) to topic named ```names``` and run it but modify the topic name to ```testNames```:
@@ -204,6 +205,7 @@ If you wish to give the topics a test drive a convenient way to do it is through
 ## Topic FAQ
 
 ### Why do I get ```415 Unsupported Media Type``` error when sending data to topic?
+
 
 ```
 $ si topic send names ~/data.json
