@@ -1,0 +1,12 @@
+{
+  "name": "@scramjet/topic-consumer-provider-js",
+  "version": "0.1.0",
+  "description": "Topic consumer-provider. Sequence that reads the data under topic called 'names', and writes transformed data under a new topic called 'greetings'.",
+  "main": "index.js",
+  "author": "Scramjet <open-source@scramjet.org>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scramjetorg/transform-hub.git"
+  }
+}
