@@ -180,10 +180,9 @@ si seq start - --output-topic "testNames"
 
 ![topicoutputoverride](../images/si-topic-output-override-send.png)
 
-The ```-``` in the above command automatically perfoms the operation for the last saved Sequence ID. More about its use can 
-be found in the [documentation of CLI session configuration](https://docs.scramjet.org/platform/cli-reference#session-configuration)
+The ```-``` in the above command automatically perfoms the operation for the last saved Sequence ID. More about its use can be found in the [documentation of CLI session configuration](https://docs.scramjet.org/platform/cli-reference#session-configuration).
 
-After we successfully started our Sequence with ```--output-topic```, we can list the topics and see that the new topic ```testNames``` appeared: 
+After we successfully started our Sequence with ```--output-topic```, we can list the topics and see that the new topic ```testNames``` appeared:
 
 ![topicoutputoverridels](../images/si-output-override-ls.png)
 
@@ -206,8 +205,7 @@ If you wish to give the topics a test drive a convenient way to do it is through
 
 ### Why do I get ```415 Unsupported Media Type``` error when sending data to topic?
 
-
-```
+```bash
 $ si topic send names ~/data.json
 Error: Failed to request 'http://127.0.0.1:8000/api/v1/topic/names' with code 415.
 ```
