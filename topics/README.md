@@ -170,9 +170,9 @@ It can be easily done when starting the Instance using [Scramjet CLI](https://ww
 The CLI command to start a Sequence supports overriding topic which Instances produces and consumes with two corresponding options;
 ```--output-topic``` and ```--input-topic```.
 
-## Override Instance Provider Topic Name
+## Override Topic Name of Instance Topic Provider
 
-Let's take [our example Sequence which produces data](./topic-consumer-js/index.j) to topic named ```names``` and run it but modify the topic name to ```testNames```:
+Let's take [our example Sequence which produces data](./topic-provider-js/index.js) to topic named ```names``` and run it but modify the topic name to ```testNames```:
 
 ```bash
 si seq start - --output-topic "testNames"
@@ -189,6 +189,22 @@ After we successfully started our Sequence with ```--output-topic```, we can lis
 We can now test if the data was written to the ```testNames``` topic by consuming the topic with the ```si topic get <topicName>``` command:
 
 ![topicoutputoverridegettopic](../images/si-output-override-get-topic.png)
+
+## Override Topic Name of Instance Topic Consumer
+
+Similarly to overriding topic name of Instance topic provider we can override topic name for Instance topic consumer.
+
+We can take [our example Sequence which consumes topic data](./topic-consumer-js/index.js) named ```names``` and also change its topic name to ```testNames```:
+
+```bash
+si seq start - --input-topic "testNames"
+```
+
+If we have an Instance which is both a consumer and a provider of topics, we can override both topic names by combining the two options:
+
+```bash
+si seq start - --input-topic "testNames" --output-topic "preprocessedNames"
+```
 
 ## Accessing Topics via CLI
 
