@@ -163,6 +163,8 @@ This Sequence is also available in a form of [an already packed tar.gz](./topic-
 
 ## Change Instance Provider or Consumer Topic Name
 
+You can override the topic name used in your Sequence source code when you start its Instance.
+
 ## Accessing Topics via CLI
 
 If you wish to give the topics a test drive a convenient way to do it is through the [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli)
@@ -172,4 +174,27 @@ If you wish to give the topics a test drive a convenient way to do it is through
 - Receiving data from a topic
 - Listing the topics created on Space
 
-![listtopics](../images/si-topic-help.png)
+![helptopics](../images/si-topic-help.png)
+
+## Topic FAQ
+
+- Why do I get ```415 Unsupported Media Type``` error when sending data to topic?
+
+This error means that the format of data you are trying to send to topic does not match the data format required by this topic.
+The data format required by the topic is defined when the topic is created and can not be modified.
+
+If you wish to check the data format required by the topic you can list the topics, e.g. using [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli):
+
+```bash
+si topic ls
+```
+
+![listtopics](../images/si-topic-ls.png)
+
+If you use [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli) to send data to a topic, you can use ```-t``` option to indicate the topic data format.
+For example, to send data to topic named ```topicTestName``` expecting data in format ```application/x-ndjson```:
+
+```bash
+si topic send topicTestName -t application/x-ndjson ~/data.json
+
+```
