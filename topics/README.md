@@ -39,7 +39,7 @@ curl https://api.beta.scramjet.cloud/api/v1/spaces \
     -H 'content-type: application/json'
 ```
 
-You will need a Space ID if you want to send data to a topic using [Topics API](#Topic API).
+You will need a Space ID if you want to send data to a topic using [Topics API](#topic-api).
 
 ## Topic API
 
@@ -178,7 +178,7 @@ If you wish to give the topics a test drive a convenient way to do it is through
 
 ## Topic FAQ
 
-- Why do I get ```415 Unsupported Media Type``` error when sending data to topic?
+### Why do I get ```415 Unsupported Media Type``` error when sending data to topic?
 
 ```
 $ si topic send names ~/data.json
@@ -203,3 +203,10 @@ For example, to send data to topic named ```topicTestName``` expecting data in f
 si topic send topicTestName -t application/x-ndjson ~/data.json
 
 ```
+
+### Why data is not available in topic?
+
+If your Instance seems not to be getting the topic data or you are having trouble obtaining all topic data using Topics API please check first
+whether there are no active consumers of this topic.
+
+Once the data in a topic is consumed it is no longer available. The only way to make is available again is to write it the topic again.
