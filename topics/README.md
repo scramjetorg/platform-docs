@@ -165,6 +165,31 @@ This Sequence is also available in a form of [an already packed tar.gz](./topic-
 
 You can override the topic name used in your Sequence source code when you start its Instance.
 
+It can be easily done when starting the Instance using [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli).
+
+The CLI command to start a Sequence supports overriding topic which Instances produces and consumes with two corresponding options;
+```--output-topic``` and ```--input-topic```:
+## Override Instance Provider Topic Name
+
+Let's take [our example Sequence which produces data](./topic-consumer-js/index.j) to topic named ```names``` and run it but modify the topic name to ```testNames```:
+
+```bash
+si seq start - --output-topic "testNames"
+```
+
+![topicoutputoverride](../images/si-topic-output-override-send.png)
+
+The ```-``` in the above command automatically perfoms the operation for the last saved Sequence ID. More about its use can 
+be found in the [documentation of CLI session configuration](https://docs.scramjet.org/platform/cli-reference#session-configuration)
+
+After we successfully started our Sequence with ```--output-topic```, we can list the topics and see that the new topic ```testNames``` appeared: 
+
+![topicoutputoverridels](../images/si-output-override-ls.png)
+
+We can now test if the data was written to the ```testNames``` topic by consuming the topic with the ```si topic get <topicName>``` command:
+
+![topicoutputoverridegettopic](../images/si-output-override-get-topic.png)
+
 ## Accessing Topics via CLI
 
 If you wish to give the topics a test drive a convenient way to do it is through the [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli)
