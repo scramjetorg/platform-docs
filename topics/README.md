@@ -219,7 +219,7 @@ If you wish to check the data format required by the topic you can list the topi
 si topic ls
 ```
 
-![listtopics](../images/si-topic-ls.png)
+![listtopics](../images/si-output-override-ls.png)
 
 If you use [Scramjet CLI](https://www.npmjs.com/package/@scramjet/cli) to send data to a topic, you can use ```-t``` option to indicate the topic data format.
 For example, to send data to topic named ```topicTestName``` expecting data in format ```application/x-ndjson```:
