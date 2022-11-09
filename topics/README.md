@@ -180,6 +180,11 @@ If you wish to give the topics a test drive a convenient way to do it is through
 
 - Why do I get ```415 Unsupported Media Type``` error when sending data to topic?
 
+```
+$ si topic send names ~/data.json
+Error: Failed to request 'http://127.0.0.1:8000/api/v1/topic/names' with code 415.
+```
+
 This error means that the format of data you are trying to send to topic does not match the data format required by this topic.
 The data format required by the topic is defined when the topic is created and can not be modified.
 
