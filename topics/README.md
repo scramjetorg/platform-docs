@@ -247,7 +247,20 @@ si topic send topicTestName -t application/x-ndjson ~/data.json
 
 ### Why data is not available in topic?
 
-If your Instance seems not to be getting the topic data or you are having trouble obtaining all topic data using Topics API please check first
-whether there are no active consumers of this topic.
+If your Instance seems not to be obtaining data from a topic or you are having trouble getting all topic data using Topics API please first check if there are no active consumers of this topic. When the data in a topic is consumed it is no longer available. The only way to make is available is to write it to the topic stream again.
 
-Once the data in a topic is consumed it is no longer available. The only way to make is available again is to write it the topic again.
+If you are working with the Scramjet Cloud Platform (SCP) you can check the current consumers of the topic using Topics API on your Space:
+
+```bash
+curl https://api.beta.scramjet.cloud/api/v1/space/<space-ID>/api/v1/topics \
+    -H 'accept: */*' \
+    -H 'authorization: Bearer YOUR-ACCESS-TOKEN-HERE' \
+    -H 'cache-control: no-cache' \
+    -H 'content-type: application/json'
+```
+
+The response to this HTTP request will return a list of topics available on the Space and information on all actors using the topics. Actors can have a role of ```consumer``` or ```provider``` and an attribute ```retired``` signaling whether an actor is still active or not.
+
+![listtopicsspace](../images/topics-space-ls.png)
+
+In the screen shot above we can see two topics; ```names``` and ```avengers``` both having one consumer and one provider each being currently not active.
