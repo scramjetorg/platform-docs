@@ -1,0 +1,32 @@
+{
+  "name": "@scramjet/topic-consumer",
+  "version": "0.1.0",
+  "description": "Topic consumer. Sequence that reads the data under topic called 'names'.",
+  "main": "index",
+  "engines": {
+    "node": ">=10"
+  },
+  "scramjet": {
+    "image": "node"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "postbuild": "cp -r package.json dist/ && (cd dist && npm i --only=production)"
+  },
+  "author": "Scramjet <open-source@scramjet.org>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@scramjet/types": "^0.28.0",
+    "@types/node": "15.12.5",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "JSONStream": "^1.3.5",
+    "scramjet": "^4.36.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scramjetorg/transform-hub.git"
+  }
+}
