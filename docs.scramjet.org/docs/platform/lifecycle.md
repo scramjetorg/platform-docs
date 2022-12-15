@@ -112,7 +112,7 @@ si inst output -
 
 You will see the output like this:
 
-```
+```txt
 3000
 3001
 3002
