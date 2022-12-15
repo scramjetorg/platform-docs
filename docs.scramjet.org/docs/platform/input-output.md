@@ -31,7 +31,7 @@ module.exports = function (input, param1, param2) {
 }
 ```
 
-This converts the data from lines of data to `Hello ` lines of data. It's a data transformer, as it uses the input and has an output. Let's dive into what it means.
+This converts the data from lines of data to `Hello` lines of data. It's a data transformer, as it uses the input and has an output. Let's dive into what it means.
 
 ## Producing data (output stream)
 
@@ -56,7 +56,6 @@ async def run(context, input):​
 In this example you see the `yield` keyword is used to expose items fetched from an API. Every single result will come as a single item on the input of another sequence connected via a topic, or as a single JSON line in the API protocol.
 
 Similar construct in Node.js would look as follows:
-
 
 ```js
 module.exports = async function* (_stream) {​

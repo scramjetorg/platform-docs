@@ -201,11 +201,11 @@ To see how this template works you can run it with a few simple commands written
 - `cd templates/template-ts`
 - `npm install`
 - `npm run build` - it runs build script in the template's package.json file, which compiles Typescript to JavaScript
-- `cp -r node_modules/ package.json dist/` - it copies _node_modules_ and _package.json_ to the _dist_ folder
+- `cp -r node_modules/ package.json dist/` - it copies _node_modules_and_package.json_to the_dist_ folder
 - `si pack dist` - it creates a _tar.gz_ archive of the _dist_ folder
 - `si sequence send dist.tar.gz` - it sends the archive to STH
-- `si sequence start - ` - it starts the Sequence (started Sequence turns into Instance)
-- `si instance output - ` - it shows the Instance's output stream in the terminal
+- `si sequence start -` - it starts the Sequence (started Sequence turns into Instance)
+- `si instance output -` - it shows the Instance's output stream in the terminal
 
 #### 3️⃣ terminal:
 

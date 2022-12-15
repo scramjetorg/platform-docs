@@ -244,7 +244,7 @@ Shift Function
 
 <a name="module_scramjet..JoinCallback"></a>
 
-## ~JoinCallback : Promise.&lt;_&gt; | _
+## ~JoinCallback : Promise.&lt;_&gt; |_
 
 **Kind**: inner typedef  
 **Returns**: <code>Promise.&lt;\*&gt;</code> \| <code>\*</code> - promise that is resolved with the joining item

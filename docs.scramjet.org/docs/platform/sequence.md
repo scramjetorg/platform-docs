@@ -33,16 +33,16 @@ Based on how they are written by the Developer, they can take the following role
 
 In order to return the data you can use one of the following:
 
-* Return an Async Iterator
-* Return a Generator
-* Return a Stream
+- Return an Async Iterator
+- Return a Generator
+- Return a Stream
 
 Sequences like these can be used to obtain data from an external source or for generating data programatically. Here's a couple of ideas:
 
-* A Sequence querying a database with the SQL query as an additional argument
-* A Sequence scraping a website repeatedly to check for new data
-* A Sequence fetching a long CSV file and exposing data points one by one
-* A Sequence generating random data for testing
+- A Sequence querying a database with the SQL query as an additional argument
+- A Sequence scraping a website repeatedly to check for new data
+- A Sequence fetching a long CSV file and exposing data points one by one
+- A Sequence generating random data for testing
 
 The Data producer doesn't differ from other methods, it'll still get the input argument. It's just that you don't really use it in any way.
 
@@ -56,11 +56,11 @@ The input stream can be consumed as a stream or using async iteration protocols.
 
 Consumer Sequences can be used to consume the data passed in topics, sent over the API or from other Sequences in the same Space. Here's a couple of potential use cases:
 
-* Saving new data to a database, omitting known items
-* Batching data from a stream
-* Updating in-memory object for real-time API's
-* Calling external API's when new data shows up
-* Machine learning
+- Saving new data to a database, omitting known items
+- Batching data from a stream
+- Updating in-memory object for real-time API's
+- Calling external API's when new data shows up
+- Machine learning
 
 The data consumer should read the input passed in the first argument and return a Future, or a Promise where applicable. When the Promise is resolved, the platform will assume that the sequence has completed and will attempt to stop and kill the program.
 
@@ -72,12 +72,12 @@ The data consumer should read the input passed in the first argument and return 
 
 Transformers are essentially functions that read input and return an output. This can be used for:
 
-* Wrangling data - changing from one format to one common with other sequences.
-* Enrichment - fetching additional data from API's and databases for each item
-* Data aggregation, moving window analysis
-* Compression and encryption
-* Data extraction (for instance: pictures from videos)
-* Running AI inference on a ML Model
+- Wrangling data - changing from one format to one common with other sequences.
+- Enrichment - fetching additional data from API's and databases for each item
+- Data aggregation, moving window analysis
+- Compression and encryption
+- Data extraction (for instance: pictures from videos)
+- Running AI inference on a ML Model
 
 ---
 
@@ -89,9 +89,9 @@ A data opetator is just a function that runs operations without using input and 
 
 Some use cases for operator Sequences:
 
-* Running cron-like operations
-* Simple processes that don't need data
-* Just running a long running process that performs repeatable actions
+- Running cron-like operations
+- Simple processes that don't need data
+- Just running a long running process that performs repeatable actions
 
 ---
 

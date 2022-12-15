@@ -13,7 +13,7 @@ order: 1
 
 Scramjet Cloud Platform is a distributed data processing platform that allows you to deploy, run and connect programs integrating data between separated environments just as if they were on a single machine. It allows users to run programs simultaneously in multiple languages, and interconnect multiple environments in virtual data spaces, where programs can share the data and expose it through a single, globally available API. With it you can easily process data while if flows between locations, networks, organizations or legal regimes.
 
-We do not aim to be the Best Data Platform in every specific aspect, we just want to take the hassle of integrating data from multiple locations away from our users and let them focus on their core competence. 
+We do not aim to be the Best Data Platform in every specific aspect, we just want to take the hassle of integrating data from multiple locations away from our users and let them focus on their core competence.
 
 We want to help you get your job done.
 
@@ -73,12 +73,12 @@ Transformed data can be obtained from the output and either saved on any databas
 
 Scramjet Cloud Platform is responsible for maintaining and deploying Sequences, keeping them running and managing their lifecycle. This is a solution for the central processing and management unit with the following major components:
 
-- **Sequence** - a user's program to be executed on the STH, that contains a developer's code that consists of one or more functions with a lightweight application business logic. It needs to be packed into a package together with its dependencies (compressed into `tar.gz` format) before sending it to STH
-- **Instance** - once a Sequence is run, STH will create a separate runtime environment for it and will execute Sequence code inside this runtime entity. This is an Instance.
-- **API & CLI** - our Application Programming Interface and Command Line Interface allow for:
+* **Sequence** - a user's program to be executed on the STH, that contains a developer's code that consists of one or more functions with a lightweight application business logic. It needs to be packed into a package together with its dependencies (compressed into `tar.gz` format) before sending it to STH
+* **Instance** - once a Sequence is run, STH will create a separate runtime environment for it and will execute Sequence code inside this runtime entity. This is an Instance.
+* **API & CLI** - our Application Programming Interface and Command Line Interface allow for:
 
-  - Data operations - sending input data and receiving output data
-  - Management operations - manage STH itself and its entities: Sequences or Instances
+  * Data operations - sending input data and receiving output data
+  * Management operations - manage STH itself and its entities: Sequences or Instances
 
 STH exposes also its own REST API to provide and receive data, manage Sequences, Instances and STH itself.
 
@@ -95,11 +95,11 @@ STH is powered by [Scramjet Framework](https://www.npmjs.com/package/scramjet) -
 
 Our engine outputs can be managed in several ways:
 
-- **File** - you can save your output to a local or a remote file
-- **STDOUT** - output can be directed to system STDOUT (STDERR is supported as well)
-- **API** - output can be consumed from our STH REST API
-- **URL Request** - you can write your app in a way to request URL, webhook etc
-- **Stream** - output can be streamed to a particular destination
+* **File** - you can save your output to a local or a remote file
+* **STDOUT** - output can be directed to system STDOUT (STDERR is supported as well)
+* **API** - output can be consumed from our STH REST API
+* **URL Request** - you can write your app in a way to request URL, webhook etc
+* **Stream** - output can be streamed to a particular destination
 
 You can mix multiple actions together: you can both send data to remote system/URL and save it locally.
 
@@ -133,8 +133,8 @@ An Instance (computing instance) is a Sequence that has been run and is currentl
 
 Both Sequence and Instance have their own API, which you can explore in sections:
 
-- [API Reference](../platform/api-reference/)
-- [CLI Reference](../platform/cli-reference/)
+* [API Reference](../platform/api-reference/)
+* [CLI Reference](../platform/cli-reference/)
 
 <details>
 <summary>
@@ -149,7 +149,7 @@ The Transform Hub engine powering Scramjet Cloud Platform can run programs based
 
 ## Handy links
 
-- ![GitHub logo](../../images/logos/github-icon.svg) [Repository with Quick Start and code samples](https://github.com/scramjetorg/scramjet-cloud-docs)
-- ![GitHub logo](../../images/logos/github-icon.svg) [STH solution open source repository](https://github.com/scramjetorg/transform-hub).
-- ![NPM package STH](../../images/logos/npm-icon.svg) [STH NPM package](https://www.npmjs.com/package/@scramjet/sth)
-- ![NPM package STH](../../images/logos/npm-icon.svg) [Scramjet CLI NPM package](https://www.npmjs.com/package/@scramjet/cli)
+* ![GitHub logo](../../images/logos/github-icon.svg) [Repository with Quick Start and code samples](https://github.com/scramjetorg/scramjet-cloud-docs)
+* ![GitHub logo](../../images/logos/github-icon.svg) [STH solution open source repository](https://github.com/scramjetorg/transform-hub).
+* ![NPM package STH](../../images/logos/npm-icon.svg) [STH NPM package](https://www.npmjs.com/package/@scramjet/sth)
+* ![NPM package STH](../../images/logos/npm-icon.svg) [Scramjet CLI NPM package](https://www.npmjs.com/package/@scramjet/cli)

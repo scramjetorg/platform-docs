@@ -207,7 +207,6 @@ https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1
 
 </details>
 
-
 <details>
 <summary>
     <strong className="get">[ GET ]</strong>  <code>&#123;API Base&#125;/topics</code> <small>- list Space Topics</small>
@@ -220,6 +219,7 @@ https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1
 **Responses**
 
 <small>Status: <code>200</code> - Success</small>
+
 ```json
 [
   {
@@ -714,6 +714,7 @@ https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
   "error": "Sequence with name <sequenceName> already exist"
 }
 ```
+
 <small>Status <code>422</code> - Unprocessable Entity</small>
 
 ```json
@@ -721,6 +722,7 @@ https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
   "error": Error | string | unknown 
 }
 ```
+
 </details>
 
 <details>
@@ -764,7 +766,6 @@ https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
   "error": Error | string | unknown 
 }
 ```
-
 
 </details>
 
@@ -940,6 +941,7 @@ https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
   "status": "running"
 }
 ```
+
 <small>Status <code>404</code> - Not found </small>
 
 ```json
@@ -1175,8 +1177,6 @@ Event contains `<eventName>`, `<handler>` with optional `<message>` of any type:
 }
 ```
 
-
-
 </details>
 
 <details>
@@ -1200,7 +1200,6 @@ Event contains `<eventName>`, `<handler>` with optional `<message>` of any type:
 }
 ```
 
-
 </details>
 
 <details>
@@ -1215,7 +1214,6 @@ Event contains `<eventName>`, `<handler>` with optional `<message>` of any type:
 **Responses**
 
 <small>Content-type: application/octet-stream</small>
-
 
 <small>Status <code>404</code> - Not found </small>
 
@@ -1396,7 +1394,6 @@ The data can be sent to the input stream of the Instance where it can be consume
 }
 ```
 
-
 </details>
 
 ---
@@ -1478,6 +1475,7 @@ https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
 **Responses**
 
 <small>Status: <code>200</code> - Success</small>
+
 ```json
 [
   {

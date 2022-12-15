@@ -253,8 +253,6 @@ si seq start <sequence-id> --config
 
 The data is then accessible in the sequence via the `.config` property in context.
 
-
-
 ```js
 module.exports = function (input) {
   const apiKey = this.config.apiKey;

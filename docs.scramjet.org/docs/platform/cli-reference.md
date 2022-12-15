@@ -288,7 +288,7 @@ Every value can be set for every config property by using command `si config set
 
    <br />
 
-   #### Creating profiles
+#### Creating profiles
 
    <br />Profiles can be managed by a CLI command `si config profile [command]`
 

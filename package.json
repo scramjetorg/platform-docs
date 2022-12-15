@@ -3,7 +3,9 @@
     "markdownlint-cli": "^0.30.0"
   },
   "scripts": {
-    "lint": "npx markdownlint '**/*.md' --ignore **/node_modules/** -c .markdownlint.json"
+    "lint": "npm run lint:website && npm run lint:docs",
+    "lint:website": "npx markdownlint 'docs.scramjet.org/**/*.md' -c docs.scramjet.org/.markdownlint.json",
+    "lint:docs": "npx markdownlint '**/*.md' --ignore docs.scramjet.org/ --ignore **/node_modules/** -c .markdownlint.json"
   },
   "devDependencies": {
     "markdownlint": "^0.26.1"

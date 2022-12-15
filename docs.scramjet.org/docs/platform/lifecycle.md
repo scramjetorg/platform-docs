@@ -21,16 +21,19 @@ This document describes the process and their internal stages.
 
 ## Source code
 
-In this phase the program is being written by the developer and may contain additional 
+In this phase the program is being written by the developer and may contain additional
 files or items that you need for development. The minimal source code would consist of:
 
 1. A source file (js for instance):
+
    ```js
    module.exports = async function() {
      // do stuff here.
    }
    ```
+
 2. A basic configuration file - `package.json` - this always needs to be defined, no matter the language.
+
    ```json
    {
      "name": "@example/my-sequence",
@@ -127,4 +130,3 @@ You will see the output like this:
 When the sequence ends it's process gets removed along with any parts the sequence left behind.
 
 The output, logs and stdio will be accessible for a short time period for inspection.
-

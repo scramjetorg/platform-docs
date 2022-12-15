@@ -148,7 +148,6 @@ timings:
 
 ## Config options and command line table
 
-
 | Config name | CMD Parameter | Default | Description | Example |
 |-|-|-|-|-|
 | N/A | `-c, --config <path>` | `null` | Specifies path to config

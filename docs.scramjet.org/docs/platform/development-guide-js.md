@@ -12,7 +12,7 @@ order: 2
 
 Packaging a sequence is literally just compressing it into a tar.gz file. If your code doesn't use any dependencies you can simply run `tar czf /path/to/package.tar.gz .` and you're set. We suggest that you use the `si` command for packing, it'll do some extra checks to make sure that your package contains the needed files:
 
-```
+```bash
 si seq pack
 ```
 
