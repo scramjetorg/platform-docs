@@ -26,4 +26,4 @@ jobs:
       run: npm install
 
     - name: Check all markdown files
-      run: npx markdownlint '**/*.md' --ignore node_modules -c .markdownlint.json
+      run: npm lint
