@@ -28,7 +28,7 @@ response = asyncio.run(host.get_version())
 print(f'Host version: {response}')
 ```
 
-You can also send, start or delete Sequencec with our API.
+You can also send, start or delete Sequence with our API.
 
 ### Sending Sequence
 

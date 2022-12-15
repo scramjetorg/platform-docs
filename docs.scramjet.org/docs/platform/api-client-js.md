@@ -69,7 +69,7 @@ const spaceHubs = await spaceClient.getHosts();
 
 > There is usually one Hub available.
 
-Having Hubs avaiable allows for the HostClient to be created.
+Having Hubs available allows for the HostClient to be created.
 
 ```js
 const hostClient = spaceClient.getHostClient(spaceHubs[0].id);
@@ -79,7 +79,7 @@ HostClient allows for listing available Instances and Sequences and for the crea
 
 ## Sequence and Instance clients
 
-For the Sequence or Instance client to be created the entity id is needed. It can be retrived from the HostClient listing the instances and sequences. Creating HostClient in the context of Scramjet Platform was shown in the [Users Space and HostClient](#users-space-and-hostclient) section.
+For the Sequence or Instance client to be created the entity id is needed. It can be retrieved from the HostClient listing the instances and sequences. Creating HostClient in the context of Scramjet Platform was shown in the [Users Space and HostClient](#users-space-and-hostclient) section.
 
 _Creating SequenceClient_
 
