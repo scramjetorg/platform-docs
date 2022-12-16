@@ -25,5 +25,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Check all markdown files
-      run: npm lint
+    - name: Check website markdown files
+      run: npm lint:website
+
+    - name: Check remaining markdown files
+      run: npm lint:docs
