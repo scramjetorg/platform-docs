@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="217"
+   height="71"
+   viewBox="-0.5 -0.5 217 71"
+   content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2022-06-08T13:32:35.758Z&quot; agent=&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36&quot; version=&quot;19.0.2&quot; etag=&quot;eZ6619DR5K0tUOmFqPX9&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;iAW7qFj5YrE1Mz5BYM3O&quot;&gt;7ZhLc5swEMc/DccwAvGwj7EdmkM705l0pseODDKoFSwVcuL001cCyZgAE2fiafryIZb+eu7uj2UdB6/LwztB6uIDZJQ7PsoODt44vr/0A/VXC4+dEMR+J+SCZZ3k9cId+0GNiIy6ZxltBhMlAJesHoopVBVN5UAjQsDDcNoO+PDUmuR0JNylhI/VzyyTRacu/LjXbynLC3uyFy27kZLYycaSpiAZPJxI+MbBawEgu1Z5WFOufWf90q1LZkaPFxO0kucsMH6/J3xvbDP3ko/W2HsqJFO2vydbyj9CwySDSg1tQUooHbyyE645y/WAhFqphSy56niqqYys9WblIdc4uFvSsNTNGMm/CNhX2RfRBmnV8hGpRqvSzC6XAr7RNXAQ7Y0wQv4iWKqRHeP8RN+sb64TrRuj1L3oYdYx3tHdClMKJZXiUU0xC3xkImQQ9QPTf+gD7lmtOAl2ZDRiGMuPW/dhUA0Tiemo4Oejkisf1bN2GvDJ1k5HL7UfB0/tD0f2x54b4LEHwgt4IHjeA0PAuqcIaYpIU7Ts6A4xTKbKbComYC1ZlukdR5B2ecLvvvW22hHIjSyngd6+ApkW5qghtDuoZEJKxvWyW8rvqT7WDJiM5kWmP8X2kPoKKjoGPvDi1So4F3g8HfBfE9BwIqARl8YB+l1AJLnS7atGpO2M6Ptep0GVSaTO69f6LD/RUxo3B8g5JTVr3FQlIT9JGzUl2VmPf4VG9jsMwLFid1YbCbU1Ur46tFP7RVGuv2Ev7VXN8XZkhKTyvhymPkHVCeYxbHncS2hM9F+EZw1M2a2PCVdOuHnCgsFjkpmeS/QclydoJe1nyKuPXomaXTBMLd44s04lVnwBCqNZCovgHEi8aAaS3wzm2Xtu1MXU+CdBqmYHolTQzbF9lLVr/n7g+6JiIkHfGZPRBSoLbxkO36x4/Gb1wokHIL7AAxC/fWXhYeyG8VsWF4v/xcUZxUWSLBA6O+PHb1lcLP/Y4oJV/2BtMZVq29pCJRdJWKVv25rwGvLsAk0dOvkMM89E7YEvU3uobv8zvh07+V8IvvkJ&lt;/diagram&gt;&lt;/mxfile&gt;"
+   id="svg40"
+   sodipodi:docname="data-transformer.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata44">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1334"
+     id="namedview42"
+     showgrid="false"
+     inkscape:zoom="5.6251156"
+     inkscape:cx="139.5"
+     inkscape:cy="35.5"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg40" />
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style2">@import url(https://fonts.googleapis.com/css?family=jost);
+</style>
+  </defs>
+  <path
+     d="M 15.067961,5 H 143.06796 v 48 c 0,6.63 -5.37,12 -12,12 H 3.0679605 V 17 c 0,-6.63 5.37,-12 12.0000005,-12 z"
+     fill="#dceaf9"
+     stroke="#002849"
+     stroke-miterlimit="10"
+     pointer-events="all"
+     id="path6" />
+  <path
+     d="m 143.06796,25 h 31.43 V 10 l 40,25 -40,25 V 45 h -31.43 V 35 Z"
+     fill="#417bb4"
+     stroke="none"
+     pointer-events="none"
+     id="path8" />
+  <g
+     transform="translate(-63.432039,-0.5)"
+     id="g14">
+    <switch
+       id="switch12">
+      <foreignObject
+         pointer-events="none"
+         width="100%"
+         height="100%"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+         style="overflow: visible; text-align: left;">
+        <xhtml:div
+           style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 35px; margin-left: 236px;">
+          <xhtml:div
+             data-drawio-colors="color: #FFFFFF; "
+             style="box-sizing: border-box; font-size: 0px; text-align: center;">
+            <xhtml:div
+               style="display: inline-block; font-size: 20px; font-family: Helvetica; color: rgb(255, 255, 255); line-height: 1.2; pointer-events: none; white-space: nowrap;">
+              <xhtml:font
+                 style="font-size: 20px;"
+                 data-font-src="https://fonts.googleapis.com/css?family=jost">out</xhtml:font>
+            </xhtml:div>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="236"
+         y="41"
+         fill="#ffffff"
+         font-family="Helvetica"
+         font-size="20px"
+         text-anchor="middle"
+         id="text10">out</text>
+    </switch>
+  </g>
+  <g
+     transform="translate(-63.432039,-0.5)"
+     id="g20">
+    <switch
+       id="switch18">
+      <foreignObject
+         pointer-events="none"
+         width="100%"
+         height="100%"
+         requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+         style="overflow: visible; text-align: left;">
+        <xhtml:div
+           style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 35px; margin-left: 136px;">
+          <xhtml:div
+             data-drawio-colors="color: #002849; "
+             style="box-sizing: border-box; font-size: 0px; text-align: center;">
+            <xhtml:div
+               style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 40, 73); line-height: 1.2; pointer-events: none; white-space: nowrap;">
+              <xhtml:h4
+                 style="font-size: 16px;">
+                <xhtml:font
+                   style="font-size: 16px;"
+                   data-font-src="https://fonts.googleapis.com/css?family=jost">Data Transformer</xhtml:font>
+              </xhtml:h4>
+            </xhtml:div>
+          </xhtml:div>
+        </xhtml:div>
+      </foreignObject>
+      <text
+         x="136"
+         y="40"
+         fill="#002849"
+         font-family="Helvetica"
+         font-size="16px"
+         text-anchor="middle"
+         id="text16">Data Producer</text>
+    </switch>
+  </g>
+  <switch
+     id="switch38">
+    <g
+       requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+       id="g32" />
+    <a
+       transform="translate(0,-5)"
+       xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems"
+       target="_blank"
+       id="a36">
+      <text
+         text-anchor="middle"
+         font-size="10px"
+         x="50%"
+         y="100%"
+         id="text34">Text is not SVG - cannot display</text>
+    </a>
+  </switch>
+</svg>

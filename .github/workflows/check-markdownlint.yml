@@ -25,5 +25,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Check all markdown files
-      run: npx markdownlint '**/*.md' --ignore node_modules -c .markdownlint.json
+    - name: Check website markdown files
+      run: npm run lint:website
+
+    - name: Check remaining markdown files
+      run: npm run lint:docs
