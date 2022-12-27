@@ -13,22 +13,18 @@ order: 2
 
 > **Deploy** and **execute** long running data **programs** that, **​transform** **in real-time** and transport **data** ​between multiple clouds and **on-premise** machines, just as **simply** as starting a program on a laptop, ​with no tedious configurations, VPNs or DevOps work.​
 
-<!-- ## Joining the Beta Program to register
-
-<BetaBanner /> -->
-
-## Log in to Scramjet Cloud Platform Beta Panel
+## Log in to Scramjet Cloud Platform Panel
 
 <div className="w-200"></div>
 
-| ![Scramjet Login](../../images/screens/log-in-page.png) |  To use our platform **free of charge for a year**, please [sign up for the beta program](https://scr.je/join-beta-docs). <br/> If you are already our user, please log in to the [Scramjet Cloud Platform Beta Panel](https://console.beta.scramjet.cloud/) through your provided mail and set the new password by clicking `Forgot the password`. |
+| ![Scramjet Login](../../images/screens/log-in-page.png) |  To try our platform and get **30 days free of charge**, please [sign up to Scramjet Cloud Platform panel here](https://console.scramjet.cloud). <br/> If you are already our user, please log in to the [Scramjet Cloud Platform Panel](https://console.scramjet.cloud/) through your provided mail and password. |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
 ## Start the journey with Scramjet 🚀
 
 There are only three simple steps!
 
-- [Set up the environment](https://console.beta.scramjet.cloud/settings).
+- [Set up the environment](https://console.scramjet.cloud/settings).
 - [Deploy one of the demo Transform Sequence programs](https://docs.scramjet.org/platform/samples).
 - Write your own Transform Sequence from [templates](https://docs.scramjet.org/platform/templates) in [JavaScript](https://docs.scramjet.org/platform/development-guide-js), [TypeScript](https://docs.scramjet.org/platform/development-guide-ts) or [Python](https://docs.scramjet.org/platform/development-guide-py)
 
@@ -36,7 +32,8 @@ There are only three simple steps!
 
 ## Step 1: Set up the environment
 
-Dear user, in order to use our Beta Space, you need to have Linux based operating system installed eg. Ubuntu.
+Dear user, in order to use our Scramjet Cloud Platform from a command line in a development environment you'll need a Posix compatible console. You can run WSL2 in Windows, [here's a good guide from Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#2-install-wsl) or bash for Windows with MinGW or Git Bash. On Mac a normal Bash terminal will work just as well.
+
 You will also need Node.js together with its package manager npm. Please refer to installation helper for node and npm in case of any problems. You must have Bash installed while using Windows.
 
 Open the command prompt and follow the steps below to configure Scramjet Cloud Platform (SCP).
@@ -49,12 +46,12 @@ Open the command prompt and follow the steps below to configure Scramjet Cloud P
 
 2. Generate SCP CLI Token.
 
-   [![Token will not be saved. After generation, please store it on your device.](../../images/screens/generate-token.png)](https://console.beta.scramjet.cloud/settings)
+   [![Token will not be saved. After generation, please store it on your device.](../../images/screens/generate-token.png)](https://console.scramjet.cloud/settings)
 
    After token generation copy and paste the following CLI command for setting up config.
 
    ```bash
-   si config set json '{"middlewareApiUrl": "https://api.beta.scramjet.cloud/api/v1", "env": "production", "token": "<GeneratedToken>"}'
+   si config set json '{"middlewareApiUrl": "https://api.scramjet.cloud/api/v1", "env": "production", "token": "<GeneratedToken>"}'
    ```
 
 3. Check if your setup is working properly by listing your programs (Sequences).

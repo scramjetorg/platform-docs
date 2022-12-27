@@ -160,7 +160,7 @@ Every value can be set for every config property by using command `si config set
       {
       "configVersion": 1,
       "apiUrl": "http://127.0.0.1:8000/api/v1",
-      "middlewareApiUrl": "https://api.beta.scramjet.cloud/api/v1",
+      "middlewareApiUrl": "https://api.scramjet.cloud/api/v1",
       "env": "production",
       "scope": "",
       "token": "generatedToken",
@@ -565,7 +565,7 @@ $ si config session
   sessionId: '340908'
 }
 
-$ si config set json '{"middlewareApiUrl": "https://api.beta.scramjet.cloud/api/v1", "env": "production", "token": "generatedToken"}'
+$ si config set json '{"middlewareApiUrl": "https://api.scramjet.cloud/api/v1", "env": "production", "token": "generatedToken"}'
 
 $ si config session
 
@@ -649,7 +649,7 @@ Current profile: default
 
 ### Config commands example usage
 
-- `si config set json '{"middlewareApiUrl": "https://api.beta.scramjet.cloud/api/v1", "env": "production", "token": "generated token"}'`
+- `si config set json '{"middlewareApiUrl": "https://api.scramjet.cloud/api/v1", "env": "production", "token": "generated token"}'`
 - `si config set log --format json`
 - `si config set log --debug false`
 - `si config reset all`

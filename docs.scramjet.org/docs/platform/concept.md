@@ -30,8 +30,6 @@ Scramjet Cloud Platform's core Features:
 * create execution environments at multiple cloud providers with a click of a button,
 * low memory footprint allowing to run on machines with less than 256MB of RAM.
 
-<!-- <BetaBanner /> -->
-
 ## Concept diagram
 
 The diagram below shows the data flow using Scramjet Cloud Platform. Any type of data (file, image, stream, movie, etc.) can be used and passed into the input of an Instance. Please take a close look at the Instances in the diagram. They have been deployed using the same Sequence several times, which means that the same Sequence ("SEQUENCE A" in the diagram) has been started 3 times (2 times with the same dataset). The forth Instance was deployed using "SEQUENCE B", which in its transformation logic uses external API as a data input.

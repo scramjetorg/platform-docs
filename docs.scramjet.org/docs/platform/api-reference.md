@@ -37,11 +37,11 @@ http://127.0.0.1:11000/api/v1/
 
 # Scramjet Cloud Platform Space
 
-https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1
+https://api.scramjet.cloud/api/v1/space/:id/api/v1
 
 # Scramjet Cloud Platform Hub
 
-https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
+https://api.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
 ```
 
 > Please remember to provide content-type in Header for POST and DELETE methods.
@@ -57,7 +57,7 @@ curl -X POST http://127.0.0.1:11000/api/v1/sequence/:id/start -H 'content-type: 
 **Example cURL**
 
 ```bash
-curl -X GET https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/list -H 'accept: */*' -H 'authorization: Bearer {Token}' -H 'content-type: application/json'
+curl -X GET https://api.scramjet.cloud/api/v1/space/:id/api/v1/list -H 'accept: */*' -H 'authorization: Bearer {Token}' -H 'content-type: application/json'
 ```
 
 **No token provided or wrong token response**
@@ -73,7 +73,7 @@ curl -X GET https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/list -H 'acc
 **API Base SCP Space URL**
 
 ```bash
-https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1
+https://api.scramjet.cloud/api/v1/space/:id/api/v1
 ```
 
 <details>
@@ -376,7 +376,7 @@ sth-0: {"level":"DEBUG","msg":"Request","ts":1661330786642,"from":"Host","Host":
 **API Base SCP Hub URL**
 
 ```bash
-https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
+https://api.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
 ```
 
 <details>
@@ -544,7 +544,7 @@ https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
 **API Base SCP Hub URL**
 
 ```bash
-https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
+https://api.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
 ```
 
 <details>
@@ -871,7 +871,7 @@ Note: If Instance is started from a given Sequence, Sequence can not be removed
 **API Base SCP Hub URL**
 
 ```bash
-https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
+https://api.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
 ```
 
 <details>
@@ -1403,7 +1403,7 @@ The data can be sent to the input stream of the Instance where it can be consume
 **API Base SCP Hub URL**
 
 ```bash
-https://api.beta.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
+https://api.scramjet.cloud/api/v1/space/:id/api/v1/sth/:id/api/v1/
 ```
 
 **Type of Headers**
