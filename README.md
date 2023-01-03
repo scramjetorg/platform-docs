@@ -80,7 +80,7 @@ Our vanilla STH engine is based on Node.js and thus allows developers to benefit
 
 ### **1.2 Solution concept diagram**
 
-[![Solution concept diagram](https://scramjet.org/images/sth-diagram.jpg)](https://scramjet.org/#join-beta)
+[![Solution concept diagram](https://scramjet.org/images/sth-diagram.jpg)](https://scramjet.org/)
 
 <u>Glossary:</u>
 
@@ -129,9 +129,9 @@ Our engine outputs can be managed in several ways:
 
 </details><br>
 
-### Cloud Platform Beta is coming 🥳 <!-- omit in toc -->
+### Start your 30 days trial now! :partying_face: <!-- omit in toc -->
 
-[![Beta program](https://scramjet.org/images/join-scramjet-cloud-beta.png)](https://scramjet.org/#join-beta)
+[![Register](https://user-images.githubusercontent.com/63969229/208955381-676702f3-2af1-4f50-bd0c-f6b3660c26f0.png)](https://scramjet.org/)
 
 ## **2. Installation**
 
