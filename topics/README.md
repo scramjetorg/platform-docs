@@ -4,7 +4,7 @@ Topics enable building highly efficient data streaming pipelines. The topic data
 
 Each Instance can be either producer and/or customer of one topic.
 
-![topics-diagram](../images/topic-diagram.svg) 
+![topics-diagram](../images/topic-diagram.svg)
 
 The topics are also available under their own API endpoints. Topics API endpoint can have multiple producers and consumers.
 
