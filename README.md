@@ -312,10 +312,10 @@ Our `hello-snowman` app will read and interpret these messages and will inform u
 * if temperature will be 0 or below, Sequence will return message: `Snowman ⛄ is freezing 🥶 Winter is coming ❄️ ❄️ ❄️ ❄️ ❄️`
 * in the other case (temperature above 0 degrees), Sequence will return message: `Snowman ⛄ is melting! 🥵`
 
-To run this app, please execute the following command from the root of our directory `node ./tools/stream-gen-tool/stream-gen.js <instance_id>`. In our case this would look like this:
+To run this app, please execute the following command from the root of our directory `node ./javascript/hello-snowman/lib/stream-gen.js <instance_id>`. In our case this would look like this:
 
 ```bash
-node ./tools/stream-gen-tool/stream-gen.js e70222d1-acfc-4e00-b046-4a3a9481c53b
+node ./javascript/hello-snowman/lib/stream-gen.js e70222d1-acfc-4e00-b046-4a3a9481c53b
 ```
 
 The output will look similar to this one:
